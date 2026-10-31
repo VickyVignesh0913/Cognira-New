@@ -26,10 +26,10 @@ function L() {
       <div className="brutal-card"><b>CATEGORIES</b>{cats.length === 0 && <div className="font-mono2 text-xs">Nothing here yet.</div>}{cats.map(([n, c]) => <div key={n} className="flex items-center justify-between border-t-2 border-black py-1 text-sm"><span>📁 {n}</span><span className="font-mono2 text-xs">{c} ›</span></div>)}</div>
       <div className="grid grid-cols-2 gap-2">{['My Notes', 'PYQs', 'Mock Tests', 'Bookmarks'].map((t) => <button key={t} className="brutal-card text-left font-bold" onClick={() => setChip(t === 'My Notes' ? 'Notes' : t === 'Bookmarks' ? 'All' : t)}>⭐ {t}</button>)}</div>
       <div className="brutal-card"><div className="flex items-center justify-between"><b>RECENT FILES</b><button className="brutal-btn" onClick={() => setOpen(true)}>+ Add</button></div>
-        {filtered.length === 0 && <div className="mt-1 font-mono2 text-xs">No files match. Add a PDF link or note above.</div>}
+        {filtered.length === 0 && <div className="mt-1 font-mono2 text-xs">{items.length === 0 ? 'Nothing saved yet — add a PDF link or note above.' : 'No files match your search.'}</div>}
         {filtered.map((r) => <FileRow key={r.id} r={r} del={() => persist(items.filter((x) => x.id !== r.id))} ren={(t: string) => persist(items.map((x) => x.id === r.id ? { ...x, title: t } : x))} />)}
       </div>
-      {open && <Add close={() => setOpen(false)} add={(r: Resource) => { persist([r, ...items]); setOpen(false) }} />}
+      {open && <Add close={() => setOpen(false)} add={(r: Resource) => { persist([r, ...items]); setQ(''); setChip('All'); setOpen(false) }} />}
     </Shell>
   )
 }
@@ -39,10 +39,15 @@ function FileRow({ r, del, ren }: { r: Resource; del: () => void; ren: (t: strin
   const [menu, setMenu] = useState(false)
   const [editing, setEditing] = useState(false)
   const [v, setV] = useState(r.title)
+  function commit() {
+    const t = v.trim()
+    if (t) ren(t)
+    setEditing(false)
+  }
   return (
     <div className="flex items-center gap-2 border-t-2 border-black py-2">
       <span className="brutal-card px-2 py-1">{r.type === 'link' ? '🔗' : '📄'}</span>
-      <div className="min-w-0 flex-1">{editing ? <input className="in" value={v} onChange={(e) => setV(e.target.value)} onBlur={() => { if (v.trim()) ren(v.trim()); setEditing(false) }} autoFocus /> : <a href={r.url} target="_blank" rel="noreferrer" className="block truncate text-sm font-bold underline">{r.title}</a>}<div className="font-mono2 text-[11px]">{r.category} · {rel(r.updatedAt)}</div></div>
+      <div className="min-w-0 flex-1">{editing ? <input className="in" value={v} onChange={(e) => setV(e.target.value)} onBlur={commit} onKeyDown={(e) => { if (e.key === 'Enter') commit(); if (e.key === 'Escape') { setV(r.title); setEditing(false) } }} autoFocus /> : <a href={r.url} target="_blank" rel="noreferrer" className="block truncate text-sm font-bold underline">{r.title}</a>}<div className="font-mono2 text-[11px]">{r.category} · {rel(r.updatedAt)}</div></div>
       <button aria-label="file options" className="btn-ghost" onClick={() => setMenu(!menu)}>⋯</button>
       {menu && <div className="flex gap-1"><button className="chip" onClick={() => { setEditing(true); setMenu(false) }}>Rename</button><button className="chip" onClick={del}>Delete</button></div>}
     </div>

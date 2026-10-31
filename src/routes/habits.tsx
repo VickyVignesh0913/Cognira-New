@@ -42,7 +42,7 @@ function H() {
           {habits.length === 0 && <div className="brutal-card text-sm">No habits yet. Add your first one below.</div>}
           {habits.map((h) => (
             <button key={h.id} onClick={() => toggle(h.id)} className="brutal-card text-left" aria-pressed={(h.completedDates || []).includes(today)}>
-              <div className="flex items-center gap-2"><span className="text-xl">{h.icon}</span><div className="flex-1"><b className="text-sm">{h.title}</b><div className="font-mono2 text-[11px]">{h.frequency} · 🔥 {streak(h)} day streak</div></div><span className="tick">{(h.completedDates || []).includes(today) ? '✓' : '○'}</span></div>
+              <div className="flex items-center gap-2"><span className="text-xl">{h.icon}</span><div className="flex-1"><b className="text-sm">{h.title}</b><div className="font-mono2 text-[11px]">{h.frequency} · {h.category || 'Study'} · target {h.target} · 🔥 {streak(h)} day streak</div></div><span className="tick">{(h.completedDates || []).includes(today) ? '✓' : '○'}</span></div>
               <div className="mt-2 flex gap-1">{days.map((d, i) => { const doneD = (h.completedDates || []).includes(d); const future = i === 6 && !(h.completedDates || []).includes(today) ? false : false; return <span key={d} className="dot" style={{ background: doneD ? '#0A1128' : '#EAF0FA', border: '2px solid #0A1128' }} title={d} /> })}</div>
             </button>
           ))}
@@ -66,15 +66,19 @@ function NewHabit({ close, add }: { close: () => void; add: (h: Habit) => void }
   const [title, setTitle] = useState('')
   const [icon, setIcon] = useState('📚')
   const [freq, setFreq] = useState('Daily')
+  const [cat, setCat] = useState('Study')
+  const [target, setTarget] = useState('1')
   const [err, setErr] = useState('')
   return (
     <div className="sheet-back" onClick={close}><div className="sheet" onClick={(e) => e.stopPropagation()} role="dialog" aria-label="New habit">
       <b>NEW HABIT</b>
       <label className="lbl">Title<input className="in" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Read 20 pages" /></label>
       <div className="lbl">Icon<div className="flex gap-2">{['📚', '🏃', '💧', '🧘', '💻', '✍️'].map((i) => <button key={i} className={`chip ${icon === i ? 'on' : ''}`} onClick={() => setIcon(i)}>{i}</button>)}</div></div>
+      <div className="lbl">Category<div className="flex flex-wrap gap-2">{['Study', 'Health', 'Mind', 'Work'].map((c) => <button key={c} className={`chip ${cat === c ? 'on' : ''}`} onClick={() => setCat(c)}>{c}</button>)}</div></div>
       <div className="lbl">Frequency<div className="flex gap-2">{['Daily', 'Weekdays', 'Weekends'].map((f) => <button key={f} className={`chip ${freq === f ? 'on' : ''}`} onClick={() => setFreq(f)}>{f}</button>)}</div></div>
+      <label className="lbl">Target<input className="in" type="number" min={1} max={100} value={target} onChange={(e) => setTarget(e.target.value)} aria-label="Target" /></label>
       {err && <div role="alert" className="text-sm font-bold">{err}</div>}
-      <div className="flex gap-2"><button className="brutal-btn flex-1" onClick={() => { if (!title.trim()) { setErr('Give the habit a name.'); return } add({ id: uid(), title: title.trim(), icon, frequency: freq, target: 1, completedDates: [] }) }}>Add habit</button><button className="btn-ghost" onClick={close}>Cancel</button></div>
+      <div className="flex gap-2"><button className="brutal-btn flex-1" onClick={() => { if (!title.trim()) { setErr('Give the habit a name.'); return } add({ id: uid(), title: title.trim(), icon, frequency: freq, category: cat, target: Math.max(1, Math.min(100, Number(target) || 1)), completedDates: [] }) }}>Add habit</button><button className="btn-ghost" onClick={close}>Cancel</button></div>
     </div></div>
   )
 }

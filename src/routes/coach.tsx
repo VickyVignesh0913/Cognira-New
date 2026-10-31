@@ -23,17 +23,27 @@ function C() {
   useEffect(() => { bottom.current?.scrollIntoView({ behavior: 'smooth' }) }, [msgs, typing])
   const profile = loadProfile()
 
-  const send = useAction(async (text: string) => {
-    const mine: CoachMsg = { role: 'user', content: text, at: new Date().toISOString() }
-    const next = [...msgs, mine]; setMsgs(next); saveCoach(next); setDraft(''); setTyping(true)
+  const send = useAction(async (text: string, next: CoachMsg[]) => {
     try {
       const r = await coachReply({ data: { message: text, context: { profile, tasks: loadTasks().slice(0, 8), habits: loadHabits().slice(0, 8), sessions: loadFocusSessions().slice(-7) } } })
       const reply: CoachMsg = { role: 'coach', content: String((r as any)?.reply || (r as any)?.text || 'Got it — start with 25 focused minutes, then tell me how it went.'), at: new Date().toISOString() }
       const fin = [...next, reply]; setMsgs(fin); saveCoach(fin)
-    } catch { const fin = [...next, { role: 'coach' as const, content: tipFor(profile), at: new Date().toISOString() }]; setMsgs(fin); saveCoach(fin) }
-    finally { setTyping(false) }
+    } catch {
+      const content = profile ? tipFor(profile) : 'Got it — start with one 25-minute focus block on the first thing you named, then mark it done and tell me how it went.'
+      const fin = [...next, { role: 'coach' as const, content, at: new Date().toISOString() }]; setMsgs(fin); saveCoach(fin)
+    } finally { setTyping(false) }
     return null
-  }, { onSuccess: () => {} })
+  }, { refresh: false })
+
+  // Render the sent message now; the server reply can take a while (AI generation).
+  function submit(text: string) {
+    const t = text.trim()
+    if (!t || send.pending) return
+    const mine: CoachMsg = { role: 'user', content: t, at: new Date().toISOString() }
+    const next = [...msgs, mine]
+    setMsgs(next); saveCoach(next); setDraft(''); setTyping(true)
+    send.run(t, next)
+  }
 
   return (
     <Shell title="AI Coach">
@@ -44,8 +54,8 @@ function C() {
         {typing && <div className="mr-8 border-2 border-black bg-white p-2 font-mono2 text-xs">typing…</div>}
         <div ref={bottom} />
       </div>
-      <div className="flex flex-wrap gap-2">{CHIPS.map((c) => <button key={c} className="chip" onClick={() => send.run(c)}>{c}</button>)}</div>
-      <form className="flex gap-2" onSubmit={(e) => { e.preventDefault(); if (draft.trim()) send.run(draft.trim()) }}>
+      <div className="flex flex-wrap gap-2">{CHIPS.map((c) => <button key={c} className="chip" onClick={() => submit(c)}>{c}</button>)}</div>
+      <form className="flex gap-2" onSubmit={(e) => { e.preventDefault(); submit(draft) }}>
         <input className="in flex-1" value={draft} onChange={(e) => setDraft(e.target.value)} placeholder="Ask your coach…" aria-label="Ask your coach" />
         <button className="brutal-btn" type="submit" disabled={send.pending}>{send.pending ? '…' : 'Send'}</button>
       </form>

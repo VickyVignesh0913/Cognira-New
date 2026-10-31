@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Shell } from '@/components/ui'
-import { clearAll, loadPrefs, loadProfile, savePrefs, type Prefs } from '@/lib/cognira'
+import { clearAll, DEFAULT_PREFS, loadPrefs, loadProfile, savePrefs, type Prefs } from '@/lib/cognira'
 
 export const Route = createFileRoute('/settings')({ component: S })
 
@@ -12,7 +12,11 @@ const ENVS = ['Calm', 'Deep Focus', 'Energetic', 'Zen'] as const
 function S() {
   const nav = useNavigate()
   const profile = loadProfile()
-  const [p, setP] = useState<Prefs>(loadPrefs)
+  const [p, setP] = useState<Prefs>(DEFAULT_PREFS)
+  const current = useRef(p)
+  current.current = p
+  // Load after mount so the server HTML and the first client render agree (localStorage is client-only).
+  useEffect(() => { setP(loadPrefs()) }, [])
   useEffect(() => {
     const root = document.documentElement
     root.classList.remove('theme-calm', 'theme-focus', 'theme-minimal', 'theme-sky')
@@ -21,7 +25,12 @@ function S() {
     document.body.classList.toggle('motion-minimal', p.motion.toLowerCase() === 'minimal' || p.motion.toLowerCase() === 'reduced')
     document.body.dataset.env = p.env
   }, [p.theme, p.motion, p.env])
-  function set(patch: Partial<Prefs>) { const n = { ...p, ...patch }; setP(n); savePrefs(n) }
+  function set(patch: Partial<Prefs>) {
+    const n = { ...current.current, ...patch }
+    current.current = n
+    setP(n)
+    savePrefs(n)
+  }
 
   return (
     <Shell title="Settings">

@@ -3,7 +3,7 @@ export type Persona = 'student' | 'professional' | ''
 
 export interface DemoTask { id: string; title: string; start: string; end: string; startTime: string; endTime: string; category: string; repeatDays: string[]; completedDates: string[]; date: string }
 export type Task = DemoTask
-export interface DemoHabit { id: string; title: string; icon: string; frequency: string; target: number; completedDates: string[] }
+export interface DemoHabit { id: string; title: string; icon: string; frequency: string; target: number; category?: string; completedDates: string[] }
 export type Habit = DemoHabit
 export interface DemoSession { id: string; startedAt: string; durationSec: number; mode: string; subject?: string; completed?: boolean }
 export type FocusSession = DemoSession
@@ -252,7 +252,7 @@ export function saveCoach(m: CoachMsg[]) { writeLS('cognira-coach', m); emit() }
 
 // Settings prefs (local)
 const PREFS_KEY = 'cognira-prefs'
-const DEFAULT_PREFS: Prefs = { theme: 'Sky Blue', motion: 'Full', env: 'Calm', widgets: { stats: true, plan: true, weekly: true, coachTip: true }, sound: true, ai: true, ambient: 'Rain' }
+export const DEFAULT_PREFS: Prefs = { theme: 'Sky Blue', motion: 'Full', env: 'Calm', widgets: { stats: true, plan: true, weekly: true, coachTip: true }, sound: true, ai: true, ambient: 'Rain' }
 export function loadPrefs(): Prefs {
   const p = readLS<Partial<Prefs>>(PREFS_KEY, {})
   return { ...DEFAULT_PREFS, ...p, widgets: { ...DEFAULT_PREFS.widgets, ...(p.widgets || {}) } }

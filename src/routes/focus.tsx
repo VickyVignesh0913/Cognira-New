@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { Shell } from '@/components/ui'
-import { loadProfile, loadSessions, saveProfile, saveSessions, uid, type FocusSession } from '@/lib/cognira'
+import { loadProfile, loadSessions, saveProfile, saveSessions, dayKey, uid, type FocusSession } from '@/lib/cognira'
 import { saveFocusSession } from '@/server/cognira'
 
 export const Route = createFileRoute('/focus')({ component: F })
@@ -43,11 +43,10 @@ function F() {
       try { const pr = loadProfile(); if (pr) saveProfile({ ...pr, coins: (pr.coins || 0) + 10 }) } catch {}
       try { saveFocusSession({ data: { startedAt: s.startedAt, durationSec: s.durationSec, mode: s.mode } }).catch(() => null) } catch {}
     }
-    setTimeout(() => setDone(false), 4000)
   }
   const mm = String(Math.floor(left / 60)).padStart(2, '0'), ss = String(left % 60).padStart(2, '0')
   const prog = 1 - left / total
-  const today = sessions.filter((s) => s.startedAt.slice(0, 10) === new Date().toISOString().slice(0, 10))
+  const today = sessions.filter((s) => dayKey(s.startedAt) === dayKey(new Date()))
 
   return (
     <Shell title="Focus">
@@ -64,12 +63,12 @@ function F() {
           <text x="100" y="122" textAnchor="middle" fontSize="11" fill="#6C7A9C" fontFamily="Space Mono">{mode} · {useCustom ? 'Custom' : PRESETS[preset].n}</text>
         </svg>
         <div className="mt-2 flex justify-center gap-2">
-          {!running ? <button className="brutal-btn" onClick={() => { setRunning(true); setDone(false) }}>Start {mode} Session</button> : <button className="brutal-btn" onClick={() => setRunning(false)}>Pause</button>}
+          {!running ? <button className="brutal-btn" onClick={() => { if (left <= 0) setLeft(total); setDone(false); setRunning(true) }}>Start {mode} Session</button> : <button className="brutal-btn" onClick={() => setRunning(false)}>Pause</button>}
           <button className="btn-ghost" onClick={() => { setRunning(false); setLeft(total) }}>Reset</button>
         </div>
         {done && <div className="mt-2 border-2 border-black bg-[#FF9F1C] p-2 font-bold" role="status">🎉 Session saved! +10 coins. Nice work.</div>}
       </div>
-      <div className="brutal-card"><b>TODAY'S SESSIONS</b><div className="mt-1 flex gap-2">{today.length === 0 ? <span className="font-mono2 text-xs">No sessions yet — start your first one above.</span> : today.map((s) => <span key={s.id} className="tick" title={`${Math.round(s.durationSec / 60)} min`}>●</span>)}</div></div>
+      <div className="brutal-card"><b>TODAY'S SESSIONS</b>{today.length === 0 ? <div className="mt-1 font-mono2 text-xs">No sessions yet — start your first one above.</div> : <div className="mt-1 flex flex-col gap-1">{today.map((s) => <div key={s.id} className="flex items-center justify-between gap-2 border-t-2 border-black pt-1 font-mono2 text-xs first:border-t-0 first:pt-0"><span>{new Date(s.startedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span><span>{s.mode} · {Math.round(s.durationSec / 60)} min</span><span className="tick">✓</span></div>)}</div>}</div>
       {([['Focus Mode', ['Silent', 'Phone away', 'Do not disturb']], ['Ambient Sound', ['Off', 'Rain', 'Forest', 'Café']], ['Background Music', ['Off', 'Lo-fi', 'Classical']]] as const).map(([label, opts]) => (
         <div key={label} className="brutal-card"><b className="font-mono2 text-xs">{label.toUpperCase()}</b><div className="mt-1 flex flex-wrap gap-2">{opts.map((o) => <button key={o} className={`chip ${label === 'Ambient Sound' && ambient === o ? 'on' : ''}`} onClick={() => { if (label === 'Ambient Sound') { setAmbient(o); try { const p = loadProfile(); if (p) saveProfile({ ...p, ambient: o }) } catch { /* keep timer running */ } } }}>{o}</button>)}</div></div>
       ))}

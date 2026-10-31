@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { Shell } from '@/components/ui'
 import { dayKey, loadProfile, loadTasks, saveProfile, saveTasks, demoTasks, uid, type Task } from '@/lib/cognira'
@@ -19,6 +19,18 @@ function R() {
   const [edit, setEdit] = useState<Task | null>(null)
   const dates = useMemo(weekDates, [])
   const key = dayKey(dates[dayIdx])
+
+  // Week/Month are views of this page, so Back should step Week -> Day instead of leaving /routine.
+  useEffect(() => {
+    const onPop = (e: PopStateEvent) => setView((e.state as { routineView?: string } | null)?.routineView === 'Week' ? 'Week' : 'Day')
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+  function pickView(v: 'Day' | 'Week' | 'Month') {
+    if (v === view) return
+    setView(v)
+    if (v === 'Week' && view === 'Day') history.pushState({ routineView: 'Week' }, '')
+  }
 
   function persist(t: Task[]) { setTasks(t); saveTasks(t) }
   function awardCoins(n: number) { try { const pr = loadProfile(); if (pr) saveProfile({ ...pr, coins: (pr.coins || 0) + n }) } catch {} }
@@ -43,7 +55,7 @@ function R() {
           </button>
         ))}
       </div>
-      <div className="seg"><button className={view === 'Day' ? 'on' : ''} onClick={() => setView('Day')}>Day</button><button className={view === 'Week' ? 'on' : ''} onClick={() => setView('Week')}>Week</button><button className={view === 'Month' ? 'on' : ''} onClick={() => setView('Month')}>Month</button></div>
+      <div className="seg"><button className={view === 'Day' ? 'on' : ''} onClick={() => pickView('Day')}>Day</button><button className={view === 'Week' ? 'on' : ''} onClick={() => pickView('Week')}>Week</button><button className={view === 'Month' ? 'on' : ''} onClick={() => pickView('Month')}>Month</button></div>
 
       {view === 'Day' && (
         <div className="flex flex-col gap-3">
@@ -51,10 +63,10 @@ function R() {
           {dayTasks.map((t) => (
             <div key={t.id} className="flex gap-3">
               <div className="w-12 shrink-0 font-mono2 text-[11px] font-bold">{t.start}</div>
-              <div className={`brutal-card flex-1 ${(t.completedDates || []).includes(key) ? 'opacity-60' : ''}`}>
+              <div className={`brutal-card min-w-0 flex-1 ${(t.completedDates || []).includes(key) ? 'opacity-60' : ''}`}>
                 <div className="flex items-center gap-2">
                   <button className="tick min-h-[44px] min-w-[44px]" onClick={() => toggle(t.id)} aria-label={`Complete ${t.title}`}>{(t.completedDates || []).includes(key) ? '✓' : '○'}</button>
-                  <div className="flex-1"><b className="text-sm">{t.title}</b><div className="font-mono2 text-[11px]">{t.start}–{t.end} · {t.category}</div></div>
+                  <div className="min-w-0 flex-1"><b className="block break-words text-sm [overflow-wrap:anywhere]">{t.title}</b><div className="font-mono2 text-[11px]">{t.start}–{t.end} · {t.category}</div></div>
                   <button className="btn-ghost" onClick={() => { setEdit(t); setOpen(true) }} aria-label="Edit">✎</button>
                   <button className="btn-ghost" onClick={() => remove(t.id)} aria-label="Delete">🗑</button>
                 </div>
