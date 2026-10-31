@@ -19,10 +19,14 @@ function F() {
   const [left, setLeft] = useState(total)
   const [running, setRunning] = useState(false)
   const endRef = useRef(0)
-  const [sessions, setSessions] = useState<FocusSession[]>(loadSessions)
+  const [sessions, setSessions] = useState<FocusSession[]>([])
   const [done, setDone] = useState(false)
-  const [ambient, setAmbient] = useState(loadProfile()?.ambient || 'Off')
+  const [ambient, setAmbient] = useState('Off')
   useEffect(() => { if (!running) setLeft(total) }, [total, mode, preset, useCustom])
+  useEffect(() => {
+    setSessions(loadSessions())
+    try { const pr = loadProfile(); if (pr) setAmbient(pr.ambient || 'Off') } catch {}
+  }, [])
   useEffect(() => {
     if (!running) return
     endRef.current = Date.now() + left * 1000
@@ -66,9 +70,9 @@ function F() {
           {!running ? <button className="brutal-btn" onClick={() => { if (left <= 0) setLeft(total); setDone(false); setRunning(true) }}>Start {mode} Session</button> : <button className="brutal-btn" onClick={() => setRunning(false)}>Pause</button>}
           <button className="btn-ghost" onClick={() => { setRunning(false); setLeft(total) }}>Reset</button>
         </div>
-        {done && <div className="mt-2 border-2 border-black bg-[#FF9F1C] p-2 font-bold" role="status">🎉 Session saved! +10 coins. Nice work.</div>}
+        {done && <div className="mt-2 border-2 border-ink bg-[#FF9F1C] p-2 font-bold" role="status">🎉 Session saved! +10 coins. Nice work.</div>}
       </div>
-      <div className="brutal-card"><b>TODAY'S SESSIONS</b>{today.length === 0 ? <div className="mt-1 font-mono2 text-xs">No sessions yet — start your first one above.</div> : <div className="mt-1 flex flex-col gap-1">{today.map((s) => <div key={s.id} className="flex items-center justify-between gap-2 border-t-2 border-black pt-1 font-mono2 text-xs first:border-t-0 first:pt-0"><span>{new Date(s.startedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span><span>{s.mode} · {Math.round(s.durationSec / 60)} min</span><span className="tick">✓</span></div>)}</div>}</div>
+      <div className="brutal-card"><b>TODAY'S SESSIONS</b>{today.length === 0 ? <div className="mt-1 font-mono2 text-xs">No sessions yet — start your first one above.</div> : <div className="mt-1 flex flex-col gap-1">{today.map((s) => <div key={s.id} className="flex items-center justify-between gap-2 border-t-2 border-ink pt-1 font-mono2 text-xs first:border-t-0 first:pt-0"><span>{new Date(s.startedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span><span>{s.mode} · {Math.round(s.durationSec / 60)} min</span><span className="tick">✓</span></div>)}</div>}</div>
       {([['Focus Mode', ['Silent', 'Phone away', 'Do not disturb']], ['Ambient Sound', ['Off', 'Rain', 'Forest', 'Café']], ['Background Music', ['Off', 'Lo-fi', 'Classical']]] as const).map(([label, opts]) => (
         <div key={label} className="brutal-card"><b className="font-mono2 text-xs">{label.toUpperCase()}</b><div className="mt-1 flex flex-wrap gap-2">{opts.map((o) => <button key={o} className={`chip ${label === 'Ambient Sound' && ambient === o ? 'on' : ''}`} onClick={() => { if (label === 'Ambient Sound') { setAmbient(o); try { const p = loadProfile(); if (p) saveProfile({ ...p, ambient: o }) } catch { /* keep timer running */ } } }}>{o}</button>)}</div></div>
       ))}

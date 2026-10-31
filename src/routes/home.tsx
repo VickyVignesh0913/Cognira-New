@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { Shell } from '@/components/ui'
-import { dayKey, addDays, loadProfile, saveProfile, demoTasks, demoHabits, demoSessions, loadTasks, loadHabits, loadSessions, saveTasks, randomTip, loadPrefs } from '@/lib/cognira'
+import { dayKey, addDays, loadProfile, saveProfile, demoTasks, demoHabits, demoSessions, loadTasks, loadHabits, loadSessions, saveTasks, randomTip, loadPrefs, type Profile, type Task, type Habit, type FocusSession } from '@/lib/cognira'
 
 export const Route = createFileRoute('/home')({ component: Home })
 
@@ -15,12 +15,16 @@ function streakDays(dates: string[]): number {
 }
 
 function Home() {
-  const [p, setP] = useState(() => loadProfile())
-  const [tasks, setTasks] = useState(loadTasks())
-  const [habits, setHabits] = useState(loadHabits())
-  const [sessions, setSessions] = useState(loadSessions())
+  const [p, setP] = useState<Profile | null>(null)
+  const [tasks, setTasks] = useState<Task[]>([])
+  const [habits, setHabits] = useState<Habit[]>([])
+  const [sessions, setSessions] = useState<FocusSession[]>([])
   const prefs = useMemo(loadPrefs, [])
   useEffect(() => {
+    setP(loadProfile())
+    setTasks(loadTasks())
+    setHabits(loadHabits())
+    setSessions(loadSessions())
     const f = () => { setTasks(loadTasks()); setHabits(loadHabits()); setSessions(loadSessions()); setP(loadProfile()) }
     window.addEventListener('cognira-data', f)
     return () => window.removeEventListener('cognira-data', f)
@@ -79,7 +83,7 @@ function Home() {
           {todayPlan.map((x) => {
             const done = (x.completedDates || []).includes(tk)
             return (
-              <button key={x.id} onClick={() => toggleTask(x.id)} className="mb-1 flex min-h-[44px] w-full items-center gap-2 border-b-2 border-black/10 py-1 text-left last:border-0" aria-pressed={done} aria-label={`Mark ${x.title} ${done ? 'not done' : 'done'}`}>
+              <button key={x.id} onClick={() => toggleTask(x.id)} className="mb-1 flex min-h-[44px] w-full items-center gap-2 border-b-2 border-ink/10 py-1 text-left last:border-0" aria-pressed={done} aria-label={`Mark ${x.title} ${done ? 'not done' : 'done'}`}>
                 <span className="tick">{done ? '✓' : '○'}</span>
                 <span className="flex-1 text-sm font-bold">{x.title}</span>
                 <span className="font-mono2 text-[11px]">{x.start}–{x.end}</span>
