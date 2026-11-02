@@ -17,6 +17,7 @@ import { Route as HomeRouteImport } from './routes/home'
 import { Route as LibraryRouteImport } from './routes/library'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as MasteryRouteImport } from './routes/mastery'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as RoutineRouteImport } from './routes/routine'
@@ -65,6 +66,11 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MasteryRoute = MasteryRouteImport.update({
+  id: '/mastery',
+  path: '/mastery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
@@ -110,6 +116,7 @@ export interface FileRoutesByFullPath {
   '/library': typeof LibraryRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/login': typeof LoginRoute
+  '/mastery': typeof MasteryRoute
   '/onboarding': typeof OnboardingRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/routine': typeof RoutineRoute
@@ -127,6 +134,7 @@ export interface FileRoutesByTo {
   '/library': typeof LibraryRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/login': typeof LoginRoute
+  '/mastery': typeof MasteryRoute
   '/onboarding': typeof OnboardingRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/routine': typeof RoutineRoute
@@ -145,6 +153,7 @@ export interface FileRoutesById {
   '/library': typeof LibraryRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/login': typeof LoginRoute
+  '/mastery': typeof MasteryRoute
   '/onboarding': typeof OnboardingRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/routine': typeof RoutineRoute
@@ -164,6 +173,7 @@ export interface FileRouteTypes {
     | '/library'
     | '/llms.txt'
     | '/login'
+    | '/mastery'
     | '/onboarding'
     | '/robots.txt'
     | '/routine'
@@ -181,6 +191,7 @@ export interface FileRouteTypes {
     | '/library'
     | '/llms.txt'
     | '/login'
+    | '/mastery'
     | '/onboarding'
     | '/robots.txt'
     | '/routine'
@@ -198,6 +209,7 @@ export interface FileRouteTypes {
     | '/library'
     | '/llms.txt'
     | '/login'
+    | '/mastery'
     | '/onboarding'
     | '/robots.txt'
     | '/routine'
@@ -216,6 +228,7 @@ export interface RootRouteChildren {
   LibraryRoute: typeof LibraryRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   LoginRoute: typeof LoginRoute
+  MasteryRoute: typeof MasteryRoute
   OnboardingRoute: typeof OnboardingRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   RoutineRoute: typeof RoutineRoute
@@ -283,6 +296,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mastery': {
+      id: '/mastery'
+      path: '/mastery'
+      fullPath: '/mastery'
+      preLoaderRoute: typeof MasteryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/onboarding': {
       id: '/onboarding'
       path: '/onboarding'
@@ -344,6 +364,7 @@ const rootRouteChildren: RootRouteChildren = {
   LibraryRoute: LibraryRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   LoginRoute: LoginRoute,
+  MasteryRoute: MasteryRoute,
   OnboardingRoute: OnboardingRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   RoutineRoute: RoutineRoute,

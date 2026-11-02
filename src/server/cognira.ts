@@ -17,6 +17,8 @@ export const getState = createServerFn({ method: 'GET' }).handler(async () => {
   const sessRows = await d.select().from(s.focusSessions).where(eq(s.focusSessions.userId, u.id))
   const resRows = await d.select().from(s.resources).where(eq(s.resources.userId, u.id))
   const msgRows = await d.select().from(s.coachMessages).where(eq(s.coachMessages.userId, u.id))
+  let masteryRows: any[] = []
+  try { masteryRows = await d.select().from((s as any).masteryEntries).where(eq((s as any).masteryEntries.userId, u.id)) } catch { masteryRows = [] }
   sessRows.sort((a, b) => (b.startedAt > a.startedAt ? 1 : -1))
   resRows.sort((a, b) => (b.updatedAt > a.updatedAt ? 1 : -1))
   msgRows.sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1))
@@ -26,6 +28,7 @@ export const getState = createServerFn({ method: 'GET' }).handler(async () => {
     tasks: taskRows.map((t) => ({ ...t, repeatDays: jparse(t.repeatDays, []), completedDates: jparse(t.completedDates, []) })),
     habits: habitRows.map((h) => ({ ...h, completedDates: jparse(h.completedDates, []) })),
     sessions: sessRows.slice(0, 60), resources: resRows, messages: msgRows.slice(-60),
+    mastery: masteryRows.map((m: any) => ({ ...m, logs: jparse(m.logs, []) })),
   }
 })
 
@@ -266,13 +269,81 @@ export const addCoins = createServerFn({ method: 'POST' }).validator((d: any) =>
   return { ok: true }
 })
 
+export const logMastery = createServerFn({ method: 'POST' }).validator((d: any) => d).handler(async ({ data }: { data: any }) => {
+  const { requireUser } = await import('@/lib/session.server')
+  const u = await requireUser()
+  const subject = String(data.subject || '').trim().slice(0, 80)
+  if (!subject) throw new Error('Subject is required')
+  const minutes = Math.max(0, Math.min(480, Math.round(Number(data.minutes) || 0)))
+  const confidence = Math.max(1, Math.min(5, Math.round(Number(data.confidence) || 3)))
+  if (!minutes && !data.confidence) throw new Error('Nothing to save')
+  const { getDb } = await import('@/lib/db')
+  const s = await import('@/db/schema')
+  const d = await getDb()
+  const now = new Date().toISOString()
+  const rows = await d.select().from(s.masteryEntries).where(eq(s.masteryEntries.userId, u.id))
+  const ex = rows.find((r: any) => String(r.subject).toLowerCase() === subject.toLowerCase())
+  if (ex) {
+    const logs = jparse(ex.logs, [])
+    logs.push({ at: now, minutes })
+    await d.update(s.masteryEntries).set({ minutes: (ex.minutes || 0) + minutes, confidence, logs: JSON.stringify(logs.slice(-60)), updatedAt: now }).where(eq(s.masteryEntries.id, ex.id))
+    return { ok: true, id: ex.id }
+  }
+  const id = nid('-m')
+  await d.insert(s.masteryEntries).values({ id, userId: u.id, subject, minutes, confidence, logs: JSON.stringify(minutes ? [{ at: now, minutes }] : []), updatedAt: now })
+  return { ok: true, id }
+})
+
+export const setMasteryConfidence = createServerFn({ method: 'POST' }).validator((d: any) => d).handler(async ({ data }: { data: any }) => {
+  const { requireUser } = await import('@/lib/session.server')
+  const u = await requireUser()
+  const subject = String(data.subject || '').trim().slice(0, 80)
+  if (!subject) throw new Error('Subject is required')
+  const confidence = Math.max(1, Math.min(5, Math.round(Number(data.confidence) || 3)))
+  const { getDb } = await import('@/lib/db')
+  const s = await import('@/db/schema')
+  const d = await getDb()
+  const now = new Date().toISOString()
+  const rows = await d.select().from(s.masteryEntries).where(eq(s.masteryEntries.userId, u.id))
+  const ex = rows.find((r: any) => String(r.subject).toLowerCase() === subject.toLowerCase())
+  if (ex) {
+    await d.update(s.masteryEntries).set({ confidence, updatedAt: now }).where(eq(s.masteryEntries.id, ex.id))
+    return { ok: true, id: ex.id }
+  }
+  const id = nid('-m')
+  await d.insert(s.masteryEntries).values({ id, userId: u.id, subject, minutes: 0, confidence, logs: JSON.stringify([]), updatedAt: now })
+  return { ok: true, id }
+})
+
+export const deleteMastery = createServerFn({ method: 'POST' }).validator((d: any) => d).handler(async ({ data }: { data: any }) => {
+  const { requireUser } = await import('@/lib/session.server')
+  const u = await requireUser()
+  const { getDb } = await import('@/lib/db')
+  const s = await import('@/db/schema')
+  const d = await getDb()
+  const id = data?.id != null ? String(data.id) : ''
+  const subject = data?.subject != null ? String(data.subject).trim().toLowerCase() : ''
+  if (id) {
+    const ex = await d.select().from(s.masteryEntries).where(eq(s.masteryEntries.id, id)).get()
+    if (ex && (ex as any).userId === u.id) await d.delete(s.masteryEntries).where(eq(s.masteryEntries.id, id))
+    return { ok: true }
+  }
+  if (subject) {
+    const rows = await d.select().from(s.masteryEntries).where(eq(s.masteryEntries.userId, u.id))
+    const hit = (rows as any[]).find((r) => String(r.subject || '').toLowerCase() === subject)
+    if (hit) await d.delete(s.masteryEntries).where(eq(s.masteryEntries.id, hit.id))
+    return { ok: true }
+  }
+  return { ok: true }
+})
+
 export const deleteAccount = createServerFn({ method: 'POST' }).handler(async () => {
   const { requireUser } = await import('@/lib/session.server')
   const u = await requireUser()
   const { getDb } = await import('@/lib/db')
   const s = await import('@/db/schema')
   const d = await getDb()
-  for (const t of [s.coachMessages, s.resources, s.focusSessions, s.habits, s.tasks, s.profiles]) {
+  for (const t of [s.coachMessages, s.resources, s.focusSessions, s.habits, s.tasks, (s as any).masteryEntries, s.profiles]) {
     try { await d.delete(t).where(eq((t as any).userId, u.id)) } catch { /* ignore */ }
   }
   return { ok: true }

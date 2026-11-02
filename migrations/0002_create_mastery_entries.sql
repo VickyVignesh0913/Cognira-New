@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS mastery_entries (id TEXT PRIMARY KEY, user_id TEXT NOT NULL, subject TEXT NOT NULL, minutes INTEGER NOT NULL DEFAULT 0, confidence INTEGER NOT NULL DEFAULT 3, logs TEXT NOT NULL DEFAULT '[]', updated_at TEXT NOT NULL); CREATE INDEX IF NOT EXISTS idx_mastery_user ON mastery_entries(user_id);

@@ -84,6 +84,16 @@ export const coachMessages = sqliteTable('coach_messages', {
   createdAt: text('created_at').notNull(),
 })
 
+export const masteryEntries = sqliteTable('mastery_entries', {
+  id: text('id').primaryKey(),
+  userId: text('user_id').notNull(),
+  subject: text('subject').notNull(),
+  minutes: integer('minutes').notNull().default(0),
+  confidence: integer('confidence').notNull().default(3),
+  logs: text('logs').notNull().default('[]'),
+  updatedAt: text('updated_at').notNull(),
+})
+
 export type Profile = typeof profiles.$inferSelect
 export type Task = typeof tasks.$inferSelect
 export type Habit = typeof habits.$inferSelect
