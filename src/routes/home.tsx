@@ -65,10 +65,10 @@ function Home() {
       <p className="font-mono2 text-xs">You&apos;re on the right track! {p?.persona === 'professional' ? 'Deep work is your biggest win today.' : 'Revision is your biggest win today.'}</p>
       {show.stats !== false && (
         <div className="grid grid-cols-2 gap-3">
-          <div className="brutal-card"><div className="font-mono2 text-[11px]">🔥 Streak</div><div className="font-display text-2xl">{streak} days</div></div>
-          <div className="brutal-card"><div className="font-mono2 text-[11px]">⏱ Focus today</div><div className="font-display text-2xl">{focusToday} min</div></div>
-          <div className="brutal-card"><div className="font-mono2 text-[11px]">✅ Tasks done</div><div className="font-display text-2xl">{doneToday}/{t.length}</div></div>
-          <Link to="/mastery" className="brutal-card brutal-card-yellow" aria-label="Open Subject Mastery tracker"><div className="font-mono2 text-[11px]">📚 Active → Mastery</div><div className="font-display text-2xl">{p?.persona === 'student' ? (p?.subjects?.length || 5) : (p?.skills?.length || 4)} {p?.persona === 'student' ? 'subjects' : 'skills'}</div><div className="font-mono2 text-[10px] underline">Track mastery →</div></Link>
+          <div className="brutal-card"><div className="font-mono2 text-[11px] text-ink">🔥 Streak</div><div className="font-display text-2xl">{streak} days</div></div>
+          <div className="brutal-card"><div className="font-mono2 text-[11px] text-ink">⏱ Focus today</div><div className="font-display text-2xl">{focusToday} min</div></div>
+          <div className="brutal-card"><div className="font-mono2 text-[11px] text-ink">✅ Tasks done</div><div className="font-display text-2xl">{doneToday}/{t.length}</div></div>
+          <Link to="/mastery" className="brutal-card brutal-card-yellow" aria-label="Open Subject Mastery tracker"><div className="font-mono2 text-[11px] text-ink">📚 Active → Mastery</div><div className="font-display text-2xl text-ink">{p?.persona === 'student' ? (p?.subjects?.length || 5) : (p?.skills?.length || 4)} {p?.persona === 'student' ? 'subjects' : 'skills'}</div><div className="font-mono2 text-[10px]">Track mastery →</div></Link>
         </div>
       )}
       {show.coachTip !== false && (

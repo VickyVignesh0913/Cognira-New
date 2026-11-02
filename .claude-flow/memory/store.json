@@ -1,0 +1,176 @@
+{
+  "entries": {
+    "cmd-1793464052240": {
+      "key": "cmd-1793464052240",
+      "value": "{\"command\":\"rtk ls -la \\\"C:\\\\Users\\\\VJKING\\\\.claude\\\\plugins\\\\marketplaces\\\\\\\" 2>/dev/null || echo \\\"Directory not found or empty\\\"\",\"exitCode\":2,\"success\":false}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:27:32.240Z",
+      "lastAccessed": "2026-10-31T16:27:32.240Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:27:32.240Z"
+    },
+    "cmd-1793464060758": {
+      "key": "cmd-1793464060758",
+      "value": "{\"command\":\"rtk ls -la 'C:\\\\Users\\\\VJKING\\\\.claude\\\\plugins\\\\marketplaces'\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:27:40.758Z",
+      "lastAccessed": "2026-10-31T16:27:40.758Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:27:40.758Z"
+    },
+    "cmd-1793464077167": {
+      "key": "cmd-1793464077167",
+      "value": "{\"command\":\"rtk ls -la 'C:\\\\Users\\\\VJKING\\\\.claude\\\\plugins\\\\marketplaces\\\\claude-plugins-official..clone.git\\\\shallow.lock' 2>&1; echo \\\"---\\\"; rtk ls -la 'C:\\\\Users\\\\VJKING\\\\.claude\\\\plugins\\\\marketplaces\\\\claude-plugins-official..clone' 2>&1\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:27:57.167Z",
+      "lastAccessed": "2026-10-31T16:27:57.167Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:27:57.167Z"
+    },
+    "cmd-1793464090804": {
+      "key": "cmd-1793464090804",
+      "value": "{\"command\":\"rtk ls -la 'C:\\\\Users\\\\VJKING\\\\.claude\\\\plugins\\\\marketplaces\\\\claude-plugins-official..clone/.git'\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:28:10.804Z",
+      "lastAccessed": "2026-10-31T16:28:10.804Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:28:10.804Z"
+    },
+    "cmd-1793464101476": {
+      "key": "cmd-1793464101476",
+      "value": "{\"command\":\"rtk read 'C:\\\\Users\\\\VJKING\\\\.claude\\\\plugins\\\\marketplaces\\\\claude-plugins-official..clone/.git/shallow.lock'\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:28:21.476Z",
+      "lastAccessed": "2026-10-31T16:28:21.476Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:28:21.476Z"
+    },
+    "cmd-1793464126167": {
+      "key": "cmd-1793464126167",
+      "value": "{\"command\":\"rtk ls -la 'C:\\\\Users\\\\VJKING\\\\.claude\\\\plugins\\\\marketplaces\\\\claude-plugins-official..clone.git\\\\shallow.lock' 2>&1; echo \\\"---\\\"; rtk ls -la 'C:\\\\Users\\\\VJKING\\\\.claude\\\\plugins\\\\marketplaces\\\\claude-plugins-official..clone' 2>&1\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:28:46.167Z",
+      "lastAccessed": "2026-10-31T16:28:46.167Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:28:46.167Z"
+    },
+    "cmd-1793464138818": {
+      "key": "cmd-1793464138818",
+      "value": "{\"command\":\"rtk ls -la 'C:\\\\Users\\\\VJKING\\\\.claude\\\\plugins\\\\marketplaces\\\\claude-plugins-official..clone.git\\\\shallow.lock' 2>&1; echo \\\"---\\\"; rtk ls -la 'C:\\\\Users\\\\VJKING\\\\.claude\\\\plugins\\\\marketplaces\\\\claude-plugins-official..clone' 2>&1\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:28:58.818Z",
+      "lastAccessed": "2026-10-31T16:28:58.818Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:28:58.818Z"
+    },
+    "cmd-1793465069713": {
+      "key": "cmd-1793465069713",
+      "value": "{\"command\":\"which claude 2>/dev/null; claude --version 2>/dev/null; echo \\\"---\\\"; rtk ls ~/.claude/plugins/ 2>/dev/null\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:44:29.713Z",
+      "lastAccessed": "2026-10-31T16:44:29.713Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:44:29.713Z"
+    },
+    "cmd-1793465078353": {
+      "key": "cmd-1793465078353",
+      "value": "{\"command\":\"claude plugin --help 2>&1 | head -40\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:44:38.353Z",
+      "lastAccessed": "2026-10-31T16:44:38.353Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:44:38.353Z"
+    },
+    "cmd-1793465087301": {
+      "key": "cmd-1793465087301",
+      "value": "{\"command\":\"claude plugin list 2>&1 | head -40\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:44:47.301Z",
+      "lastAccessed": "2026-10-31T16:44:47.301Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:44:47.301Z"
+    },
+    "cmd-1793465122367": {
+      "key": "cmd-1793465122367",
+      "value": "{\"command\":\"claude plugin disable humanizer-blader 2>&1; echo \\\"===\\\"; claude plugin disable ruflo-core 2>&1; echo \\\"===\\\"; claude plugin disable ruflo-console 2>&1\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:45:22.367Z",
+      "lastAccessed": "2026-10-31T16:45:22.367Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:45:22.367Z"
+    },
+    "cmd-1793465131005": {
+      "key": "cmd-1793465131005",
+      "value": "{\"command\":\"claude plugin list 2>&1\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:45:31.005Z",
+      "lastAccessed": "2026-10-31T16:45:31.005Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:45:31.005Z"
+    },
+    "cmd-1793465659614": {
+      "key": "cmd-1793465659614",
+      "value": "{\"command\":\"grep -n 'AI Life Coach' src/components/ui.tsx | head -5\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:54:19.614Z",
+      "lastAccessed": "2026-10-31T16:54:19.614Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:54:19.614Z"
+    },
+    "cmd-1793465660707": {
+      "key": "cmd-1793465660707",
+      "value": "{\"command\":\"sed -n '82p' src/components/ui.tsx | hexdump -C | head -20\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:54:20.707Z",
+      "lastAccessed": "2026-10-31T16:54:20.707Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:54:20.707Z"
+    },
+    "cmd-1793465664185": {
+      "key": "cmd-1793465664185",
+      "value": "{\"command\":\"sed -n '82p' src/components/ui.tsx | od -A x -t x1z | head -10\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:54:24.185Z",
+      "lastAccessed": "2026-10-31T16:54:24.185Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:54:24.185Z"
+    },
+    "cmd-1793465680348": {
+      "key": "cmd-1793465680348",
+      "value": "{\"command\":\"sed -n '71p' src/routes/home.tsx | od -A x -t x1z | head -5\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:54:40.348Z",
+      "lastAccessed": "2026-10-31T16:54:40.348Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:54:40.348Z"
+    },
+    "cmd-1793465685671": {
+      "key": "cmd-1793465685671",
+      "value": "{\"command\":\"sed -n '154p' src/routes/onboarding.tsx | od -A x -t x1z | head -5\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T16:54:45.671Z",
+      "lastAccessed": "2026-10-31T16:54:45.671Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T16:54:45.671Z"
+    },
+    "cmd-1793466110945": {
+      "key": "cmd-1793466110945",
+      "value": "{\"command\":\"rtk gain 2>&1\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T17:01:50.945Z",
+      "lastAccessed": "2026-10-31T17:01:50.945Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T17:01:50.945Z"
+    },
+    "cmd-1793467095901": {
+      "key": "cmd-1793467095901",
+      "value": "{\"command\":\"rtk gain 2>&1\",\"exitCode\":0,\"success\":true}",
+      "namespace": "commands",
+      "storedAt": "2026-10-31T17:18:15.901Z",
+      "lastAccessed": "2026-10-31T17:18:15.901Z",
+      "accessCount": 0,
+      "expiresAt": "2026-11-30T17:18:15.901Z"
+    }
+  },
+  "version": "3.0.0"
+}
