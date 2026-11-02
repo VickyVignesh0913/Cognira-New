@@ -43,7 +43,7 @@ function H() {
           {habits.map((h) => (
             <button key={h.id} onClick={() => toggle(h.id)} className="brutal-card text-left" aria-pressed={(h.completedDates || []).includes(today)}>
               <div className="flex items-center gap-2"><span className="text-xl">{h.icon}</span><div className="flex-1"><b className="text-sm">{h.title}</b><div className="font-mono2 text-[11px]">{h.frequency} · {h.category || 'Study'} · target {h.target} · 🔥 {streak(h)} day streak</div></div><span className="tick">{(h.completedDates || []).includes(today) ? '✓' : '○'}</span></div>
-              <div className="mt-2 flex gap-1">{days.map((d, i) => { const doneD = (h.completedDates || []).includes(d); const future = i === 6 && !(h.completedDates || []).includes(today) ? false : false; return <span key={d} className="dot" style={{ background: doneD ? '#0A1128' : '#EAF0FA', border: '2px solid #0A1128' }} title={d} /> })}</div>
+              <div className="mt-2 flex gap-1">{days.map((d, i) => { const doneD = (h.completedDates || []).includes(d); const future = i === 6 && !(h.completedDates || []).includes(today) ? false : false; return <span key={d} className="dot" style={{ background: doneD ? 'var(--color-ink)' : 'var(--color-surface)', border: '2px solid var(--color-ink)' }} title={d} /> })}</div>
             </button>
           ))}
           <button className="brutal-btn" onClick={() => setOpen(true)}>+ Add habit</button>
@@ -51,7 +51,7 @@ function H() {
       ) : (
         <div className="flex flex-col gap-3">
           <div className="brutal-card"><b>WEEKLY COMPLETION</b>
-            <div className="mt-2 flex h-28 items-end gap-2">{days.map((d) => { const c = habits.filter((h) => (h.completedDates || []).includes(d)).length; const pct = habits.length ? c / habits.length : 0; return <div key={d} className="flex-1 bg-[#1E60FF]" style={{ height: `${Math.max(6, pct * 100)}%`, border: '2px solid #0A1128' }} title={`${d}: ${c}/${habits.length}`} /> })}</div>
+            <div className="mt-2 flex h-28 items-end gap-2">{days.map((d) => { const c = habits.filter((h) => (h.completedDates || []).includes(d)).length; const pct = habits.length ? c / habits.length : 0; return <div key={d} className="flex-1" style={{ height: `${Math.max(6, pct * 100)}%`, background: 'var(--color-primary)', border: '2px solid var(--color-ink)' }} title={`${d}: ${c}/${habits.length}`} /> })}</div>
             <div className="mt-1 flex gap-2 font-mono2 text-[10px]">{days.map((d) => <span key={d} className="flex-1 text-center">{d.slice(5)}</span>)}</div>
           </div>
           {habits.map((h) => { const c = days.filter((d) => (h.completedDates || []).includes(d)).length; return <div key={h.id} className="brutal-card"><div className="flex justify-between text-sm"><b>{h.icon} {h.title}</b><span>{Math.round((c / 7) * 100)}%</span></div><div className="bar mt-1"><i style={{ width: `${(c / 7) * 100}%` }} /></div></div> })}

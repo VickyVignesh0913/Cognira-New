@@ -97,8 +97,8 @@ function Home() {
         <div className="brutal-card">
           <div className="flex items-center justify-between"><b>WEEKLY PROGRESS</b><span className="font-display text-2xl">{week}%</span></div>
           <svg viewBox="0 0 200 60" className="mt-2 w-full" role="img" aria-label="Weekly progress chart">
-            <polyline points={pts} fill="none" stroke="#0A1128" strokeWidth="4" strokeLinejoin="round" />
-            {perDay.map((c, i) => <circle key={i} cx={i * 30} cy={54 - Math.round((c / max) * 44)} r="5" fill="#FF9F1C" stroke="#0A1128" strokeWidth="2"><title>{days[i]}: {c} done</title></circle>)}
+            <polyline points={pts} fill="none" stroke="var(--color-ink)" strokeWidth="4" strokeLinejoin="round" />
+            {perDay.map((c, i) => <circle key={i} cx={i * 30} cy={54 - Math.round((c / max) * 44)} r="5" fill="var(--color-accent)" stroke="var(--color-ink)" strokeWidth="2"><title>{days[i]}: {c} done</title></circle>)}
           </svg>
           <div className="flex justify-between font-mono2 text-[10px]">{days.map((d) => <span key={d}>{d.slice(5)}</span>)}</div>
         </div>
