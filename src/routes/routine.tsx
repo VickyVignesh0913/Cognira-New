@@ -66,7 +66,9 @@ function R() {
               <div className={`brutal-card min-w-0 flex-1 ${(t.completedDates || []).includes(key) ? 'opacity-60' : ''}`}>
                 <div className="flex items-center gap-2">
                   <button className="tick min-h-[44px] min-w-[44px]" onClick={() => toggle(t.id)} aria-label={`Complete ${t.title}`}>{(t.completedDates || []).includes(key) ? '✓' : '○'}</button>
-                  <div className="min-w-0 flex-1"><b className="block break-words text-sm [overflow-wrap:anywhere]">{t.title}</b><div className="font-mono2 text-[11px]">{t.start}–{t.end} · {t.category}</div></div>
+                  <div className="min-w-0 flex-1"><b className="block break-words text-sm">{t.title}</b><div className="font-mono2 text-[11px]">{t.start}–{t.end} · {t.category}</div></div>
+                </div>
+                <div className="mt-2 flex justify-end gap-2">
                   <button className="btn-ghost" onClick={() => { setEdit(t); setOpen(true) }} aria-label="Edit">✎</button>
                   <button className="btn-ghost" onClick={() => remove(t.id)} aria-label="Delete">🗑</button>
                 </div>

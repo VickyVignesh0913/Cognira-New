@@ -36,6 +36,11 @@ body {
 .brutal-btn {
   border: 2px solid var(--color-ink);
   box-shadow: 4px 4px 0 var(--color-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 16px;
   transition: transform 0.08s ease, box-shadow 0.08s ease;
 }
 .brutal-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--color-ink); }
@@ -68,7 +73,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .kicker { font-family: var(--font-body); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-muted); }
 .font-mono2 { font-family: var(--font-body); }
 .text-muted { color: var(--color-muted); }
-.brutal-card { border: 2px solid var(--color-ink); box-shadow: 4px 4px 0 var(--color-ink); border-radius: 12px; background: var(--color-surface); padding: 16px; margin-bottom: 12px; }
+.brutal-card { border: 2px solid var(--color-ink); box-shadow: 4px 4px 0 var(--color-ink); border-radius: 12px; background: var(--color-surface); padding: 16px; }
+/* screens stack blocks directly under <main>; keep a consistent rhythm there */
+main > * + * { margin-top: 16px; }
 .brutal-card-yellow { background: var(--color-accent); color: var(--color-on-accent); }
 .brutal-btn-yellow { background: var(--color-accent); color: var(--color-on-accent); }
 .brutal-btn-white { background: var(--color-surface); color: var(--color-ink); }
