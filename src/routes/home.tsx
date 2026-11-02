@@ -68,7 +68,7 @@ function Home() {
           <div className="brutal-card"><div className="font-mono2 text-[11px] text-ink">🔥 Streak</div><div className="font-display text-2xl">{streak} days</div></div>
           <div className="brutal-card"><div className="font-mono2 text-[11px] text-ink">⏱ Focus today</div><div className="font-display text-2xl">{focusToday} min</div></div>
           <div className="brutal-card"><div className="font-mono2 text-[11px] text-ink">✅ Tasks done</div><div className="font-display text-2xl">{doneToday}/{t.length}</div></div>
-          <Link to="/mastery" className="brutal-card brutal-card-yellow" aria-label="Open Subject Mastery tracker"><div className="font-mono2 text-[11px] text-ink">📚 Active → Mastery</div><div className="font-display text-2xl text-ink">{p?.persona === 'student' ? (p?.subjects?.length || 5) : (p?.skills?.length || 4)} {p?.persona === 'student' ? 'subjects' : 'skills'}</div><div className="font-mono2 text-[10px]">Track mastery →</div></Link>
+          <Link to="/mastery" className="brutal-card brutal-card-yellow" aria-label="Open Subject Mastery tracker"><div className="font-mono2 text-[11px] text-on-accent">📚 Active → Mastery</div><div className="font-display text-2xl text-on-accent">{p?.persona === 'student' ? (p?.subjects?.length || 5) : (p?.skills?.length || 4)} {p?.persona === 'student' ? 'subjects' : 'skills'}</div><div className="font-mono2 text-[10px] text-on-accent underline">Track mastery →</div></Link>
         </div>
       )}
       {show.coachTip !== false && (
@@ -84,10 +84,10 @@ function Home() {
           {todayPlan.map((x) => {
             const done = (x.completedDates || []).includes(tk)
             return (
-              <button key={x.id} onClick={() => toggleTask(x.id)} className="mb-1 flex min-h-[44px] w-full items-center gap-2 border-b-2 border-ink/10 py-1 text-left last:border-0" aria-pressed={done} aria-label={`Mark ${x.title} ${done ? 'not done' : 'done'}`}>
+              <button key={x.id} onClick={() => toggleTask(x.id)} className="mb-1 flex min-h-[44px] w-full items-center gap-2 border-b-2 border-ink/20 py-1 text-left last:border-0" aria-pressed={done} aria-label={`Mark ${x.title} ${done ? 'not done' : 'done'}`}>
                 <span className="tick">{done ? '✓' : '○'}</span>
                 <span className="flex-1 text-sm font-bold">{x.title}</span>
-                <span className="font-mono2 text-[11px]">{x.start}–{x.end}</span>
+                <span className="font-mono2 text-xs">{x.start}–{x.end}</span>
               </button>
             )
           })}
@@ -98,7 +98,7 @@ function Home() {
           <div className="flex items-center justify-between"><b>WEEKLY PROGRESS</b><span className="font-display text-2xl">{week}%</span></div>
           <svg viewBox="0 0 200 60" className="mt-2 w-full" role="img" aria-label="Weekly progress chart">
             <polyline points={pts} fill="none" stroke="var(--color-ink)" strokeWidth="4" strokeLinejoin="round" />
-            {perDay.map((c, i) => <circle key={i} cx={i * 30} cy={54 - Math.round((c / max) * 44)} r="5" fill="var(--color-accent)" stroke="var(--color-ink)" strokeWidth="2"><title>{days[i]}: {c} done</title></circle>)}
+            {perDay.map((c, i) => <circle key={i} cx={i * 30} cy={54 - Math.round((c / max) * 44)} r="7" fill="var(--color-accent)" stroke="var(--color-ink)" strokeWidth="2"><title>{days[i]}: {c} done</title></circle>)}
           </svg>
           <div className="flex justify-between font-mono2 text-[10px]">{days.map((d) => <span key={d}>{d.slice(5)}</span>)}</div>
         </div>
