@@ -242,7 +242,7 @@ function Mastery() {
       )}
 
       {(actionError || logAction.error || confAction.error || delAction.error) && (
-        <div role="alert" className="brutal-card text-sm font-bold" style={{ background: '#FFE9E9' }}>
+        <div role="alert" className="brutal-card bg-danger/15 text-sm font-bold">
           {actionError || logAction.error || confAction.error || delAction.error}
           <div className="font-mono2 mt-1 text-[11px] font-normal">Your entry is kept on this device — check your connection and it will sync when you are back online.</div>
         </div>
@@ -260,7 +260,7 @@ function Mastery() {
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
                   <h2 className="font-display text-lg leading-tight break-words">{entry.subject}</h2>
-                  {needs && <span className="rounded-full border-2 border-ink px-2 py-0.5 text-[10px] font-bold uppercase text-white" style={{ background: '#FF3D3D' }}>Needs work</span>}
+                  {needs && <span className="rounded-full border-2 border-ink bg-danger px-2 py-0.5 text-[10px] font-bold uppercase text-on-accent">Needs work</span>}
                 </div>
                 <div className="font-mono2 mt-1 text-[11px] text-muted">
                   {totalMins} min total · {focusMins} min focus · {taskCount} tasks{doneToday > 0 ? ` · ${doneToday} done today` : ''} · {entry.logs.length} logs
@@ -296,7 +296,7 @@ function Mastery() {
                     key={v}
                     onClick={() => handleConfidence(entry.subject, v)}
                     className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border-2 border-ink text-sm font-bold"
-                    style={{ background: v <= entry.confidence ? '#0A1128' : '#fff', color: v <= entry.confidence ? '#fff' : '#0A1128' }}
+                    style={{ background: v <= entry.confidence ? 'var(--color-ink)' : 'var(--color-surface)', color: v <= entry.confidence ? 'var(--color-surface)' : 'var(--color-ink)' }}
                     aria-label={`Set ${entry.subject} confidence to ${v}`}
                     aria-pressed={entry.confidence === v}
                   >
