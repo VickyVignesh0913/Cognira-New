@@ -50,7 +50,7 @@ function R() {
       <h1 className="font-display text-3xl">MY ROUTINE</h1>
       <div className="flex gap-1">
         {dates.map((d, i) => (
-          <button key={i} onClick={() => setDayIdx(i)} className={`flex min-h-[44px] flex-1 flex-col items-center justify-center border-2 border-black font-mono2 text-[11px] ${i === dayIdx ? 'bg-black text-white' : 'bg-white'}`} aria-label={d.toDateString()}>
+          <button key={i} onClick={() => setDayIdx(i)} className={`flex min-h-[44px] flex-1 flex-col items-center justify-center border-2 border-ink font-mono2 text-[11px] ${i === dayIdx ? 'bg-ink text-surface' : 'bg-surface'}`} aria-label={d.toDateString()}>
             <span>{DAYS[i][0]}</span><b>{d.getDate()}</b>
           </button>
         ))}

@@ -50,8 +50,8 @@ function C() {
       <div className="brutal-card flex items-center gap-2"><span className="text-2xl">🔥</span><div><b>COACH</b><div className="font-mono2 text-[11px]">Calm · direct · knows your plan</div></div></div>
       <div className="flex flex-col gap-2" aria-live="polite">
         {msgs.length === 0 && <div className="brutal-card text-sm">{tipFor(profile)}</div>}
-        {msgs.map((m, i) => <div key={i} className={m.role === 'user' ? 'ml-8 border-2 border-black bg-[#0A1128] p-2 text-sm text-white' : 'mr-8 border-2 border-black bg-white p-2 text-sm'} style={{ borderRadius: 12 }}>{m.content}</div>)}
-        {typing && <div className="mr-8 border-2 border-black bg-white p-2 font-mono2 text-xs">typing…</div>}
+        {msgs.map((m, i) => <div key={i} className={m.role === 'user' ? 'ml-8 border-2 border-ink bg-ink p-2 text-sm text-surface' : 'mr-8 border-2 border-ink bg-surface p-2 text-sm'} style={{ borderRadius: 12 }}>{m.content}</div>)}
+        {typing && <div className="mr-8 border-2 border-ink bg-surface p-2 font-mono2 text-xs">typing…</div>}
         <div ref={bottom} />
       </div>
       <div className="flex flex-wrap gap-2">{CHIPS.map((c) => <button key={c} className="chip" onClick={() => submit(c)}>{c}</button>)}</div>

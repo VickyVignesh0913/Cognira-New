@@ -23,7 +23,7 @@ function L() {
       <h1 className="font-display text-3xl">{student ? 'STUDYHOUSE' : 'RESOURCES'}</h1>
       <input className="in" placeholder="Search files…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search files" />
       <div className="flex flex-wrap gap-2">{chips.map((c) => <button key={c} className={`chip ${chip === c ? 'on' : ''}`} onClick={() => setChip(c)}>{c}</button>)}</div>
-      <div className="brutal-card"><b>CATEGORIES</b>{cats.length === 0 && <div className="font-mono2 text-xs">Nothing here yet.</div>}{cats.map(([n, c]) => <div key={n} className="flex items-center justify-between border-t-2 border-black py-1 text-sm"><span>📁 {n}</span><span className="font-mono2 text-xs">{c} ›</span></div>)}</div>
+      <div className="brutal-card"><b>CATEGORIES</b>{cats.length === 0 && <div className="font-mono2 text-xs">Nothing here yet.</div>}{cats.map(([n, c]) => <div key={n} className="flex items-center justify-between border-t-2 border-ink py-1 text-sm"><span>📁 {n}</span><span className="font-mono2 text-xs">{c} ›</span></div>)}</div>
       <div className="grid grid-cols-2 gap-2">{['My Notes', 'PYQs', 'Mock Tests', 'Bookmarks'].map((t) => <button key={t} className="brutal-card text-left font-bold" onClick={() => setChip(t === 'My Notes' ? 'Notes' : t === 'Bookmarks' ? 'All' : t)}>⭐ {t}</button>)}</div>
       <div className="brutal-card"><div className="flex items-center justify-between"><b>RECENT FILES</b><button className="brutal-btn" onClick={() => setOpen(true)}>+ Add</button></div>
         {filtered.length === 0 && <div className="mt-1 font-mono2 text-xs">{items.length === 0 ? 'Nothing saved yet — add a PDF link or note above.' : 'No files match your search.'}</div>}
@@ -45,7 +45,7 @@ function FileRow({ r, del, ren }: { r: Resource; del: () => void; ren: (t: strin
     setEditing(false)
   }
   return (
-    <div className="flex items-center gap-2 border-t-2 border-black py-2">
+    <div className="flex items-center gap-2 border-t-2 border-ink py-2">
       <span className="brutal-card px-2 py-1">{r.type === 'link' ? '🔗' : '📄'}</span>
       <div className="min-w-0 flex-1">{editing ? <input className="in" value={v} onChange={(e) => setV(e.target.value)} onBlur={commit} onKeyDown={(e) => { if (e.key === 'Enter') commit(); if (e.key === 'Escape') { setV(r.title); setEditing(false) } }} autoFocus /> : <a href={r.url} target="_blank" rel="noreferrer" className="block truncate text-sm font-bold underline">{r.title}</a>}<div className="font-mono2 text-[11px]">{r.category} · {rel(r.updatedAt)}</div></div>
       <button aria-label="file options" className="btn-ghost" onClick={() => setMenu(!menu)}>⋯</button>

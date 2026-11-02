@@ -42,7 +42,7 @@ function S() {
       <div className="brutal-card"><b>MOTION</b><div className="mt-2 flex flex-wrap gap-2">{MOTIONS.map((t) => <button key={t} className={`chip ${p.motion === t ? 'on' : ''}`} onClick={() => set({ motion: t })}>{t}</button>)}</div></div>
       <div className="brutal-card"><b>FOCUS ENVIRONMENT</b><div className="mt-2 flex flex-wrap gap-2">{ENVS.map((t) => <button key={t} className={`chip ${p.env === t ? 'on' : ''}`} onClick={() => set({ env: t })}>{t}</button>)}</div><p className="mt-1 font-mono2 text-[11px]">Sets the default timer length + sound on Focus.</p></div>
       <div className="brutal-card"><b>DASHBOARD WIDGETS</b>
-        {[['stats', 'Stat cards'], ['plan', "Today's Plan"], ['weekly', 'Weekly progress'], ['coachTip', 'Coach tip']].map(([k, l]) => <label key={k} className="flex items-center justify-between border-t-2 border-black py-1 text-sm"><span>{l}</span><input type="checkbox" checked={(p.widgets as any)[k] !== false} onChange={(e) => set({ widgets: { ...p.widgets, [k]: e.target.checked } })} aria-label={l} /></label>)}
+        {[['stats', 'Stat cards'], ['plan', "Today's Plan"], ['weekly', 'Weekly progress'], ['coachTip', 'Coach tip']].map(([k, l]) => <label key={k} className="flex items-center justify-between border-t-2 border-ink py-1 text-sm"><span>{l}</span><input type="checkbox" checked={(p.widgets as any)[k] !== false} onChange={(e) => set({ widgets: { ...p.widgets, [k]: e.target.checked } })} aria-label={l} /></label>)}
       </div>
       <div className="brutal-card"><b>SOUNDS & AI</b>
         <label className="flex items-center justify-between py-1 text-sm"><span>Focus chime</span><input type="checkbox" checked={p.sound} onChange={(e) => set({ sound: e.target.checked })} aria-label="Focus chime" /></label>
