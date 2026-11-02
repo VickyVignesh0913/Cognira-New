@@ -124,7 +124,12 @@ export const seo: SeoConfig = {
   "privatePaths": [
     "/coach",
     "/focus",
-    "/mastery"
+    "/habits",
+    "/home",
+    "/library",
+    "/mastery",
+    "/routine",
+    "/settings"
   ]
 }
 
