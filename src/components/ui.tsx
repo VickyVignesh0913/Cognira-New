@@ -29,6 +29,7 @@ export function Shell({ children, coins = 0, title = 'Cognira' }: { children: Re
   // Render them only after mount so the server HTML and the first client render agree.
   const [mounted, setMounted] = useState(false)
   useEffect(() => { setMounted(true) }, [])
+  const [tickerPaused, setTickerPaused] = useState(false)
   useEffect(() => {
     const sync = () => { try { const p = loadProfile(); if (p && typeof p.coins === 'number') setLiveCoins(coins || p.coins) } catch {} }
     sync()
@@ -77,11 +78,17 @@ export function Shell({ children, coins = 0, title = 'Cognira' }: { children: Re
               </Link>
             </div>
           </div>
-          <div className="marquee border-t-2 border-ink bg-ink py-1 text-[11px] font-bold uppercase tracking-widest text-surface">
-            <div className="marquee-inner">
+          <div className="marquee relative border-t-2 border-ink bg-ink py-1 text-[11px] font-bold uppercase tracking-widest text-surface">
+            <div className={cn('marquee-inner', tickerPaused && 'paused')}>
               <span className="px-4">AI Life Coach ✦ {title} ✦ Small wins daily ✦ Student & Professional ✦ AI Life Coach ✦ {title} ✦ Small wins daily ✦ Student & Professional ✦&nbsp;</span>
               <span className="px-4">AI Life Coach ✦ {title} ✦ Small wins daily ✦ Student & Professional ✦ AI Life Coach ✦ {title} ✦ Small wins daily ✦ Student & Professional ✦&nbsp;</span>
             </div>
+            {/* WCAG 2.2.2: auto-playing motion needs its own pause control */}
+            <button type="button" onClick={() => setTickerPaused((v) => !v)} className="marquee-toggle absolute inset-y-0 right-0 w-7 border-l-2 border-surface bg-ink text-[10px]" aria-label={tickerPaused ? 'Play ticker' : 'Pause ticker'}>
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden>
+                {tickerPaused ? <path d="M2 1l7 4-7 4z" /> : <><rect x="2" y="1" width="2.5" height="8" /><rect x="6" y="1" width="2.5" height="8" /></>}
+              </svg>
+            </button>
           </div>
         </header>
         <main className="px-6 pb-28 pt-5">{mounted && children}</main>

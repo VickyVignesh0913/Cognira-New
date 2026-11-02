@@ -115,7 +115,7 @@ function Sheet({ edit, day, tasks, persist, close }: { edit: Task | null; day: s
         <label className="lbl">Start<input className="in" type="time" value={start} onChange={(e) => setStart(e.target.value)} /></label>
         <label className="lbl">End<input className="in" type="time" value={end} onChange={(e) => setEnd(e.target.value)} /></label>
       </div>
-      <label className="lbl">Category<div className="flex flex-wrap gap-2">{['Study', 'Work', 'Health', 'Personal'].map((c) => <button key={c} className={`chip ${cat === c ? 'on' : ''}`} onClick={() => setCat(c)}>{c}</button>)}</div></label>
+      <div className="lbl">Category<div className="flex flex-wrap gap-2">{['Study', 'Work', 'Health', 'Personal'].map((c) => <button key={c} className={`chip ${cat === c ? 'on' : ''}`} onClick={() => setCat(c)}>{c}</button>)}</div></div>
       <div className="lbl">Repeat<div className="flex flex-wrap gap-2">{['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((d) => <button key={d} className={`chip ${days.includes(d) ? 'on' : ''}`} onClick={() => setDays(days.includes(d) ? days.filter((x) => x !== d) : [...days, d])}>{d}</button>)}</div></div>
       {err && <div role="alert" className="text-sm font-bold">{err}</div>}
       <div className="flex gap-2"><button className="brutal-btn flex-1" onClick={save}>Save</button><button className="btn-ghost" onClick={close}>Cancel</button></div>

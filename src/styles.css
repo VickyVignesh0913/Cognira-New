@@ -46,17 +46,21 @@ body {
 .brutal-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--color-ink); }
 .brutal-input { border: 2px solid var(--color-ink); background: var(--color-surface); }
 .brutal-input:focus { outline: 3px solid var(--color-accent); outline-offset: 0; }
-.marquee { overflow: hidden; white-space: nowrap; }
+.marquee { position: relative; overflow: hidden; white-space: nowrap; }
 .marquee-inner { display: inline-block; animation: scrollX 22s linear infinite; }
+.marquee-inner.paused { animation-play-state: paused; }
 @keyframes scrollX { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* Tier 1 (looped decorative motion) stops; tier 3 feedback (colour, focus ring, press state) stays.
+   0.01ms rather than 0s so transitionend/animationend still fire. */
 @media (prefers-reduced-motion: reduce) {
   .marquee-inner { animation: none; }
-  .marquee { overflow: visible; }
-  * { animation: none !important; }
-  button, a, [role="button"], input, select, textarea {
-    transition: background-color 0.08s ease, border-color 0.08s ease, color 0.08s ease, box-shadow 0.08s ease;
+  .marquee-toggle { display: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
-  button:active, a:active { transform: none; }
+  button, a, [role="button"], input, select, textarea { transition-duration: 0.01ms !important; }
 }
 .motion-minimal .marquee-inner { animation: none; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
