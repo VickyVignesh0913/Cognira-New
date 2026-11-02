@@ -84,6 +84,9 @@ export const seo: SeoConfig = {
       "title": "Sign in — Cognira"
     },
     {
+      "path": "/mastery"
+    },
+    {
       "path": "/onboarding",
       "title": "Get started — Cognira"
     },
@@ -111,6 +114,7 @@ export const seo: SeoConfig = {
     "/library",
     "/llms.txt",
     "/login",
+    "/mastery",
     "/onboarding",
     "/robots.txt",
     "/routine",
