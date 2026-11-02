@@ -217,8 +217,8 @@ function readLS<T>(key: string, fb: T): T {
     return raw ? JSON.parse(raw) as T : fb
   } catch { return fb }
 }
-function writeLS(key: string, val: unknown) {
-  try { localStorage.setItem(key, JSON.stringify(val)) } catch { /* full */ }
+function writeLS(key: string, val: unknown): boolean {
+  try { localStorage.setItem(key, JSON.stringify(val)); return true } catch { return false /* full */ }
 }
 function emit() {
   try { window.dispatchEvent(new Event('cognira-data')) } catch { /* ssr */ }
@@ -246,7 +246,7 @@ export function loadSessions(): DemoSession[] { return readLS<DemoSession[]>('co
 export function loadFocusSessions(): DemoSession[] { return loadSessions() }
 export function saveSessions(s: DemoSession[]) { writeLS('cognira-sessions', s); emit() }
 export function loadResources(): DemoResource[] { return readLS<DemoResource[]>('cognira-resources', []) }
-export function saveResources(r: DemoResource[]) { writeLS('cognira-resources', r); emit() }
+export function saveResources(r: DemoResource[]): boolean { const ok = writeLS('cognira-resources', r); emit(); return ok }
 export function loadCoach(): CoachMsg[] { return readLS<CoachMsg[]>('cognira-coach', []) }
 export function saveCoach(m: CoachMsg[]) { writeLS('cognira-coach', m); emit() }
 

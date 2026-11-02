@@ -196,14 +196,17 @@ export const upsertResource = createServerFn({ method: 'POST' }).validator((d: a
   const s = await import('@/db/schema')
   const d = await getDb()
   const now = new Date().toISOString()
+  // Only keys this user's uploads produced: deleteResource deletes fileKey from storage.
+  const fileKey = String(data.fileKey || '')
+  if (fileKey && !fileKey.startsWith(`public/resources/${u.id}/`)) throw new Error('Not found')
   if (data.id) {
     const ex = await d.select().from(s.resources).where(eq(s.resources.id, String(data.id))).get()
     if (!ex || ex.userId !== u.id) throw new Error('Not found')
-    await d.update(s.resources).set({ title: String(data.title), type: String(data.type || 'link'), category: String(data.category || 'General'), url: String(data.url || ''), fileKey: String(data.fileKey || ''), updatedAt: now }).where(eq(s.resources.id, String(data.id)))
+    await d.update(s.resources).set({ title: String(data.title), type: String(data.type || 'link'), category: String(data.category || 'General'), url: String(data.url || ''), fileKey, updatedAt: now }).where(eq(s.resources.id, String(data.id)))
     return { ok: true, id: String(data.id) }
   }
   const id = nid('-r')
-  await d.insert(s.resources).values({ id, userId: u.id, title: String(data.title), type: String(data.type || 'link'), category: String(data.category || 'General'), url: String(data.url || ''), fileKey: String(data.fileKey || ''), updatedAt: now })
+  await d.insert(s.resources).values({ id, userId: u.id, title: String(data.title), type: String(data.type || 'link'), category: String(data.category || 'General'), url: String(data.url || ''), fileKey, updatedAt: now })
   return { ok: true, id }
 })
 
@@ -229,6 +232,8 @@ export const uploadResourceFile = createServerFn({ method: 'POST' }).validator((
   const u = await requireUser()
   const file = data.get('file') as File | null
   if (!file) throw new Error('No file')
+  if (file.size > 8 * 1024 * 1024) throw new Error('That file is over 8 MB — pick a smaller one.')
+  if (!/^(application\/pdf|image\/|text\/plain)/.test(file.type)) throw new Error('Choose a PDF, image or text file.')
   const { storage } = await import('@/lib/storage')
   const key = `public/resources/${u.id}/${Date.now()}-${(file.name || 'file').replace(/[^a-zA-Z0-9._-]/g, '_')}`
   const bytes = await file.arrayBuffer()
@@ -264,8 +269,10 @@ export const addCoins = createServerFn({ method: 'POST' }).validator((d: any) =>
   const { getDb } = await import('@/lib/db')
   const s = await import('@/db/schema')
   const d = await getDb()
+  const amount = Math.round(Number(data.amount))
+  if (!Number.isFinite(amount) || Math.abs(amount) > 1000) throw new Error('Invalid amount')
   const prof = await d.select().from(s.profiles).where(eq(s.profiles.userId, u.id)).get()
-  if (prof) await d.update(s.profiles).set({ coins: (prof.coins || 0) + Number(data.amount || 0) }).where(eq(s.profiles.userId, u.id))
+  if (prof) await d.update(s.profiles).set({ coins: Math.max(0, (prof.coins || 0) + amount) }).where(eq(s.profiles.userId, u.id))
   return { ok: true }
 })
 
@@ -346,5 +353,11 @@ export const deleteAccount = createServerFn({ method: 'POST' }).handler(async ()
   for (const t of [s.coachMessages, s.resources, s.focusSessions, s.habits, s.tasks, (s as any).masteryEntries, s.profiles]) {
     try { await d.delete(t).where(eq((t as any).userId, u.id)) } catch { /* ignore */ }
   }
+  // Remove the sign-in itself too, or the account survives a "delete account".
+  try {
+    await d.delete(s.session).where(eq(s.session.userId, u.id))
+    await d.delete(s.account).where(eq(s.account.userId, u.id))
+    await d.delete(s.user).where(eq(s.user.id, u.id))
+  } catch { /* ignore */ }
   return { ok: true }
 })

@@ -14,7 +14,11 @@ export const Route = createFileRoute('/api/files/$')({
         const key = decodeURIComponent(params._splat ?? '')
         if (!key) return new Response('Not found', { status: 404 })
         if (key.startsWith('public/')) return Response.redirect(storage.publicUrl(key), 302)
-        if (!(await currentUser())) return new Response('Sign in to access this file', { status: 401 })
+        const user = await currentUser()
+        if (!user) return new Response('Sign in to access this file', { status: 401 })
+        // Private keys under resources/<userId>/ belong to that user only.
+        const owner = /^resources\/([^/]+)\//.exec(key)
+        if (owner && owner[1] !== user.id) return new Response('Not found', { status: 404 })
         const file = await storage.get(key)
         if (!file) return new Response('Not found', { status: 404 })
         return new Response(file.body, { headers: { 'content-type': file.contentType, 'cache-control': 'private, no-cache' } })

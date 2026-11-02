@@ -13,14 +13,20 @@ function L() {
   const [q, setQ] = useState('')
   const [chip, setChip] = useState('All')
   const [open, setOpen] = useState(false)
+  const [err, setErr] = useState('')
   const chips = student ? ['All', 'Subjects', 'Notes', 'PYQs', 'Mock Tests'] : ['All', 'Documents', 'Templates', 'Articles', 'Links']
   const filtered = useMemo(() => items.filter((r) => (chip === 'All' || r.category === chip) && (!q || r.title.toLowerCase().includes(q.toLowerCase()))), [items, chip, q])
-  function persist(v: Resource[]) { setItems(v); saveResources(v) }
+  function persist(v: Resource[]) {
+    if (!saveResources(v)) { setErr('This device is out of space. Delete a file, or sign in to upload to storage.'); return }
+    setErr('')
+    setItems(v)
+  }
   const cats = useMemo(() => { const m = new Map<string, number>(); items.forEach((r) => m.set(r.category, (m.get(r.category) || 0) + 1)); return [...m.entries()] }, [items])
 
   return (
     <Shell title={student ? 'StudyHouse' : 'Resources'}>
       <h1 className="font-display text-3xl">{student ? 'STUDYHOUSE' : 'RESOURCES'}</h1>
+      {err && <div role="alert" className="brutal-card text-sm" style={{ borderColor: 'var(--color-danger)' }}>{err}</div>}
       <input className="in" placeholder="Search files…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search files" />
       <div className="flex flex-wrap gap-2">{chips.map((c) => <button key={c} className={`chip ${chip === c ? 'on' : ''}`} onClick={() => setChip(c)}>{c}</button>)}</div>
       <div className="brutal-card"><b>CATEGORIES</b>{cats.length === 0 && <div className="font-mono2 text-xs">Nothing here yet.</div>}{cats.map(([n, c]) => <div key={n} className="flex items-center justify-between border-t-2 border-ink py-1 text-sm"><span>📁 {n}</span><span className="font-mono2 text-xs">{c} ›</span></div>)}</div>
@@ -74,6 +80,7 @@ function Add({ close, add }: { close: () => void; add: (r: Resource) => void }) 
         const url = String(r?.url || '')
         if (url) { add({ id: uid(), title: name, type: f.type.includes('pdf') ? 'pdf' : 'file', category: cat, url, updatedAt: new Date().toISOString() }); return }
       } catch { /* not signed in — fall through to on-device copy */ }
+      if (f.size > 3 * 1024 * 1024) { setErr('On this device keep files under 3 MB — sign in to upload larger ones.'); return }
       const dataUrl: string = await new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result)); r.onerror = rej; r.readAsDataURL(f) })
       add({ id: uid(), title: name, type: f.type.includes('pdf') ? 'pdf' : 'file', category: cat, url: dataUrl, updatedAt: new Date().toISOString() })
     } catch { setErr('Could not read that file — try again.') }
