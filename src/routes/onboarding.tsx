@@ -57,7 +57,8 @@ function Onb() {
   }, [phase])
 
   async function finish() {
-    const done = { ...p, onboarding_complete: true, coins: 20, xp: 50 }
+    // Keep earned coins/xp: this also runs from Settings → Edit profile.
+    const done = { ...p, onboarding_complete: true, coins: Math.max(p.coins || 0, 20), xp: Math.max(p.xp || 0, 50) }
     saveProfile(done)
     // Build an editable starter routine + habits locally so demo mode (no sign-in) lands populated.
     try {

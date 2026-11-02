@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { createFileRoute, Link, useNavigate } from '@tanstack/react-router'
 import { authClient } from '@/lib/auth-client'
 import { useAction } from '@/lib/actions'
+import { loadProfile } from '@/lib/cognira'
 import { Logo } from '@/components/ui'
 
 export const Route = createFileRoute('/login')({ component: Login })
@@ -18,7 +19,7 @@ function Login() {
       : await authClient.signUp.email({ name: name || email.split('@')[0], email, password })
     if (r?.error) throw new Error(r.error.message || 'Sign-in failed')
     return r
-  }, { onSuccess: () => nav({ to: '/onboarding' }) })
+  }, { onSuccess: () => nav({ to: mode === 'in' && loadProfile()?.onboarding_complete ? '/home' : '/onboarding' }) })
 
   const google = useAction(async () => {
     const r: any = await authClient.signIn.social({ provider: 'google', callbackURL: '/home' })

@@ -4,7 +4,7 @@ import { authClient } from '@/lib/auth-client'
 import { useAction } from '@/lib/actions'
 import { getSessionUser } from '@/lib/session'
 import { Logo, BrutalBtn, BrutalCard } from '@/components/ui'
-import { DEMO_STUDENT, DEMO_PRO } from '@/lib/cognira'
+import { DEMO_STUDENT, DEMO_PRO, loadProfile } from '@/lib/cognira'
 
 export const Route = createFileRoute('/')({
   loader: async () => ({ user: await getSessionUser().catch(() => null) }),
@@ -28,10 +28,7 @@ function Opening() {
   useEffect(() => {
     try {
       if (localStorage.getItem('cognira_seen') === '1' && !data.user) setPhase('join')
-      if (data.user) {
-        const raw = localStorage.getItem('cognira_profile_v1')
-        if (raw) nav({ to: '/home' })
-      }
+      if (data.user) nav({ to: loadProfile() ? '/home' : '/onboarding' })
     } catch { /* ignore */ }
   }, [])
 
