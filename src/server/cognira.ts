@@ -17,8 +17,7 @@ export const getState = createServerFn({ method: 'GET' }).handler(async () => {
   const sessRows = await d.select().from(s.focusSessions).where(eq(s.focusSessions.userId, u.id))
   const resRows = await d.select().from(s.resources).where(eq(s.resources.userId, u.id))
   const msgRows = await d.select().from(s.coachMessages).where(eq(s.coachMessages.userId, u.id))
-  let masteryRows: any[] = []
-  try { masteryRows = await d.select().from((s as any).masteryEntries).where(eq((s as any).masteryEntries.userId, u.id)) } catch { masteryRows = [] }
+  let masteryRows: any[] = await d.select().from((s as any).masteryEntries).where(eq((s as any).masteryEntries.userId, u.id))
   sessRows.sort((a, b) => (b.startedAt > a.startedAt ? 1 : -1))
   resRows.sort((a, b) => (b.updatedAt > a.updatedAt ? 1 : -1))
   msgRows.sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1))

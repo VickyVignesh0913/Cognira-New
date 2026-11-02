@@ -19,7 +19,7 @@ function Onb() {
   const [err, setErr] = useState('')
 
   useEffect(() => { setP((v) => ({ ...v, persona })) }, [persona])
-  useEffect(() => { saveProfile(p) }, [p])
+  useEffect(() => { if (p.name.trim()) saveProfile(p) }, [p])
 
   const steps = useMemo(() => persona === 'student'
     ? ['Your name', 'Class + board', 'Subjects', 'Goals', 'Study level', 'Schedule', 'Challenge']

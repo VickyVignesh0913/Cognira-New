@@ -260,7 +260,7 @@ export function loadPrefs(): Prefs {
 export function savePrefs(p: Prefs) { writeLS(PREFS_KEY, p); emit() }
 export function clearAll() {
   try {
-    ;['cognira-profile', 'cognira-tasks', 'cognira-habits', 'cognira-sessions', 'cognira-resources', 'cognira-coach', DEMO_KEY, PREFS_KEY].forEach((k) => localStorage.removeItem(k))
+    ;['cognira-profile', 'cognira-tasks', 'cognira-habits', 'cognira-sessions', 'cognira-resources', 'cognira-coach', 'cognira-mastery', 'cognira_seen', 'cognira_persona_pick', DEMO_KEY, PREFS_KEY].forEach((k) => localStorage.removeItem(k))
   } catch { /* noop */ }
   emit()
 }
