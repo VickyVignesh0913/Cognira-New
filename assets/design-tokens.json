@@ -1,0 +1,81 @@
+{
+  "brand": "Cognira Design Tokens",
+  "primitive": {
+    "color": {
+      "primary": {
+        "50": { "$value": "#E9EFFF", "$type": "color" },
+        "100": { "$value": "#D2DFFF", "$type": "color" },
+        "200": { "$value": "#A5BFFF", "$type": "color" },
+        "300": { "$value": "#78A0FF", "$type": "color" },
+        "400": { "$value": "#4B80FF", "$type": "color" },
+        "500": { "$value": "#1E60FF", "$type": "color" },
+        "600": { "$value": "#1A58F5", "$type": "color" },
+        "700": { "$value": "#1543B3", "$type": "color" },
+        "800": { "$value": "#11358C", "$type": "color" },
+        "900": { "$value": "#0C2666", "$type": "color" }
+      },
+      "secondary": {
+        "50": { "$value": "#FFF5E8", "$type": "color" },
+        "100": { "$value": "#FFECD2", "$type": "color" },
+        "200": { "$value": "#FFD9A4", "$type": "color" },
+        "300": { "$value": "#FFC577", "$type": "color" },
+        "400": { "$value": "#FFB249", "$type": "color" },
+        "500": { "$value": "#FF9F1C", "$type": "color" },
+        "600": { "$value": "#D98718", "$type": "color" },
+        "700": { "$value": "#B36F14", "$type": "color" },
+        "800": { "$value": "#8C570F", "$type": "color" },
+        "900": { "$value": "#66400B", "$type": "color" }
+      },
+      "accent": {
+        "50": { "$value": "#F2EBFD", "$type": "color" },
+        "100": { "$value": "#E5D8FB", "$type": "color" },
+        "200": { "$value": "#CBB0F8", "$type": "color" },
+        "300": { "$value": "#B089F4", "$type": "color" },
+        "400": { "$value": "#9661F1", "$type": "color" },
+        "500": { "$value": "#7C3AED", "$type": "color" },
+        "600": { "$value": "#6931C9", "$type": "color" },
+        "700": { "$value": "#5729A6", "$type": "color" },
+        "800": { "$value": "#442082", "$type": "color" },
+        "900": { "$value": "#32175F", "$type": "color" }
+      },
+      "neutral": {
+        "50": { "$value": "#F4F8FC", "$type": "color" },
+        "100": { "$value": "#EAF0FA", "$type": "color" },
+        "200": { "$value": "#D2DFFA", "$type": "color" },
+        "300": { "$value": "#9AA7C7", "$type": "color" },
+        "400": { "$value": "#6C7A9C", "$type": "color" },
+        "500": { "$value": "#1C2748", "$type": "color" },
+        "600": { "$value": "#141D38", "$type": "color" },
+        "700": { "$value": "#0A1128", "$type": "color" }
+      }
+    }
+  },
+  "semantic": {
+    "color": {
+      "bg": { "$value": "{primitive.color.neutral.50}", "$type": "color" },
+      "surface": { "$value": "#FFFFFF", "$type": "color" },
+      "ink": { "$value": "{primitive.color.neutral.700}", "$type": "color" },
+      "muted": { "$value": "{primitive.color.neutral.400}", "$type": "color" },
+      "primary": { "$value": "{primitive.color.primary.500}", "$type": "color" },
+      "on-primary": { "$value": "#FFFFFF", "$type": "color" },
+      "accent": { "$value": "{primitive.color.secondary.500}", "$type": "color" },
+      "on-accent": { "$value": "{primitive.color.neutral.700}", "$type": "color" },
+      "violet": { "$value": "{primitive.color.accent.500}", "$type": "color" },
+      "sky": { "$value": "#0EA5E9", "$type": "color" },
+      "danger": { "$value": "#FF3D3D", "$type": "color" },
+      "soft": { "$value": "{primitive.color.neutral.100}", "$type": "color" },
+      "border": { "$value": "{primitive.color.neutral.700}", "$type": "color" }
+    }
+  },
+  "dark": {
+    "semantic": {
+      "color": {
+        "bg": { "$value": "{primitive.color.neutral.700}", "$type": "color" },
+        "surface": { "$value": "{primitive.color.neutral.600}", "$type": "color" },
+        "ink": { "$value": "{primitive.color.neutral.50}", "$type": "color" },
+        "muted": { "$value": "{primitive.color.neutral.300}", "$type": "color" },
+        "soft": { "$value": "{primitive.color.neutral.500}", "$type": "color" }
+      }
+    }
+  }
+}

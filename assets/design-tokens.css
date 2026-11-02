@@ -1,0 +1,75 @@
+/* Design Tokens - Auto-generated */
+/* Do not edit directly - modify tokens.json instead */
+
+/* === PRIMITIVES === */
+:root {
+  --primitive-color-primary-50: #E9EFFF;
+  --primitive-color-primary-100: #D2DFFF;
+  --primitive-color-primary-200: #A5BFFF;
+  --primitive-color-primary-300: #78A0FF;
+  --primitive-color-primary-400: #4B80FF;
+  --primitive-color-primary-500: #1E60FF;
+  --primitive-color-primary-600: #1A58F5;
+  --primitive-color-primary-700: #1543B3;
+  --primitive-color-primary-800: #11358C;
+  --primitive-color-primary-900: #0C2666;
+  --primitive-color-secondary-50: #FFF5E8;
+  --primitive-color-secondary-100: #FFECD2;
+  --primitive-color-secondary-200: #FFD9A4;
+  --primitive-color-secondary-300: #FFC577;
+  --primitive-color-secondary-400: #FFB249;
+  --primitive-color-secondary-500: #FF9F1C;
+  --primitive-color-secondary-600: #D98718;
+  --primitive-color-secondary-700: #B36F14;
+  --primitive-color-secondary-800: #8C570F;
+  --primitive-color-secondary-900: #66400B;
+  --primitive-color-accent-50: #F2EBFD;
+  --primitive-color-accent-100: #E5D8FB;
+  --primitive-color-accent-200: #CBB0F8;
+  --primitive-color-accent-300: #B089F4;
+  --primitive-color-accent-400: #9661F1;
+  --primitive-color-accent-500: #7C3AED;
+  --primitive-color-accent-600: #6931C9;
+  --primitive-color-accent-700: #5729A6;
+  --primitive-color-accent-800: #442082;
+  --primitive-color-accent-900: #32175F;
+  --primitive-color-neutral-50: #F4F8FC;
+  --primitive-color-neutral-100: #EAF0FA;
+  --primitive-color-neutral-200: #D2DFFA;
+  --primitive-color-neutral-300: #9AA7C7;
+  --primitive-color-neutral-400: #6C7A9C;
+  --primitive-color-neutral-500: #1C2748;
+  --primitive-color-neutral-600: #141D38;
+  --primitive-color-neutral-700: #0A1128;
+}
+
+/* === SEMANTIC === */
+:root {
+  --color-bg: #F4F8FC;
+  --color-surface: #FFFFFF;
+  --color-ink: #0A1128;
+  --color-muted: #6C7A9C;
+  --color-primary: #1E60FF;
+  --color-on-primary: #FFFFFF;
+  --color-accent: #FF9F1C;
+  --color-on-accent: #0A1128;
+  --color-violet: #7C3AED;
+  --color-sky: #0EA5E9;
+  --color-danger: #FF3D3D;
+  --color-soft: #EAF0FA;
+  --color-border: #0A1128;
+}
+
+/* === COMPONENTS === */
+:root {
+
+}
+
+/* === DARK MODE === */
+.dark {
+  --color-bg: #0A1128;
+  --color-surface: #141D38;
+  --color-ink: #F4F8FC;
+  --color-muted: #9AA7C7;
+  --color-soft: #1C2748;
+}
