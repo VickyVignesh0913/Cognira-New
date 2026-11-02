@@ -70,7 +70,7 @@ export function Shell({ children, coins = 0, title = 'Cognira' }: { children: Re
               <Link to="/coach" className="brutal-sm rounded-full bg-surface p-2 text-ink" aria-label="AI Coach">
                 <MessageCircle size={16} strokeWidth={2.5} />
               </Link>
-              <button className="brutal-sm rounded-full bg-surface p-2 text-ink" aria-label="Notifications" onClick={() => alert('In-app reminders live in Settings → Notifications.')}>
+              <button className="brutal-sm rounded-full bg-surface p-2 text-ink" aria-label="Notifications" onClick={() => alert('No new notifications. Reminders appear in your Today\'s Plan.')}>
                 <Bell size={16} strokeWidth={2.5} />
               </button>
               <Link to="/settings" className="brutal-sm rounded-full bg-surface p-2 text-ink" aria-label="Settings">

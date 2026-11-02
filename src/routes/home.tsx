@@ -37,8 +37,8 @@ function Home() {
   const s = sessions.length ? sessions : demoSessions()
   const tk = dayKey()
   const doneToday = t.filter((x) => (x.completedDates || []).includes(tk)).length
-  const focusToday = Math.round(s.filter((x) => (x.startedAt || '').slice(0, 10) === new Date().toISOString().slice(0, 10)).reduce((a, b) => a + b.durationSec, 0) / 60)
-  const streak = Math.max(1, streakDays(h.flatMap((x) => x.completedDates || [])), streakDays(s.map((x) => (x.startedAt || '').slice(0, 10))))
+  const focusToday = Math.round(s.filter((x) => dayKey(x.startedAt) === tk).reduce((a, b) => a + b.durationSec, 0) / 60)
+  const streak = Math.max(streakDays(h.flatMap((x) => x.completedDates || [])), streakDays(s.map((x) => dayKey(x.startedAt))))
   const week = t.length ? Math.round((doneToday / t.length) * 100) : 0
   const show = prefs.widgets as Record<string, boolean>
   const todayPlan = t.slice(0, 4)
@@ -48,7 +48,7 @@ function Home() {
     const base = real || t
     const next = base.map((x) => x.id === id ? { ...x, completedDates: (x.completedDates || []).includes(tk) ? (x.completedDates || []).filter((d) => d !== tk) : [...(x.completedDates || []), tk] } : x)
     const wasDone = (t.find((x) => x.id === id)?.completedDates || []).includes(tk)
-    if (real) { saveTasks(next) } else { saveTasks(next) }
+    saveTasks(next)
     setTasks(next)
     if (!wasDone && p) { try { const np = { ...p, coins: (p.coins || 0) + 10, xp: (p.xp || 0) + 10 }; saveProfile(np); setP(np) } catch {} }
   }
@@ -68,7 +68,7 @@ function Home() {
           <div className="brutal-card"><div className="font-mono2 text-[11px] text-ink">🔥 Streak</div><div className="font-display text-2xl">{streak} days</div></div>
           <div className="brutal-card"><div className="font-mono2 text-[11px] text-ink">⏱ Focus today</div><div className="font-display text-2xl">{focusToday} min</div></div>
           <div className="brutal-card"><div className="font-mono2 text-[11px] text-ink">✅ Tasks done</div><div className="font-display text-2xl">{doneToday}/{t.length}</div></div>
-          <Link to="/mastery" className="brutal-card brutal-card-yellow" aria-label="Open Subject Mastery tracker"><div className="font-mono2 text-[11px] text-on-accent">📚 Active → Mastery</div><div className="font-display text-2xl text-on-accent">{p?.persona === 'student' ? (p?.subjects?.length || 5) : (p?.skills?.length || 4)} {p?.persona === 'student' ? 'subjects' : 'skills'}</div><div className="font-mono2 text-[10px] text-on-accent underline">Track mastery →</div></Link>
+          <Link to="/mastery" className="brutal-card brutal-card-yellow" aria-label="Open Subject Mastery tracker"><div className="font-mono2 text-[11px] text-on-accent">📚 Active → Mastery</div><div className="font-display text-2xl text-on-accent">{p?.persona === 'student' ? (p?.subjects?.length || 3) : (p?.skills?.length || 3)} {p?.persona === 'student' ? 'subjects' : 'skills'}</div><div className="font-mono2 text-[10px] text-on-accent underline">Track mastery →</div></Link>
         </div>
       )}
       {show.coachTip !== false && (

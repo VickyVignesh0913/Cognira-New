@@ -43,7 +43,7 @@ function H() {
           {habits.map((h) => (
             <button key={h.id} onClick={() => toggle(h.id)} className="brutal-card text-left" aria-pressed={(h.completedDates || []).includes(today)}>
               <div className="flex items-center gap-2"><span className="text-xl">{h.icon}</span><div className="flex-1"><b className="text-sm">{h.title}</b><div className="font-mono2 text-[11px]">{h.frequency} · {h.category || 'Study'} · target {h.target} · 🔥 {streak(h)} day streak</div></div><span className="tick">{(h.completedDates || []).includes(today) ? '✓' : '○'}</span></div>
-              <div className="mt-2 flex gap-1">{days.map((d, i) => { const doneD = (h.completedDates || []).includes(d); const future = i === 6 && !(h.completedDates || []).includes(today) ? false : false; return <span key={d} className="dot" style={{ background: doneD ? 'var(--color-ink)' : 'var(--color-surface)', border: '2px solid var(--color-ink)' }} title={d} /> })}</div>
+              <div className="mt-2 flex gap-1">{days.map((d) => { const doneD = (h.completedDates || []).includes(d); return <span key={d} className="dot" style={{ background: doneD ? 'var(--color-ink)' : 'var(--color-surface)', border: '2px solid var(--color-ink)' }} title={d} /> })}</div>
             </button>
           ))}
           <button className="brutal-btn" onClick={() => setOpen(true)}>+ Add habit</button>
