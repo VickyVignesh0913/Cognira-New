@@ -18,12 +18,14 @@
   --font-body: "Space Mono", ui-monospace, monospace;
 }
 
-html { background: var(--color-bg); }
+html { background: var(--color-bg); color-scheme: light; }
 body {
   font-family: var(--font-body);
   background: var(--color-bg);
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 .font-display { font-family: var(--font-display); }
 .brutal {
@@ -57,7 +59,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   outline-offset: 2px;
 }
 .theme-calm { --color-bg: #f6f4ec; --color-soft: #efece0; }
-.theme-focus { --color-bg: #0a1128; --color-surface: #141d38; --color-ink: #f4f8fc; --color-muted: #9aa7c7; --color-soft: #1c2748; }
+.theme-focus { --color-bg: #0a1128; --color-surface: #141d38; --color-ink: #f4f8fc; --color-muted: #9aa7c7; --color-soft: #1c2748; color-scheme: dark; }
 .theme-minimal { --color-accent: #1e60ff; }
 .theme-sky { --color-bg: #e8f3fd; }
 
@@ -91,7 +93,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .tick { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border: 2px solid var(--color-ink); border-radius: 999px; background: var(--color-accent); color: var(--color-on-accent); font-weight: 900; flex: none; }
 .bar { border: 2px solid var(--color-ink); border-radius: 999px; height: 12px; background: var(--color-surface); overflow: hidden; }
 .bar > i { display: block; height: 100%; background: var(--color-primary); }
-.sheet-back { position: fixed; inset: 0; background: rgba(10,17,40,0.5); z-index: 40; display: flex; align-items: flex-end; justify-content: center; }
+.sheet-back { position: fixed; inset: 0; background: rgba(10,17,40,0.5); z-index: 40; display: flex; align-items: flex-end; justify-content: center; overscroll-behavior: contain; }
 .sheet { background: var(--color-surface); border: 2px solid var(--color-ink); border-bottom: 0; border-radius: 24px 24px 0 0; padding: 20px; width: 100%; max-width: 480px; display: flex; flex-direction: column; gap: 12px; max-height: 90vh; overflow-y: auto; }
 .fab { position: fixed; bottom: 92px; left: 50%; transform: translateX(120px); width: 56px; height: 56px; border-radius: 999px; border: 2px solid var(--color-ink); background: var(--color-accent); color: var(--color-on-accent); font-size: 28px; font-weight: 900; line-height: 1; box-shadow: 4px 4px 0 var(--color-ink); z-index: 30; }
 .fab:active { transform: translateX(120px) translateY(2px); box-shadow: 2px 2px 0 var(--color-ink); }

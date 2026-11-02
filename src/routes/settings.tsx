@@ -36,7 +36,7 @@ function S() {
     <Shell title="Settings">
       <h1 className="font-display text-3xl">SETTINGS</h1>
       <div className="brutal-card"><b>ACCOUNT</b><div className="mt-1 text-sm">{profile ? `${profile.name} · ${profile.persona}` : 'Exploring demo'}</div><div className="font-mono2 text-[11px]">Cognira v1.0.0</div>
-        <div className="mt-2 flex gap-2"><button className="chip" onClick={() => nav({ to: '/onboarding' })}>Edit profile</button><button className="chip" onClick={() => { clearAll(); nav({ to: '/' }) }}>Delete data</button></div>
+        <div className="mt-2 flex gap-2"><button className="chip" onClick={() => nav({ to: '/onboarding' })}>Edit profile</button><button className="chip" onClick={() => { if (confirm('Delete all Cognira data on this device? This cannot be undone.')) { clearAll(); nav({ to: '/' }) } }}>Delete data</button></div>
       </div>
       <div className="brutal-card"><b>APPEARANCE & ATMOSPHERE</b><div className="mt-2 flex flex-wrap gap-2">{THEMES.map((t) => <button key={t} className={`chip ${p.theme === t ? 'on' : ''}`} onClick={() => set({ theme: t })}>{t}</button>)}</div><p className="mt-1 font-mono2 text-[11px]">Theme changes the whole app instantly.</p></div>
       <div className="brutal-card"><b>MOTION</b><div className="mt-2 flex flex-wrap gap-2">{MOTIONS.map((t) => <button key={t} className={`chip ${p.motion === t ? 'on' : ''}`} onClick={() => set({ motion: t })}>{t}</button>)}</div></div>

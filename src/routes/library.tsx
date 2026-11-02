@@ -49,7 +49,7 @@ function FileRow({ r, del, ren }: { r: Resource; del: () => void; ren: (t: strin
       <span className="brutal-card px-2 py-1">{r.type === 'link' ? '🔗' : '📄'}</span>
       <div className="min-w-0 flex-1">{editing ? <input className="in" value={v} onChange={(e) => setV(e.target.value)} onBlur={commit} onKeyDown={(e) => { if (e.key === 'Enter') commit(); if (e.key === 'Escape') { setV(r.title); setEditing(false) } }} autoFocus /> : <a href={r.url} target="_blank" rel="noreferrer" className="block truncate text-sm font-bold underline">{r.title}</a>}<div className="font-mono2 text-[11px]">{r.category} · {rel(r.updatedAt)}</div></div>
       <button aria-label="file options" className="btn-ghost" onClick={() => setMenu(!menu)}>⋯</button>
-      {menu && <div className="flex gap-1"><button className="chip" onClick={() => { setEditing(true); setMenu(false) }}>Rename</button><button className="chip" onClick={del}>Delete</button></div>}
+      {menu && <div className="flex gap-1"><button className="chip" onClick={() => { setEditing(true); setMenu(false) }}>Rename</button><button className="chip" onClick={() => { if (confirm('Delete this file?')) del() }}>Delete</button></div>}
     </div>
   )
 }
