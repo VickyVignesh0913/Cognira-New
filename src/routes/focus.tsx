@@ -22,10 +22,18 @@ function F() {
   const [sessions, setSessions] = useState<FocusSession[]>([])
   const [done, setDone] = useState(false)
   const [ambient, setAmbient] = useState('Off')
+  const [subject, setSubject] = useState('')
+  const [subjects, setSubjects] = useState<string[]>([])
   useEffect(() => { if (!running) setLeft(total) }, [total, mode, preset, useCustom])
   useEffect(() => {
     setSessions(loadSessions())
-    try { const pr = loadProfile(); if (pr) setAmbient(pr.ambient || 'Off') } catch {}
+    try {
+      const pr = loadProfile()
+      if (pr) {
+        setAmbient(pr.ambient || 'Off')
+        setSubjects((pr.persona === 'professional' ? pr.skills : pr.subjects) || [])
+      }
+    } catch {}
   }, [])
   useEffect(() => {
     if (!running) return
@@ -42,10 +50,10 @@ function F() {
   function finish() {
     setRunning(false); setDone(true)
     if (mode === 'Focus') {
-      const s: FocusSession = { id: uid(), startedAt: new Date().toISOString(), durationSec: total, mode: useCustom ? 'Custom' : PRESETS[preset].n, completed: true }
+      const s: FocusSession = { id: uid(), startedAt: new Date().toISOString(), durationSec: total, mode: useCustom ? 'Custom' : PRESETS[preset].n, completed: true, subject: subject || undefined }
       const next = [...sessions, s]; setSessions(next); saveSessions(next)
       try { const pr = loadProfile(); if (pr) saveProfile({ ...pr, coins: (pr.coins || 0) + 10 }) } catch {}
-      try { saveFocusSession({ data: { startedAt: s.startedAt, durationSec: s.durationSec, mode: s.mode } }).catch(() => null) } catch {}
+      try { saveFocusSession({ data: { startedAt: s.startedAt, durationSec: s.durationSec, mode: s.mode, subject: s.subject } }).catch(() => null) } catch {}
     }
   }
   const mm = String(Math.floor(left / 60)).padStart(2, '0'), ss = String(left % 60).padStart(2, '0')
@@ -59,8 +67,9 @@ function F() {
       <div className="flex gap-2">{PRESETS.map((p, i) => <button key={p.n} className={`chip ${!useCustom && preset === i ? 'on' : ''}`} onClick={() => { setPreset(i); setUseCustom(false); setRunning(false) }}>{p.n} {p.f}/{p.b}</button>)}
         <button className={`chip ${useCustom ? 'on' : ''}`} onClick={() => { setUseCustom(true); setRunning(false) }}>Custom</button></div>
       {useCustom && <label className="lbl">Custom minutes<input className="in" type="number" min={1} max={120} value={custom} onChange={(e) => setCustom(e.target.value)} /></label>}
+      {subjects.length > 0 && <label className="lbl">Subject<select className="in" value={subject} disabled={running} onChange={(e) => setSubject(e.target.value)}><option value="">No subject</option>{subjects.map((s) => <option key={s} value={s}>{s}</option>)}</select></label>}
       <div className="brutal-card items-center text-center">
-        <svg viewBox="0 0 200 200" className="mx-auto w-52" role="timer" aria-live="polite" aria-label={`${mm}:${ss} remaining`}>
+        <svg viewBox="0 0 200 200" className="mx-auto w-52" role="timer" aria-label={`${mm}:${ss} remaining`}>
           <circle cx="100" cy="100" r={R} fill="none" stroke="var(--color-soft)" strokeWidth="16" />
           <circle cx="100" cy="100" r={R} fill="none" stroke="var(--color-ink)" strokeWidth="16" strokeLinecap="round" strokeDasharray={C} strokeDashoffset={C * (1 - prog)} transform="rotate(-90 100 100)" />
           <text x="100" y="96" textAnchor="middle" fontSize="34" fontWeight="900" fill="var(--color-ink)" fontFamily="Archivo Black">{mm}:{ss}</text>

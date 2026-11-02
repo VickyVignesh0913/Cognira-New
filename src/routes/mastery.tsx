@@ -127,6 +127,7 @@ function Mastery() {
         .filter((s) => {
           const sub = (s.subject || '').toLowerCase()
           const key = e.subject.toLowerCase()
+          if (!sub) return false // sessions saved without a subject must not count for every subject
           return sub.includes(key) || key.includes(sub)
         })
         .reduce((a, s) => a + (s.durationSec || 0), 0) / 60
