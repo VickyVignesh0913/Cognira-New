@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from '@tanstack/react-router'
-import { Home, CalendarDays, Timer, LibraryBig, Leaf, Settings, Coins, Bell, MessageCircle } from 'lucide-react'
+import { Home, CalendarDays, Timer, LibraryBig, Leaf, Settings, Coins, Bell, Menu } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { loadPrefs, loadProfile } from '@/lib/cognira'
 
@@ -58,27 +58,24 @@ export function Shell({ children, coins = 0, title = 'Cognira' }: { children: Re
     <div className="min-h-screen">
       <div className="mx-auto min-h-screen w-full max-w-[480px] border-x-2 border-ink bg-bg">
         <header className="sticky top-0 z-20 border-b-2 border-ink bg-surface">
-          <div className="flex items-center justify-between px-6 py-3">
-            <Link to="/home" className="flex items-center gap-2" aria-label="Cognira home">
-              <Logo />
-              <span className="font-display text-lg uppercase tracking-tight">Cognira</span>
-            </Link>
+          <div className="flex items-center justify-between px-4 py-2">
+            <div className="flex items-center gap-2">
+              <Link to="/settings" className="brutal-sm flex h-9 w-9 items-center justify-center rounded-md bg-surface text-ink" aria-label="Menu and settings"><Menu size={20} strokeWidth={2.5} /></Link>
+              <Link to="/home" className="flex items-center gap-2" aria-label="Cognira home">
+                <Logo />
+                <span className="font-display text-lg uppercase tracking-tight">Cognira</span>
+              </Link>
+            </div>
             <div className="flex items-center gap-2">
               <span className="brutal-sm flex items-center gap-1 rounded-full bg-accent px-3 py-1 text-xs font-bold text-on-accent" aria-label={`${showCoins} coins`}>
                 <Coins size={14} strokeWidth={2.5} /> {showCoins}
               </span>
-              <Link to="/coach" className="brutal-sm rounded-full bg-surface p-2 text-ink" aria-label="AI Coach">
-                <MessageCircle size={16} strokeWidth={2.5} />
-              </Link>
-              <button className="brutal-sm rounded-full bg-surface p-2 text-ink" aria-label="Notifications" onClick={() => alert('In-app reminders live in Settings → Notifications.')}>
-                <Bell size={16} strokeWidth={2.5} />
+              <button className="brutal-sm flex h-9 w-9 items-center justify-center rounded-md bg-surface text-ink" aria-label="Notifications" onClick={() => alert('In-app reminders live in Settings → Notifications.')}>
+                <Bell size={18} strokeWidth={2.5} />
               </button>
-              <Link to="/settings" className="brutal-sm rounded-full bg-surface p-2 text-ink" aria-label="Settings">
-                <Settings size={16} strokeWidth={2.5} />
-              </Link>
             </div>
           </div>
-          <div className="marquee relative border-t-2 border-ink bg-ink py-1 text-[11px] font-bold uppercase tracking-widest text-surface">
+          <div className="hidden marquee relative border-t-2 border-ink bg-ink py-1 text-[11px] font-bold uppercase tracking-widest text-surface">
             <div className={cn('marquee-inner', tickerPaused && 'paused')}>
               <span className="px-4">AI Life Coach ✦ {title} ✦ Small wins daily ✦ Student & Professional ✦ AI Life Coach ✦ {title} ✦ Small wins daily ✦ Student & Professional ✦&nbsp;</span>
               <span className="px-4">AI Life Coach ✦ {title} ✦ Small wins daily ✦ Student & Professional ✦ AI Life Coach ✦ {title} ✦ Small wins daily ✦ Student & Professional ✦&nbsp;</span>
@@ -91,7 +88,7 @@ export function Shell({ children, coins = 0, title = 'Cognira' }: { children: Re
             </button>
           </div>
         </header>
-        <main className="px-6 pb-28 pt-5">{mounted && children}</main>
+        <main className="min-h-[calc(100vh-120px)] bg-surface px-4 pb-28 pt-5">{children}</main>
         <nav className="fixed bottom-0 left-1/2 z-20 w-full max-w-[480px] -translate-x-1/2 border-t-2 border-ink bg-surface" aria-label="Primary">
           <div className="grid grid-cols-5">
             {tabs.map(t => {
@@ -100,7 +97,7 @@ export function Shell({ children, coins = 0, title = 'Cognira' }: { children: Re
                 <Link
                   key={t.to}
                   to={t.to}
-                  className={cn('flex min-h-[64px] flex-col items-center justify-center gap-1 border-r-2 border-ink text-[10px] font-bold uppercase tracking-wider last:border-r-0', active ? 'bg-accent text-on-accent' : 'bg-surface')}
+                  className={cn('flex min-h-[64px] flex-col items-center justify-center gap-1 border-r-2 border-ink text-[10px] font-bold uppercase tracking-wider last:border-r-0', active ? 'bg-primary text-on-primary' : 'bg-surface')}
                   activeProps={{ className: 'bg-accent' }}
                   aria-current={active ? 'page' : undefined}
                 >
