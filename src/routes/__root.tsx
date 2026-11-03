@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { HeadContent, Outlet, Scripts, createRootRoute } from '@tanstack/react-router'
 import { seoConfig, seoHead } from '@/lib/monstarx/seo'
+import { ToastContainer } from '@/components/Toast'
 
 import appCss from '../styles.css?url'
 
@@ -24,6 +25,7 @@ function RootDocument({ children }: { children: ReactNode }) {
       </head>
       <body className="min-h-screen bg-bg text-ink antialiased">
         {children}
+        <ToastContainer />
         <Scripts />
       </body>
     </html>
