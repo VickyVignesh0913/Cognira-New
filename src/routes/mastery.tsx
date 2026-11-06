@@ -37,7 +37,7 @@ function writeEntries(e: MasteryEntry[]) {
   try { window.dispatchEvent(new Event('cognira-data')) } catch { /* ssr */ }
 }
 
-type Stats = { entry: MasteryEntry; focusMins: number; taskCount: number; doneToday: number; totalMins: number; needs: boolean }
+type Stats = { entry: MasteryEntry; focusMins: number; taskMins: number; taskCount: number; doneToday: number; totalMins: number; needs: boolean }
 
 function Mastery() {
   const [profile, setProfile] = useState<Profile | null>(null)
@@ -124,7 +124,24 @@ function Mastery() {
   const stats: Stats[] = useMemo(() => {
     // When signed in, server minutes already include focus sessions
     // When offline/demo, focusMins from localStorage should be added
+    const today = dayKey()
     return merged.map((e) => {
+      // Calculate task minutes from completed tasks (each task = 25 min)
+      const taskMinutes = tasks
+        .filter((t) => {
+          // Check if task contributes to this mastery subject
+          const taskSubject = (t.masterSubject || t.category || '').toLowerCase()
+          const entrySubject = e.subject.toLowerCase()
+          const matches = taskSubject === entrySubject ||
+            taskSubject.includes(entrySubject) ||
+            entrySubject.includes(taskSubject)
+
+          // Check if task was completed today
+          const completedToday = (t.completedDates || []).includes(today)
+          return matches && completedToday
+        });
+      const taskMins = Math.round(taskMinutes.length * 25)
+
       const focusMins = signedIn ? 0 : sessions
         .filter((s) => {
           const sub = (s.subject || '').toLowerCase()
@@ -133,18 +150,13 @@ function Mastery() {
           return sub.includes(key) || key.includes(sub)
         })
         .reduce((a, s) => a + (s.durationSec || 0), 0) / 60
-      const taskDone = tasks.filter((t) =>
-        (t.masterSubject || '').toLowerCase() === e.subject.toLowerCase() ||
-        (t.category || '').toLowerCase() === e.subject.toLowerCase() ||
-        t.title.toLowerCase().includes(e.subject.toLowerCase()),
-      )
       const tk = dayKey()
-      const doneToday = taskDone.filter((t) => (t.completedDates || []).includes(tk)).length
+      const doneToday = taskMinutes.filter((t) => (t.completedDates || []).includes(tk)).length
       // When signed in, use server minutes only (they include focus sessions)
       // When not signed in, add localStorage focus minutes
-      const totalMins = Math.round((e.minutes || 0) + focusMins)
+      const totalMins = Math.round((e.minutes || 0) + focusMins + taskMins)
       const needs = e.confidence <= 2 || (totalMins < 30 && e.confidence <= 3)
-      return { entry: e, focusMins: Math.round(focusMins), taskCount: taskDone.length, doneToday, totalMins, needs }
+      return { entry: e, focusMins: Math.round(focusMins), taskMins, taskCount: taskMinutes.length, doneToday, totalMins, needs }
     })
   }, [merged, sessions, tasks, signedIn])
 
@@ -269,7 +281,7 @@ function Mastery() {
                   {needs && <span className="rounded-full border-2 border-ink bg-danger px-2 py-0.5 text-[10px] font-bold uppercase text-on-accent">Needs work</span>}
                 </div>
                 <div className="font-mono2 mt-1 text-[11px] text-ink">
-                  {totalMins} min total · {focusMins} min focus · {taskCount} tasks{doneToday > 0 ? ` · ${doneToday} done today` : ''} · {entry.logs.length} logs
+                  {totalMins}m total · {focusMins}m focus · {taskMins}m tasks · {taskCount} tasks{doneToday > 0 ? ` · ${doneToday} done today` : ''} · {entry.logs.length} logs
                 </div>
               </div>
               <div className="flex shrink-0 flex-col gap-1">

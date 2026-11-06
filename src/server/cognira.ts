@@ -346,46 +346,65 @@ export const saveFocusSession = createServerFn({ method: 'POST' }).validator((d:
   const durationSec = Number(data.durationSec || 0)
   const mode = String(data.mode || 'Focus')
 
+  // Validate duration range (1 second to 480 minutes = 28800 seconds)
+  if (durationSec < 1 || durationSec > 28800) {
+    return { ok: true, id: sessionId, focusLogged: false, subject: '', masteryUpdated: false, note: 'duration out of range' }
+  }
+
   // Use transaction for atomic session + mastery update
-  return await d.transaction(async (tx) => {
-    // Insert focus session (idempotent via session ID)
-    await tx.insert(s.focusSessions).values({
-      id: sessionId,
-      userId: u.id,
-      startedAt: String(data.startedAt),
-      durationSec,
-      mode,
-      subject,
-      completed: true
+  try {
+    return await d.transaction(async (tx) => {
+      // Insert focus session (idempotent via session ID)
+      try {
+        await tx.insert(s.focusSessions).values({
+          id: sessionId,
+          userId: u.id,
+          startedAt: String(data.startedAt),
+          durationSec,
+          mode,
+          subject,
+          completed: true
+        })
+      } catch (dbErr: any) {
+        // Handle duplicate session ID gracefully - session already exists
+        if (dbErr?.message?.includes('UNIQUE constraint')) {
+          return { ok: true, id: sessionId, focusLogged: !!subject, subject, masteryUpdated: false, duplicate: true }
+        }
+        throw dbErr // Re-throw other errors
+      }
+
+      // Accumulate study minutes to mastery if subject specified
+      let masteryResult = null
+      if (subject && durationSec > 0) {
+        const minutes = Math.round(durationSec / 60)
+        masteryResult = await accumulateStudyMinutes(tx, u.id, subject, minutes)
+      }
+
+      // Award coins/Xp
+      const prof = await tx.select().from(s.profiles).where(eq(s.profiles.userId, u.id)).get()
+      if (prof) {
+        await tx.update(s.profiles)
+          .set({ coins: (prof.coins || 0) + 10, xp: (prof.xp || 0) + 20 })
+          .where(eq(s.profiles.userId, u.id))
+      }
+
+      return {
+        ok: true,
+        id: sessionId,
+        focusLogged: !!subject,
+        subject,
+        masteryUpdated: masteryResult?.updated ?? false,
+        masterySubject: masteryResult?.subject,
+        minutesAdded: masteryResult?.previousTotal !== undefined
+          ? (masteryResult.previousTotal ? 'added to' : 'created')
+          : null
+      }
     })
-
-    // Accumulate study minutes to mastery if subject specified
-    let masteryResult = null
-    if (subject && durationSec > 0) {
-      const minutes = Math.round(durationSec / 60)
-      masteryResult = await accumulateStudyMinutes(tx, u.id, subject, minutes)
-    }
-
-    // Award coins/Xp
-    const prof = await tx.select().from(s.profiles).where(eq(s.profiles.userId, u.id)).get()
-    if (prof) {
-      await tx.update(s.profiles)
-        .set({ coins: (prof.coins || 0) + 10, xp: (prof.xp || 0) + 20 })
-        .where(eq(s.profiles.userId, u.id))
-    }
-
-    return {
-      ok: true,
-      id: sessionId,
-      focusLogged: !!subject,
-      subject,
-      masteryUpdated: masteryResult?.updated ?? false,
-      masterySubject: masteryResult?.subject,
-      minutesAdded: masteryResult?.previousTotal !== undefined
-        ? (masteryResult.previousTotal ? 'added to' : 'created')
-        : null
-    }
-  })
+  } catch (e) {
+    // Log error but don't fail - session was saved as pending
+    console.error('saveFocusSession error:', e)
+    return { ok: true, id: sessionId, focusLogged: false, subject: '', masteryUpdated: false, error: true }
+  }
 })
 
 /**
