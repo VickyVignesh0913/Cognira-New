@@ -33,7 +33,7 @@ const R = 84, C = 2 * Math.PI * R
 const TOTAL_SEGMENTS = 7
 const SWINGS_PER_SEGMENT = 12
 const TOTAL_SWINGS = TOTAL_SEGMENTS * SWINGS_PER_SEGMENT // 84 swings for 25 minutes
-const SWING_PERIOD = 800 // milliseconds per half-swing (45 degrees each way)
+const SWING_PERIOD = 1000 // milliseconds for full swing cycle (90 degrees total)
 
 function F() {
   const [mode, setMode] = useState<'Focus' | 'Break'>('Focus')
@@ -145,21 +145,48 @@ function F() {
   const mm = String(Math.floor(left / 60)).padStart(2, '0'), ss = String(left % 60).padStart(2, '0')
   const prog = 1 - left / total
 
-  // Calculate completed field lines (magnetic accumulator)
+  // Reduced motion check
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  // Animation state for continuous pendulum motion
+  const [animationTime, setAnimationTime] = useState(0)
+  const animationRef = useRef(0)
+
+  useEffect(() => {
+    if (!running) return
+
+    const animate = () => {
+      if (running) {
+        setAnimationTime(Date.now())
+        animationRef.current = requestAnimationFrame(animate)
+      }
+    }
+
+    animate()
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+    }
+  }, [running])
+
+  // Calculate completed field lines based on elapsed seconds
   const totalMinutes = mins * 60
   const secondsElapsed = totalMinutes - left
+  // Track swings: each swing takes SWING_PERIOD/1000 seconds, 2 swings per full cycle
   const swingsElapsed = Math.floor(secondsElapsed * 1000 / SWING_PERIOD)
   const completedLines = Math.min(TOTAL_SEGMENTS, Math.floor(swingsElapsed / SWINGS_PER_SEGMENT))
   const currentLineProgress = (swingsElapsed % SWINGS_PER_SEGMENT) / SWINGS_PER_SEGMENT
 
-  // Pendulum swing angle (sine wave oscillation)
-  const swingAngle = Math.sin(secondsElapsed / 1000) * 45 // ±45 degrees
+  // Pendulum swing angle - continuous animation when running
+  // Use animationTime for smooth pendulum movement during running, otherwise based on seconds
+  const swingAngle = prefersReducedMotion ? 0 : running
+    ? Math.sin((animationTime / 500) % (2 * Math.PI)) * 45 // ±45 degrees continuous swing
+    : Math.sin(secondsElapsed / 1000) * 45 // ±45 degrees
+
   const currentLineWidth = 16 - (completedLines / TOTAL_SEGMENTS) * 14
 
   const today = sessions.filter((s) => dayKey(s.startedAt) === dayKey(new Date()))
-
-  // Reduced motion check
-  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   return (
     <Shell title="Focus">
@@ -182,29 +209,34 @@ function F() {
           {Array.from({ length: TOTAL_SEGMENTS }).map((_, i) => {
             const isCompleted = i < completedLines
             const isCurrent = i === completedLines
-            const lineProgress = isCurrent ? currentLineProgress : 0
+            const lineProgress = isCurrent ? currentLineProgress : (isCompleted ? 1 : 0)
 
             // Calculate line angle (evenly distributed around circle)
             const endAngle = -90 + (i / TOTAL_SEGMENTS) * 360
-            const lineLength = C
-            const dashOffset = prefersReducedMotion ? 0 : lineLength * (1 - lineProgress)
-            const dashArray = lineLength
+            const x2 = 100 + (R - 8) * Math.cos(endAngle * Math.PI / 180)
+            const y2 = 100 + (R - 8) * Math.sin(endAngle * Math.PI / 180)
+
+            // Calculate line end point based on progress (for stroke-dashoffset animation)
+            const fullLength = C
+            const drawnLength = fullLength * lineProgress
+            const dashOffset = fullLength * (1 - lineProgress)
 
             return (
               <line
                 key={i}
                 x1="100"
                 y1="100"
-                x2={100 + (R - 8) * Math.cos(endAngle * Math.PI / 180)}
-                y2={100 + (R - 8) * Math.sin(endAngle * Math.PI / 180)}
+                x2={x2}
+                y2={y2}
                 stroke="var(--color-primary)"
                 strokeWidth="3"
                 strokeLinecap="round"
-                strokeDasharray={dashArray.toFixed(1)}
-                strokeDashoffset={dashOffset.toFixed(1)}
+                strokeDasharray={fullLength.toFixed(1)}
+                strokeDashoffset={prefersReducedMotion ? '0' : dashOffset.toFixed(1)}
                 style={{
                   filter: isCompleted && completedLines > 0 ? 'drop-shadow(0 0 2px var(--color-primary))' : 'none',
-                  opacity: isCompleted ? 0.9 : (isCurrent ? 0.6 : 0.1)
+                  opacity: isCompleted ? 0.9 : (isCurrent ? 0.7 : 0.15),
+                  transition: 'opacity 0.2s ease, filter 0.2s ease'
                 }}
               />
             )
