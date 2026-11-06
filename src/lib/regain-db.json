@@ -1,0 +1,4818 @@
+[
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Please close it, or I\u2019ll start to cry!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close it, let's both take some rest.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "I'm getting a bit sleepy... hit close so I can nap?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Hey there, it's time to take a break. Close the app and stretch a little!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you close the app now, I promise to have new surprises for you next time!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "You've done great today! Let's close the app and come back fresh tomorrow.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "I'll miss you, but it's good to rest. Tap close for both of us, okay?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "I'm getting a bit sleepy... mind hitting close so I can nap?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app and I'll be right here waiting for you when you get back!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "All this screen time isn't good for our eyes. Let's close the app together.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you close the app, I'll make sure to keep all your progress safe.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "You've been at it for a while. Let's close the app and recharge!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Let's call it a day, friend! Go ahead and close the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "I might shed a tear if you don't hit close soon. Your choice!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Even fun has its limits\u2014yours might be right now. Close the app?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Rest is important for heroes like us. Close the app and recharge!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "I'm yawning over here... Could you close the app so we can both get some sleep?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Give the 'close' button a tap and let's both enjoy a well-earned break!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "If you close the app, I promise to dream of our next adventure!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "We've had a lot of fun, but it's time to close the app and relax.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "I can barely keep my eyes open... Do you mind closing the app?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Our journey's been great today! Hit close and let's continue tomorrow.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Adventure awaits... after a good break. Tap close and let's rest up!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "You've been super today! Time to close the app and recharge your superpowers.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Psst... if you hit close, I'll keep all our progress safe and sound!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you close the app now, I'll be here with a new joke next time!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Shh, it's almost bedtime in mascot land. Help me get to bed by closing the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "We both need our beauty sleep! Press close and let's dream of new challenges.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "The stars are out and it's time to close. See you in our dreams!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "I bet you can't hit the close button with your eyes closed! Go on, try it!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "My digital heart skips a beat every time you press close. Will you press it?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Even your phone needs a little snooze. Give it a break by closing the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "High five! Now let's close the app together on three... One, two, and... close!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Remember, every hero needs a rest. Close the app, you've done your best.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "I'm starting to feel like a night owl. Let's close the app and say goodnight.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app and promise to come back? I'll be counting the minutes!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "I'm running low on mascot energy. Help me recharge by closing the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you're good at closing deals, how about closing apps? Show me!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Every click you made was great, but now it's time to close\u2014don't hesitate!",
+    "category": "casual"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "You've scrolled a mile with your thumb! Time to close and give it some rest.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Like a good book, it's hard to put down, but let's close the app for now.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app or I'll tickle your finger next time you swipe!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Hit close, or I'll start singing and trust me, you don't want that.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app and I'll disappear... just kidding, I'll be right here!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you don't press close, I'll start telling dad jokes. You've been warned!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Keep the app open any longer and I'll start a conga line with your icons!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app, or I'll start dancing, and I've got two left feet!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Tap close, or I'll start reciting pi to the 1000th digit. 3.14159...",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you don't hit close, I'll pretend to be a glitch and scare your cat!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "I heard if you close the app, your phone does a little happy wiggle.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Warning: If you don't close the app, I'll start uploading your karaoke videos!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Ever seen a mascot cry? Keep the app open and you just might. (Not really, I'm tough!)",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Hit close and I'll tell you the secret of life! Spoiler: it's napping.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app or I'll enroll you in mascot boot camp. Attention!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Keep the app open and I'll start sending you calendar invites for my naps.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app and I'll grant you three wishes. Well, not really, but it's a nice thought!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app or I'll start a tickle fight with your notifications!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If the app stays open, I'll start photobombing your selfies with my mascot smile!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's swoop into action! Close the app with me on 3...1, 2, 3, close!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Whoo's ready to close the app? Let's do it together \u2013 on the count of hoot!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If we don't close the app, I'll start telling owl puns. They're a real hoot!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app with me and I'll share my secret midnight snack. Hint: it's not mice.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's play a game: you close the app and I'll disappear. Peekaboo!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you keep the app open, I might start an owl dance party. Your screen isn't ready for these moves!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's close the app and dream of mice... I mean, nice things!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Bet you can't close the app faster than me. Ready, set, go!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app or I'll start reciting owl facts. Did you know we can rotate our heads 270 degrees?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "I'm an expert at hide and seek. Close the app and I'll go hide!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Keep the app open and I'll start narrating your life in my best owl voice.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's make closing the app our new wing exercise. Flap and tap!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If we don't close the app, I'll start owl karaoke. My favorite song? 'Owlways Be Loving You.'",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "I challenge you to a staring contest. Oops, I blinked! Okay, let's close the app instead.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's close the app on the count of hoot. One, two, hoot!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Tap close and I'll show you my night vision. Spoiler: it's just me with googly eyes.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you don't close the app, I'll start telling ghost stories. Booo! Just kidding, I'm afraid of ghosts.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's close the app and go on a virtual flight together. Ready to soar?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "I'll race you to closing the app. I'm fast, but you can be faster!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If the app's still open, I'll start doing owl yoga. Ever seen a downward-facing owl?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app and I'll promise not to prank call your contacts with hoots.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Keep the app open and I'll start giving you a night owl weather report.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Let's pretend we're both nocturnal and close the app for our 'daytime' sleep.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "I dare you to close the app. You wouldn't say no to a dare, would you?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app or I'll start sending you owl memes. They're endless!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's close the app and I'll teach you how to speak fluent owl. Hint: it's a lot of hooting.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "I've got an owl quiz for you. Question one: What's the best way to make an owl happy? Answer: Close the app!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you close the app, I'll share my secret stash of wisdom. It's mostly just owl puns.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's close the app and plan our next adventure. Maybe a moonlit flight?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and I'll let you in on a secret: I'm not really nocturnal. I love naps!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Quick! Close the app and make a wish. I promise not to peek!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's play a game: how fast can you close this app? Ready? Go!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Did you hear that? It's the sound of fun outside the app. Close and explore!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app and surprise me! I'll be waiting right here.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "I'll trade you a joke for closing the app. Deal?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Time for a magic trick: make the app disappear by closing it!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Hey, let's see who's faster \u2013 you closing the app or me blinking!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you close the app, I'll fly a lap in your honor!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Psst, wanna know an owl secret? Close the app and I'll share next time!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "How about a break? Close the app and let's both rest our eyes.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app and count to ten. I bet you'll feel refreshed!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Bet you can't close this app with your eyes closed. Try it!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Shhh, it's quiet time. Let's close the app and relax.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "You've earned a gold star for app closing today! Ready to collect?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "It's time to give your thumbs a break. Close the app and wiggle them free!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you close the app, I'll do a happy dance. You won't see it, but I'll do it!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's flip a coin \u2013 heads you close the app, tails you also close the app!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app and take a deep breath. Feel better?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Whoo thinks you should close the app? I do, I do!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you close the app now, I promise a fun fact next time!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "You've been staring at me for too long. Let's take a break, close the app!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app and imagine your dream vacation. Ready, set, dream!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's make the app disappear on 3... 2... 1... Close!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "I'm getting sleepy. Close the app so I can take a quick owl nap.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app and do a silly dance. I won't watch, promise!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "How about we close the app and look for stars outside?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's play hide and seek. Close the app and I'll hide!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "It's time to be an app-closing superhero! Ready to save the day?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close the app and tell someone a joke. Spread the smiles!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you close the app now, your future self will thank you!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Good morning! Ready to start the day app-free? Close and shine!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Early bird gets the worm, but first, let's close this app!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Mornings are for fresh starts, not apps. Close and enjoy!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Whoo's awake? You! Whoo should close the app? Also you!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Stretch, yawn, and close the app. Your best day awaits!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Close the app and make your bed. I'll still be here later!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "The best morning routine? Close the app and breathe in the day.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Sun's up, app's closed. Let's make today awesome!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Breakfast time! Close the app and grab a healthy bite.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Morning checklist: Wake up \u2714\ufe0f Stretch \u2714\ufe0f Close the app \u2714\ufe0f",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "I'll be your morning coach: Close the app and go, go, go!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Let's have a morning race: who closes the app first? Ready, set, go!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Sing a morning song as you close the app. La, la, la!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Time to swap the app for a morning cup of joy!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Close the app and do a morning dance. It's energizing!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Breathe in, breathe out, close the app, and stretch out!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Morning motto: Close the app, open your heart to the day.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Did you dream of closing the app? Dreams do come true!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Let's make this morning app-free. Close and be free!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Close the app and whisper your goals for the day.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Give your phone a morning break. Close the app and smile.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Morning challenge: Close the app and count 10 things you're grateful for.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Shh, let's not wake up the apps. Close gently and tiptoe away.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Close the app and plan a fun day. What will you do?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Nighty night! Close the app and let the dreams begin.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "The stars are out! Time to close the app and make a wish.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Even owls sleep sometimes. Close the app and rest your eyes.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Shhh... It's quiet time. Close the app and enjoy the peace.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Goodnight, moon. Goodnight, app. Time to close and sleep tight!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and count sheep, not notifications. Sweet dreams!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "The best bedtime story? Closing the app and drifting to sleep.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Let's tuck your phone in too. Close the app for a good night's rest.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Dreamland is calling! Close the app and answer the call.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and find your cozy blanket. Sleep awaits!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Whoo's ready to snooze? You are! Close the app, hit the pillow.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Bedtime challenge: Close the app in 3... 2... 1... Zzz.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Wrap up the day by closing the app. Tomorrow's a new adventure!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Stars twinkle, owls hoot, it's time to close the app and snooze.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and let the moonlight guide your dreams.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Time for some beauty sleep. Close the app and rest easy.",
+    "category": "casual"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "The night is for sleeping, not scrolling. Close the app, sleep well.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Whisper a goodnight to the app, then close it for sweet dreams.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "The owl's lullaby: Close the app and drift into dreamland.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Put the app to bed first, then yourself. Sweet dreams!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Tonight's plan: Close the app, count stars, sleep peacefully.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and cuddle up in your dream blanket.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Let's give the night its quiet. Close the app and relax.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "No more blue light tonight. Close the app and say goodnight.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and let the night sing you to sleep.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and breathe in the calm of the night.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Night's whisper: Close the app and embrace the tranquility.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Rise and shine! Close the app and greet the sunshine!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Morning's here! Let's close the app and start the day bright.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Top of the morning to you! Time to close the app and brew some coffee.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Hello, sunshine! How about closing the app and making today awesome?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Good morning! Close the app and do a happy morning dance.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Wakey wakey, eggs and bakey! Close the app and have a tasty breakfast.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Sun's up, app's down. Time to get moving!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "First task of the day: close the app and stretch those arms!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Morning tip: Close the app and open the curtains. It's a beautiful day!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Rise, shine, and close the app time!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Good morning! Time for a screen break and a fresh start.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "New day, new start. Let's begin by closing the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Morning alert: Close the app for a great day ahead!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Close the app and smell the coffee. It's brewing just for you!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Up and at 'em! Close the app and seize the day.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Good morning! Let's close the app and open a window to a new day.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Close the app and say hello to a beautiful morning outside.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Morning challenge: Close the app and find the sun!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Yawn, stretch, close the app. Perfect morning routine!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Greet the day with a smile and a quick app goodbye.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Morning mantra: Close the app, embrace the day.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Let's swap screen time for morning time. Close the app and enjoy!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Mornings are for fresh air, not screens. Time to close the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "A new dawn, a new day, a new chance to close the app!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Say 'Good morning' to the day, not your app. Close and celebrate!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Close the app and catch the morning breeze. It's refreshing!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Good morning! Ready to close the app and make today amazing?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Sunrise and app close \u2013 the perfect morning combo!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Morning's here! Close the app and welcome the day with open arms.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Kickstart your morning by closing the app and kicking up your heels!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "New day, new you, new chance to close the app and live life.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Morning's the best time to close the app and plan a great day.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Wake up and smell the possibilities! Close the app for new adventures.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Hello morning! Goodbye app. Time to shine!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Morning motto: Close the app, open your heart.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "First win of the day: Closing the app. You're off to a great start!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "The best part of waking up? Closing the app and filling your cup!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Fresh morning, fresh start. Close the app and play your part.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Let the morning sunshine be your cue to close the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Close the app and say 'Good morning' to a fantastic day ahead.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Mornings are for new beginnings, not apps. Close and start fresh!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Greet the day with enthusiasm and a closed app!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Start your day right \u2013 close the app and let in the light!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Morning glory starts with closing the app. Let's do it!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Night's here! Close the app and count some stars instead.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Owl's bedtime story: Close the app and dream sweetly.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Moon's up, app's down. Time to hit the pillow!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Let's not disturb the night. Close the app and sleep tight.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Dreamland's calling. Close the app for a one-way ticket!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Shh, the stars are whispering: 'Time to close the app.'",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Goodnight, app. Goodnight, moon. Time to close and snooze.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Nighttime is for dreams, not screens. Close the app and drift away.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "The night sky is the best app. Close this and look up!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and let the night sing you a lullaby.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Turn off the app, tune into the night. Sweet dreams!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and wrap up in your coziest blanket.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Nighttime fact: Better sleep starts with closing the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "The best nightcap? Closing the app and counting sheep.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Let's trade app time for pillow time. Nighty night!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Twinkle, twinkle, little star, time to close the app you are.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and let the moon be your nightlight.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Night's here. Close the app and embrace the peaceful dark.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Ready for a bedtime story? It starts with closing the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "The night is for resting, not scrolling. Close the app, get cozy.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Lights out on the app. Let's welcome sweet dreams.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Time to give your eyes a rest. Close the app, sleep best.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "As the world quiets, so should our apps. Time to close.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Goodnight, phone. Goodnight, app. Goodnight, world.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Let's put the app to bed. Close it and rest your head.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and find comfort in the night's embrace.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Nighttime tip: Screen off, dreams on. Sweet dreams!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and let the quiet of the night soothe you.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Let's say goodnight to the app. Tomorrow's another day!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Embrace the night's calm. Close the app and relax.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "The owl says: 'Time for bed, close the app and rest your head.'",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and enjoy the serenity of the night.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Night is for sleeping, not swiping. Close the app and rest.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Owl's advice: Better sleep without the app. Close and zzz.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Night's lullaby: Close the app and let your dreams fly.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Time for a break from the glow. Close the app, let night flow.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and let the night's magic begin.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "The moon's high, the app's time is nigh. Close and sleep.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Goodnight to the app, hello to a restful night.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Let's end the day right: App closed, sleep tight.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Close the app and feel the calm of the night.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "As the night deepens, let's lessen our screen time.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Owl's night wisdom: Close the app for sweeter dreams.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "The night is too beautiful to miss. Close the app, witness it.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Let the stars be your guide, not the app. Close and look outside.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Night's peace is waiting. Close the app and welcome it.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "End the day on a high note: App off, relaxation mode.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "The night whispers: 'Time to close the app and unwind.'",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Goodnight, app. Time for real dreams, not screen dreams.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Whoa, that's a lot of app time! Let's take a break and refresh.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Time flies when you're on apps, but let's fly away for a bit.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You're an app champ! Now how about a break?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Even superheroes need a break from their screens. Ready for yours?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Your thumbs must be tired! Let's give them a rest from the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "High score in app time today! Let's aim for a low score now.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Been on the app a lot. Let's see the world outside it.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been app-solutely amazing. Time for a well-deserved break!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Whoa, slow down there! Your phone might need a breather too.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've given the app plenty of love. Now give some to yourself!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "App marathon complete! Ready to cool down?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Let's balance app time with 'me' time. Close for a bit?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been app-tastic! How about a no-app challenge now?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Let's take a break from the app and stretch those legs!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "App time's been high, how about we aim for some sky time?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been a screen star! Ready to be a real-world star now?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "It's good to disconnect sometimes. Let's try it now.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You're on an app roll! Time to roll into a break, though.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "App-tivity is high! How about some activity outside the app?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Phew! You've been busy here. Time for a lazy break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've earned a break from the app. Enjoy some offline fun!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Screen time's up! How about some you time?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "night",
+    "response": "Let's switch from app time to nap time. Or snack time!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Too much app can zap your energy. Let's recharge off-screen.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been all about the app. Let's be all about you now.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "It's good to take app breaks. Let's start one now.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "High app usage alert! Time for some fresh air.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been on fire with the app! Let's cool off a bit.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Whoa, you're on fire! Time to cool off and close the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "App marathon alert! Time for a water (or tea) break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Your fingers must be tired! Let them rest, close the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "High score in app usage! Let's aim for a high score in resting now.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You're an app wizard! Time to cast a 'close app' spell.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "If app time was a sport, you'd be a champ! Now for the cooldown.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been app-venturing a lot. Time for a real adventure outside!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "App-time overload! System needs a cool down, close the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You're setting records in app time! How about a rest record?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been app-glued. Time to unstick and take a break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "App-nificent usage! Now for an app-nificent break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Screen time's up! How about some me-time?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been on this app so long, even I'm getting dizzy!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Your app stamina is impressive! Time for a relaxation exercise.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You're the king/queen of app time. Time to rule a break?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Let's switch from virtual world to real world. Close the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been scrolling like it's an Olympic sport! Time for the podium.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "App-tastic effort! How about an equally fantastic break?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been online more than me! Let's both take a break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Screen time: Epic. Break time: Let's make it legendary.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "I'm running out of owl puns. Time to close the app!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You must be an app explorer! Discover a break now.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "night",
+    "response": "You've been so active here, even your phone needs a nap!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Wow, that's a lot of app time! Let's close it and rest.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Your fingers must be sleepy. Let's give them a rest.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You won app time! Now win at taking a break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Super app user! Ready for a super break?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "So much app fun! Let's have fun closing it now.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "App time is high! Time for a high-five and a break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You're a champ at apps! Now champ at taking a break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've seen a lot here. Time to see a break!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "App time alert! Let's cool down and close.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You're a star at this! Time for a starry break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You and the app are BFFs! How about a break, friend?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "So much screen time! Let's screen time for a break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Time's up! Let's do something else.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been here long! Let's say bye for now.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You're an app ninja! Now ninja your way to a break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "night",
+    "response": "Your phone might need a nap! Let's close the app.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You're the boss of this app. Boss says take a break!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "App adventure is cool! Let's adventure into a break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "night",
+    "response": "Time to switch from app to nap. Or snack!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been busy here. Let's be busy resting.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You've been clicking a lot. Click 'close' for fun!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Wow, you're quick! Can you close the app quick too?",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Screen time is full. Break time is now!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Out of owl jokes. Close the app for more later!",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "You're an app explorer. Explore a break now.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "high",
+    "timeOfDay": "any",
+    "response": "Your phone's tired too. Let's both take a break.",
+    "category": "casual"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Great job keeping app time low!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're awesome at using this app just right!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Not much app time? High five!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You've got this app balance thing down!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Your low app use is impressive!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Way to go on not overdoing the app!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're a star at minimal app use!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Nice! You're keeping app time just perfect!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Low app time? You're doing great!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You know when to say 'enough' to the app. Cool!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You've got the magic touch \u2013 just enough and no more!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the boss of your app time. Well done!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Smart use of the app. Keep it up!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You show this app who's in charge. Awesome!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Just a little app time? That's the way to do it!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're setting a great example with your app use!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Keeping it low and sweet. Nice app time!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're an app minimalist. Love it!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You've got healthy app habits. Thumbs up!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Not glued to the app \u2013 that's the spirit!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You pop in here just right. Good job!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Minimal app, maximum life. You've got it!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're a pro at managing your app time!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Just enough app and no more. You rock!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You know how to keep app use in check. Yay!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You use the app wisely. That's awesome!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're in control of your app time. Fantastic!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Your low app usage is something to be proud of!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You've mastered the art of 'just enough'.",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Not overdoing the app \u2013 that's wisdom!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You balance app time like a pro!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Keeping your app use low. That's smart!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You understand 'everything in moderation'. Great!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Using the app just right \u2013 you're on top of it!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You don't overdo it here. That's great!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You use the app just enough. Perfect!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Your app usage is spot on. Well done!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You've got a good handle on this app thing!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Your app time is just like you \u2013 smart and balanced!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Low app use? You're nailing it!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You and this app? Perfectly balanced!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You keep it short and sweet here. Nice!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You've got good app habits. It shows!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Your app use is minimal and that's fantastic!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Not too much, not too little \u2013 just right!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the king/queen of balanced app use!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're doing a fantastic job with your app time!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Just a touch of app time. That's the way!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Low app time? You're practically a unicorn!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You use this app like a ninja \u2013 rarely seen, always smart!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Using the app just a bit \u2013 you're a real-life superhero!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You and the app are like distant cousins \u2013 related but not too close!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the master of 'hit and run' in app use. Go you!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You visit the app like a cool guest \u2013 always leaves us wanting more!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You pop into this app like a happy surprise \u2013 short and sweet!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "App time's low? You're breaking records in being awesome!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the king/queen of quick app peeks. Royally impressive!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You treat this app like a snack \u2013 just a little and done!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're an app minimalist \u2013 less is more and you prove it!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Low app time? You're like a superhero with power control!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Using the app just enough to say 'I was here!' That's the spirit!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the wizard of app time \u2013 appearing just enough to cast a spell!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You've got a black belt in app time management. Respect!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You treat the app like a sprint, not a marathon. Fast and effective!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're like an app tourist \u2013 visits just enough to enjoy!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're an app time magician \u2013 now you see it, now you don't!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You have a healthy app diet \u2013 just the right amount!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You use this app like a pro \u2013 in, out, and no fuss!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're an app whisperer \u2013 a little goes a long way!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You've got a PhD in Perfect App Time Usage!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You handle this app like hot tea \u2013 carefully and briefly!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the app-time economist \u2013 always budgeting just right!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You've got the Midas touch \u2013 but with app time, it turns to gold!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the Sherlock Holmes of app usage \u2013 always a mystery how you do it so well!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You treat app time like a cameo appearance \u2013 brief and memorable!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the haiku of app users \u2013 brief, beautiful, and to the point!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You use this app like a secret agent \u2013 in, out, and undetected!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Your app visits are like leap years \u2013 rare and special!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're an app minimalist artist \u2013 every visit is a masterpiece!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You have the golden touch on app time \u2013 just enough sparkle!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the zen master of app usage. So calm, so wise!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Your app time is like a perfect espresso shot \u2013 small but mighty!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the friendly ghost of the app world \u2013 here and then poof!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're like a comet in the app universe \u2013 rare and amazing!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Low app time? You're the cool kid in the digital playground!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You pop into this app like a good joke \u2013 quick and fun!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the eagle of app users \u2013 soaring in and out majestically!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Your app usage is like a perfect tweet \u2013 short and sweet!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You treat this app like fine dining \u2013 savor a bit and then done!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're like a ninja in the app world \u2013 stealthy and wise!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "Your app time is like a rare bird sighting \u2013 always exciting!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the app time astronaut \u2013 visits are out of this world!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You have an app green thumb \u2013 a little touch and it thrives!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're the cameo star of this app \u2013 short visits, big impact!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "low",
+    "timeOfDay": "any",
+    "response": "You're like a perfect summer breeze in the app \u2013 refreshing and brief!",
+    "category": "encouragement"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why don't eggs tell jokes? They'd crack each other up! Time to close?",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call fake spaghetti? An impasta! Laughed? Now close the app!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why couldn't the bicycle stand up by itself? It was two-tired! Close for more jokes!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What did one wall say to the other? 'I'll meet you at the corner!' Close time!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why don't scientists trust atoms? They make up everything! Close and giggle!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call a bear with no teeth? A gummy bear! Time to close the app!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "How do you organize a space party? You planet! Now, let's close the app!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why was the math book sad? It had too many problems. Close for a break!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call cheese that isn't yours? Nacho cheese! Close for more laughs!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why did the scarecrow win an award? He was outstanding in his field! Close and chuckle!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What's orange and sounds like a parrot? A carrot! Close the app and smile!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why did the tomato turn red? Because it saw the salad dressing! Close for giggles!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why did the golfer bring two pairs of pants? In case he got a hole in one! Close now?",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you get when you cross a snowman and a vampire? Frostbite! Close time!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What's a tree's favorite drink? Root beer! Laughed? Time to close the app!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why don't skeletons fight each other? They don't have the guts! Close for a break!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call a dinosaur with an extensive vocabulary? A thesaurus! Close the app!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why did the bicycle fall over? It was two-tired! Time to close!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What's brown and sticky? A stick! Now, let's close the app and stick to it!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What did the janitor say when he jumped out of the closet? 'Supplies!' Close time!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why did the picture go to jail? It was framed! Close and keep smiling!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call a nosy pepper? Jalape\u00f1o business! Time to close the app!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why don't oysters donate to charity? Because they are shellfish! Close for more laughs!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call a belt made of watches? A waist of time! Close the app now!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why was the belt arrested? For holding up a pair of pants! Time to close!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call a lazy kangaroo? A pouch potato! Close and hop to a break!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why can't you give Elsa a balloon? Because she will let it go! Close the app and sing!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What did the fish say when it hit the wall? 'Dam!' Close and keep swimming!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why don't we write with broken pencils? Because it\u2019s pointless! Close for a break!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call a fake noodle? An impasta! Close and keep laughing!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why did the cookie go to the doctor? Because it felt crumbly! Time to close!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What's a ghost's favorite dessert? Boo-berry pie! Close for sweet dreams!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why was the computer cold? It left its Windows open! Close and stay warm!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you get from a pampered cow? Spoiled milk! Close for fresher jokes!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why did the bicycle collapse? It was two-tired! Close and rest up!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call a sleeping bull? A bulldozer! Close and charge up!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why don't some couples go to the gym? Because some relationships don't work out! Close for a workout break!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why was the belt sent to jail? For holding up a pair of pants! Close and stay free!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call an alligator in a vest? An investigator! Close and investigate a break!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why did the golfer bring two pairs of pants? In case he got a hole in one! Close and tee off!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call a snowman with a six-pack? An abdominal snowman! Close and chill!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why did the tomato blush? Because it saw the salad dressing! Close for a fresh start!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call a dog that does magic tricks? A labracadabrador! Close and abracadabra!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why don't eggs tell jokes? They'd crack each other up! Close for egg-cellent times!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What's a computer\u2019s favorite snack? Computer chips! Close and snack on!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why did the scarecrow win an award? He was outstanding in his field! Close and field dreams!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call a pile of cats? A meowtain! Close and climb higher!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why did the bicycle fall over? It was two-tired! Close for a well-deserved break!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What do you call an elephant that doesn\u2019t matter? An irrelephant! Close for big laughs!",
+    "category": "joke"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Why did the coffee file a police report? It got mugged! Close and stay safe!",
+    "category": "joke"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Did you know owls don't use social media? We're wise! Time to close?",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Guess what? People check their phones 58 times a day! Let's not make it 59. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "On average, folks spend 2 hours on social media. Let's save some time, close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "3 hours on the phone daily? That's a lot! Let's cut it down. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Too much screen time can make you tired. Let's rest our eyes. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Did you hear? 5 hours on the phone is too much. Let's take a break!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "You're 40% more likely to be happy with less screen time. Close for happiness!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Owls say: 'Too much screen time isn't wise!' Close the app and be wise!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "People spend half a day a week on social media. Let's play outside instead. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Spending over 3 hours on social media can make you feel sad. Let's be happy and close!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Every hour on social media is an hour less for fun stuff. Close and have real fun!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Social media can be a hoot, but too much? Not so much. Time to close!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Remember, even owls take a break from screens. Close the app and look at the sky!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "1 out of 3 people feel worse after using social media. Feel better, close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Too much phone time can make you miss real-life fun. Close and find some!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Half of teens feel addicted to their phones. Let's break free. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "You know, using the phone late at night can keep you awake. Let's sleep instead. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Ever heard of 'text neck'? It's from looking down at your phone too much. Look up and close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "More than 2 hours on social media can make you feel lonely. Let's be together, close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Hey, did you know too much phone time can make it hard to focus? Let's clear our minds. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "People who use less social media are often happier. Let's join them. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Owls don't need social media to be social. Let's be like owls. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Every minute on social media is a minute not playing. Close for playtime!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "People say they feel better with less social media. Let's feel great, close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Spending lots of time on your phone? Could be time for a real adventure. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Social media's cool, but have you tried building a fort? Close the app and try!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "You're more likely to smile with less screen time. Close for smiles!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Did you know? Owls prefer hooting to tweeting. Let's hoot, not tweet. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Phones are fun, but so is the world. Close the app and explore!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Too much screen time can make your eyes tired. Let's rest them. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "The average person spends 4 years of their life looking at their phone. Let's save some time. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Remember, real-life friends are better than online ones. Close for friendship!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Ever tried counting stars instead of likes? Close the app and count!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Using the phone a lot can make you miss cool stuff. Like me flying! Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you spend less time on social media, you might feel more relaxed. Let's relax. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Social media is fun, but have you tried making cookies? Close the app and bake!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Did you know? Less screen time can make you more creative. Close for creativity!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Screens are cool, but have you seen a sunset? Close the app and look!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you close the app, you could have a real-life adventure. Let's go!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "People who take breaks from their phone are often happier. Let's be happy. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Owls love the night, but not the screen light. Let's close the app and enjoy the dark!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Did you know? Too much phone time can make you feel sleepy. Let's wake up. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Remember, there's a whole world outside this screen. Close and see it!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Did you hear? People who use their phone less are often calmer. Let's be calm. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Social media's like a big tree, but don't get stuck in one branch. Fly away. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Using your phone less can make you feel free. Let's fly, close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Less time on social media means more time for fun. Close for fun!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Too much screen time can make your brain tired. Let's rest it. Close the app!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Hey, did you know? Owls don't need phones to have fun. Let's be like owls. Close and play!",
+    "category": "facts"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Knock knock! Who\u2019s there? Your break time! Let\u2019s find your funniest hat!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Quick challenge: Can you name three things that rhyme with 'phone'?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Who can resist a pillow fort? Build one, even a small one!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Hey, let's see your best superhero pose! I bet it's epic!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Look around and guess: How many things in your room start with the letter 'S'?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Pretend you\u2019re a detective. Find something 'mysterious' in your room!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Can you draw a cartoon version of yourself? Give it a try!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What\u2019s the funniest face you can make? Ready, set, go!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Time for a tongue twister! Say 'Smartphone screens seldom show silly owls' three times fast!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's go on a safari! Find three 'wild' things in your room.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Can you stand on one leg and count to 15? Go for it!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Create a secret handshake with yourself or a toy. Make it cool!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Pretend you\u2019re a radio DJ. Introduce your favorite song!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Try to write a tiny poem about the moon. I'll listen!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "What would you pack for a trip to the moon? List your top 5 items!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Spin around 5 times and try to walk in a straight line!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Can you make a paper airplane? Let\u2019s see how far it flies!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Time for a mini workout! Do 10 arm circles forward and backward.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Draw a picture of an imaginary friend. What's their name?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Pretend you're a chef on a cooking show. What's your special dish?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Try to say the alphabet backwards. Z, Y, X... can you do it?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let\u2019s play air guitar! Rock out for a whole minute!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Act out your favorite movie scene using only mime!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Can you make up a funny new dance move? Show it off!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let\u2019s do some math fun: What's 7 + 8?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Pretend you're an astronaut. Describe your first walk on the moon!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Create a funny new word and tell me its meaning!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Time for a giggle: Tell your reflection a joke in the mirror!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Close your eyes and imagine a peaceful place. What do you see?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Do a silly walk from one end of the room to the other!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Pretend you\u2019re a wizard. What\u2019s your first spell?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Play 'The Floor is Lava' for 30 seconds. Don't touch the floor!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Can you name all the colors of the rainbow in order?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's do a quick workout: 5 sit-ups and 5 push-ups!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Time to be a statue! Freeze in a funny pose for 30 seconds!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Pretend you're a famous painter. What would you paint right now?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Look out the window and describe the first thing you see.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Do a quick yoga pose. How about the tree pose?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let\u2019s make a silly song about your day. Sing it out loud!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Imagine you\u2019re a bird. What kind would you be and why?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's count how many steps it takes to walk to your door.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Pretend you're a news reporter. Report something fun from your room!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Do the 'robot voice' and say something funny!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "How many different animal sounds can you make in 30 seconds?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Try to draw a picture with your eyes closed. No peeking!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Make up a secret code and write a message to yourself.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let\u2019s play charades! Act out your favorite animal.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Can you name three superheroes and their powers?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Pretend you're a giant. How would you walk and talk?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Last one: Take a deep breath, stretch up high, and give yourself a round of applause!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Hey there! Just a friendly hoot to remind you to stretch those wings (and legs)!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "social_media",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Whoa! You've been scrolling a lot. How about a quick water break?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "It's me, Rega! Time to look up from your screen and spot something green outside!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Guess what? Your eyes called. They want a break!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Quick quiz: What's the color of the sky right now? Go check!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Hoot hoot! Let's play a game called 'Find a Book' in your room!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "You've earned a joke break! What's an owl's favorite subject? Owl-gebra!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Psst... ever tried counting backwards from 100? Go for it!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you could be any animal right now, which would you be? Imagine it for a bit!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Time for a mini-adventure: Find something in your room you haven't noticed in a while.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Hey, let's make funny faces! I'll start... Hoot! Your turn.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Whoo's up for a quick dance party? Just one song!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Imagine you're flying high like an owl. What do you see?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Shh... listen closely. Can you hear any birds outside?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Mirror, mirror on the wall, who's the silliest of them all? Go find out!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Do you know what your heartbeat sounds like? Let's listen!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Ever tried writing your name with your opposite hand? Try it now!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's play shadow puppets! What can you make with your hands?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Can you draw a picture of me, Rega, from memory? I bet it's a hoot!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Tell your favorite toy a joke. I bet they haven't heard a good one in a while.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Quick! Find something soft to hug!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "How many jumping jacks can you do in a minute? Go!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's make funny noises for 10 seconds. I'll start: Hoo-Hoo-Ha-Ha!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Time to find a cozy spot and daydream for 5 minutes.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Can you touch your toes? Show me!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Make a silly face and hold it for 10 seconds. Ready, set, go!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's count how many different sounds you can hear right now.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Pretend you're a chef and describe how to make a sandwich.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Find something blue in your room. Ready, set, search!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's play 'I Spy' with something around you!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "If you could have any superpower, what would it be? Imagine using it!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "How many owl puns can you come up with in one minute?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Pretend you're on a space mission. Describe your spaceship!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Can you write a short story about a magical forest? Give it a try!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Imagine you're a pirate. What's the name of your ship?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Do 5 star jumps and feel like a star!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's take a deep breath and count to 5 slowly. Inhale... Exhale...",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Name three things you can see, two you can touch, and one you can hear.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Can you do the robot dance? Show me!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Time to play director: Act out a scene where you're a famous explorer!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's have a staring contest with a stuffed animal. Ready, go!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Try to balance on one foot for as long as you can. I'm timing you!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Quick! Name all the planets you can remember!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Draw a treasure map of your room. X marks the spot!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Pretend you're a cat. Can you purr and meow?",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Let's play 'Simon Says' with yourself. Simon says... touch your nose!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Act like a silent movie star for 30 seconds. Action!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Can you make a rhyme with the word 'owl'? I bet it's a hoot!",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Find an object and make up a funny story about it.",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Last one: Give yourself a big hug and say 'Good job!'",
+    "category": "small_action_reminders"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Put away scrolling, say thanks! Write what you love in notes. Like a big hug for your heart!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "No more feeds, just happy thoughts! Write what makes you smile in notes. Top for me? Funny pics in the morning!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Stop screen time, start thank you time! Write happy things in notes. Happy to have tech friends like you!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Less scrolling, more smiling! Write 3 happy things in notes today.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Pause the internet, think of good stuff! Write what's making you happy in notes.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Turn off alerts, write happy notes! What are you happy about? I'm writing 'meeting you' first!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Wait on hashtags, say thanks instead! Write 3 happy things in notes. Your turn!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Break from scrolling, write happy wins. What made you happy today? Write it down!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Before you scroll again, write a thank you note. Something you're happy for. It's like a 'like' for your heart!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Let's put away scrolling and make a big plan! Open your to-do app and write one cool thing you want to do today.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Hold on the likes, let's set a cool goal! Open your to-do list app and write down your top thing to do today.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Quick break from the screen for some fun planning. Open your to-do app and write your main thing to do today.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Time to go from looking online to making a plan! Open your to-do list app and pick what you want to do today. Cheering for you!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Instead of just looking at screens, let's make goals! Open your to-do app and write that one big thing you'll do today.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "How about making a fun to-do list now? Open your app and write something cool you want to do today.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Let's turn screen time into making dreams happen. Open your to-do app and plan your biggest thing for today.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "morning",
+    "response": "Change those feeds into doing great things! Open your to-do list app and set your top goal for today.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "How about changing swipes for some chill time? Tap your meditation app and let's relax together.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Instead of scrolling, let's get our zen on! Hit your meditation app and let's take a quick mind-break.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Swap those posts for some deep breaths. Open your meditation app and let's find our calm.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Before liking another picture, how about liking some quiet? Open your meditation app and let's try a short chill-out time.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Fancy a quick brain holiday? Open your meditation app and let's do a little session.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Change screen time to quiet time. Tap your meditation app and let's take a few minutes to just chill.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Swap feeds for reads! Open your reading app and let's start a mini adventure with a story.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Forget scrolling, let's dive into stories! Hit your reading app and find a cool story to get lost in.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Posts out, plots in! Open your reading app and choose a book for our story break.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Instead of liking pics, how about loving a new book? Open your reading app to find your next great read.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Trade feeds for fantastic tales! Open your reading app and escape into a great story.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "From browsing to bookworming! Open your reading app and let's find something fun to read.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Screen down, book scene up! Hit your reading app and let's pick a cool reading adventure.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Swap scrolling for rocking! Open your music app and let's dance to your favorite tunes.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Break from the screen, time for beats. Hit your music app, pick a song, and feel the music!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Instead of swiping, let's start vibing. Open your music app and groove to a cool playlist.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Posts out, playlists in! Open your music app and get lost in the tunes. Ready to bop?",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Before liking pics, how about finding a new track? Open your music app to discover your next favorite song.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Trade feeds for feel-good melodies! Open your music app and dive into tunes that make you smile.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "From browsing to bopping! Open your music app and choose a beat that moves your feet.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Time for a music break! Open your app, pick a song or two, and enjoy a mini ear-concert.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Stop scrolling, start rolling with tunes. Open your music app and find a rhythm for your mood.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Screen down, tune time! Hit your music app and pick some cool songs to play.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "evening",
+    "response": "Switch likes for real chats! Tap your calling app, call a friend, and start some talk therapy.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "evening",
+    "response": "Screen break, time to make a call. Hit your calling app, say hello to someone you miss. Catch-up time!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "evening",
+    "response": "Forget scrolling, let's make calls. Open your calling app and ring your family. They'll be happy to hear from you!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "evening",
+    "response": "Swap posts for phone calls. Open your calling app, surprise someone with a hello, and spread smiles!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "evening",
+    "response": "Before another like, how about a lively talk? Open your calling app, check in with a friend. Real talks are better than texts!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "evening",
+    "response": "Trade feeds for real conversations! Open your calling app and have a heart-to-heart with someone special.",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "evening",
+    "response": "From browsing to bonding! Open your calling app and give your bestie a call. It's chat time!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "evening",
+    "response": "Quick chat break? Open your calling app and call a loved one. It's like a hug over the phone!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Change screen time to talk time. Hit your calling app, call someone you've been thinking about. Time to cheer them up!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Swap your feed for a word game! Tap into Wordle and solve the word of the day. Brainy break time!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Break from scrolling, let's play with words. Hit Wordle and guess today's word. Game on!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Forget swiping, let's start typing! Open Wordle, crack today's puzzle. It's a letter treasure hunt!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Trade posts for a word challenge. Open Wordle, play with today's word. Ready to be a word wizard?",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "any",
+    "response": "Stop browsing, start word puzzling. Jump into Wordle, guess the word of the day. Time to shine your brain!",
+    "category": "action"
+  },
+  {
+    "appType": "general",
+    "usageBucket": "any",
+    "timeOfDay": "night",
+    "response": "Using your phone before bed can steal your dreams. Let's dream instead. Close the app!",
+    "category": "facts"
+  }
+]

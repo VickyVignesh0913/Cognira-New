@@ -4,6 +4,8 @@ import { Shell } from '@/components/ui'
 import { loadCoach, loadFocusSessions, loadHabits, loadProfile, loadTasks, saveCoach, type CoachMsg } from '@/lib/cognira'
 import { useAction } from '@/lib/actions'
 import { coachReply } from '@/server/cognira'
+import { selectRegainResponse } from '@/lib/regain-coach'
+import { Toast } from '@/components/Toast'
 
 export const Route = createFileRoute('/coach')({ component: C })
 
@@ -22,6 +24,31 @@ function C() {
   const bottom = useRef<HTMLDivElement>(null)
   useEffect(() => { bottom.current?.scrollIntoView({ behavior: 'smooth' }) }, [msgs, typing])
   const profile = loadProfile()
+
+  // --- Regain Integration: Proactive tips in Coach ---
+  // Track if we've shown a proactive Regain tip this session
+  const regainTipShownRef = useRef(false)
+
+  useEffect(() => {
+    // Show a Regain tip on mount if no messages yet and user has a profile
+    if (msgs.length === 0 && profile && !regainTipShownRef.current) {
+      regainTipShownRef.current = true
+      const hour = new Date().getHours()
+      // Get recent focus session duration (in minutes)
+      const recentSessions = loadFocusSessions()
+      const totalRecentMins = recentSessions.slice(-3).reduce((sum, s) => sum + Math.round(s.durationSec / 60), 0)
+      const nudge = selectRegainResponse('general', totalRecentMins || undefined, hour)
+      const regainMsg: CoachMsg = {
+        role: 'coach',
+        content: `💡 Regain tip: ${nudge}`,
+        at: new Date().toISOString()
+      }
+      const fin = [...msgs, regainMsg]
+      setMsgs(fin)
+      saveCoach(fin)
+    }
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  // --- End Regain Integration ---
 
   const send = useAction(async (text: string, next: CoachMsg[]) => {
     try {
@@ -45,6 +72,25 @@ function C() {
     send.run(t, next)
   }
 
+  // --- Regain Integration: Quick action to get a fresh Regain tip ---
+  function requestRegainTip() {
+    const hour = new Date().getHours()
+    const recentSessions = loadFocusSessions()
+    const totalRecentMins = recentSessions.slice(-3).reduce((sum, s) => sum + Math.round(s.durationSec / 60), 0)
+    const nudge = selectRegainResponse('general', totalRecentMins || undefined, hour)
+    const regainMsg: CoachMsg = {
+      role: 'coach',
+      content: `💡 Regain tip: ${nudge}`,
+      at: new Date().toISOString()
+    }
+    const fin = [...msgs, regainMsg]
+    setMsgs(fin)
+    saveCoach(fin)
+    // Also show as toast
+    Toast.show({ message: nudge, type: 'regain', duration: 4000 })
+  }
+  // --- End Regain Integration ---
+
   return (
     <Shell title="AI Coach">
       <div className="brutal-card flex items-center gap-2"><span className="text-2xl">🔥</span><div><b>COACH</b><div className="font-mono2 text-[11px]">Calm · direct · knows your plan</div></div></div>
@@ -54,7 +100,9 @@ function C() {
         {typing && <div className="mr-8 border-2 border-ink bg-surface p-2 font-mono2 text-xs">typing…</div>}
         <div ref={bottom} />
       </div>
-      <div className="flex flex-wrap gap-2">{CHIPS.map((c) => <button key={c} className="chip" onClick={() => submit(c)}>{c}</button>)}</div>
+      <div className="flex flex-wrap gap-2">{CHIPS.map((c) => <button key={c} className="chip" onClick={() => submit(c)}>{c}</button>)}
+        <button className="chip" onClick={requestRegainTip} title="Get a Regain focus tip">💡 Regain Tip</button>
+      </div>
       <form className="flex gap-2" onSubmit={(e) => { e.preventDefault(); submit(draft) }}>
         <input className="in flex-1" value={draft} onChange={(e) => setDraft(e.target.value)} placeholder="Ask your coach…" aria-label="Ask your coach" />
         <button className="brutal-btn" type="submit" disabled={send.pending}>{send.pending ? '…' : 'Send'}</button>

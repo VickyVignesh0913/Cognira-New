@@ -2,17 +2,20 @@ import { useEffect, useState } from 'react'
 import { createFileRoute, Link, useNavigate } from '@tanstack/react-router'
 import { authClient } from '@/lib/auth-client'
 import { useAction } from '@/lib/actions'
-import { getSessionUser } from '@/lib/session'
+import { getSessionUser, getSignInOptions } from '@/lib/session'
 import { Logo, BrutalBtn, BrutalCard } from '@/components/ui'
 import { DEMO_STUDENT, DEMO_PRO, loadProfile } from '@/lib/cognira'
 
 export const Route = createFileRoute('/')({
-  loader: async () => ({ user: await getSessionUser().catch(() => null) }),
+  loader: async () => {
+    const [user, opts] = await Promise.all([getSessionUser().catch(() => null), getSignInOptions().catch(() => ({ google: false }))])
+    return { user, google: opts.google }
+  },
   component: Opening,
 })
 
 function Opening() {
-  const data = Route.useLoaderData() as { user: any }
+  const data = Route.useLoaderData() as { user: any; google: boolean }
   const nav = useNavigate()
   const [phase, setPhase] = useState<'splash' | 'intro' | 'join' | 'who'>('splash')
   const [slide, setSlide] = useState(0)
@@ -45,7 +48,7 @@ function Opening() {
           <div className="flex min-h-[92vh] flex-col items-center justify-center gap-5 p-8 text-center">
             <Logo size={84} />
             <h1 className="font-display text-4xl">COGNIRA</h1>
-            <p className="font-mono2 text-xs uppercase tracking-widest text-muted">Your Personal Growth Companion</p>
+            <p className="font-mono2 text-xs uppercase tracking-widest text-ink">Your Personal Growth Companion</p>
             <p className="font-mono2 text-xs">Preparing your experience…</p>
             <div className="brutal-bar"><span style={{ width: `${bar}%` }} /></div>
           </div>
@@ -68,14 +71,14 @@ function Opening() {
             </div>
           </div>
         )}
-        {phase === 'join' && <Join onWho={() => setPhase('who')} />}
+        {phase === 'join' && <Join google={data.google} onWho={() => setPhase('who')} />}
         {phase === 'who' && <Who />}
       </div>
     </div>
   )
 }
 
-function Join({ onWho }: { onWho: () => void }) {
+function Join({ google: googleEnabled, onWho }: { google: boolean; onWho: () => void }) {
   const nav = useNavigate()
   const google = useAction(async () => {
     const r: any = await authClient.signIn.social({ provider: 'google', callbackURL: '/home' })
@@ -97,11 +100,13 @@ function Join({ onWho }: { onWho: () => void }) {
   return (
     <div className="flex min-h-[92vh] flex-col justify-center gap-4 p-6">
       <div className="flex items-center gap-3"><Logo size={48} /><h1 className="font-display text-3xl">JOIN COGNIRA</h1></div>
-      <p className="font-mono2 text-xs uppercase tracking-widest text-muted">AI-powered. Human-focused.</p>
+      <p className="font-mono2 text-xs uppercase tracking-widest text-ink">AI-powered. Human-focused.</p>
       <Link to="/login" className="brutal-btn w-full">Continue with Email</Link>
-      <button className="brutal-btn brutal-btn-yellow w-full text-ink" onClick={() => google.run()}>{google.pending ? 'Opening Google…' : 'Continue with Google'}</button>
-      {google.error && <div role="alert" className="font-mono2 text-xs">{google.error}</div>}
-      <button className="brutal-btn brutal-btn-white w-full" onClick={onWho}>Continue with Apple</button>
+      {googleEnabled && <>
+        <button className="brutal-btn brutal-btn-yellow w-full text-ink" onClick={() => google.run()}>{google.pending ? 'Opening Google…' : 'Continue with Google'}</button>
+        {google.error && <div role="alert" className="font-mono2 text-xs">{google.error}</div>}
+      </>}
+      <button className="brutal-btn brutal-btn-white w-full" onClick={onWho}>Not sure yet? Choose your path</button>
       <div className="text-center font-mono2 text-xs">Already have an account? <Link to="/login" className="underline">Sign in</Link></div>
       <div className="brutal-card">
         <div className="kicker">Try it first</div>
@@ -124,11 +129,11 @@ function Who() {
       <h1 className="font-display text-3xl">PICK YOUR PATH</h1>
       <button onClick={() => setP('student')} className={`brutal-card w-full text-left ${p === 'student' ? 'brutal-pick' : ''}`}>
         <div className="font-display">STUDENT</div>
-        <div className="text-sm text-muted">Study planning, subjects, StudyHouse library.</div>
+        <div className="text-sm text-ink">Study planning, subjects, StudyHouse library.</div>
       </button>
       <button onClick={() => setP('professional')} className={`brutal-card w-full text-left ${p === 'professional' ? 'brutal-pick' : ''}`}>
         <div className="font-display">PROFESSIONAL</div>
-        <div className="text-sm text-muted">Work routines, projects, Resources library.</div>
+        <div className="text-sm text-ink">Work routines, projects, Resources library.</div>
       </button>
       <BrutalBtn disabled={!p} onClick={() => { try { localStorage.setItem('cognira_persona_pick', p) } catch {}; nav({ to: '/onboarding' }) }}>Continue</BrutalBtn>
     </div>

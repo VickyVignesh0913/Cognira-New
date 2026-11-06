@@ -3,12 +3,17 @@ import { createFileRoute, Link, useNavigate } from '@tanstack/react-router'
 import { authClient } from '@/lib/auth-client'
 import { useAction } from '@/lib/actions'
 import { loadProfile } from '@/lib/cognira'
+import { getSignInOptions } from '@/lib/session'
 import { Logo } from '@/components/ui'
 
-export const Route = createFileRoute('/login')({ component: Login })
+export const Route = createFileRoute('/login')({
+  loader: async () => ({ google: (await getSignInOptions()).google }),
+  component: Login,
+})
 
 function Login() {
   const nav = useNavigate()
+  const { google: googleEnabled } = Route.useLoaderData()
   const [mode, setMode] = useState<'in' | 'up'>('up')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -40,8 +45,10 @@ function Login() {
           <button className="brutal-btn w-full" type="submit" disabled={login.pending}>{login.pending ? 'Please wait…' : mode === 'in' ? 'Sign in' : 'Create account'}</button>
         </fieldset>
       </form>
-      <button className="brutal-btn brutal-btn-yellow w-full text-ink" onClick={() => google.run()}>{google.pending ? 'Opening Google…' : 'Continue with Google'}</button>
-      {google.error && <div role="alert" className="brutal-card text-sm">{google.error}</div>}
+      {googleEnabled && <>
+        <button className="brutal-btn brutal-btn-yellow w-full text-ink" onClick={() => google.run()}>{google.pending ? 'Opening Google…' : 'Continue with Google'}</button>
+        {google.error && <div role="alert" className="brutal-card text-sm">{google.error}</div>}
+      </>}
       <div className="text-center font-mono2 text-xs"><Link to="/" className="underline">← Back to welcome</Link></div>
     </div></div>
   )
