@@ -18,20 +18,14 @@ function R() {
   const [dayIdx, setDayIdx] = useState(() => (new Date().getDay() + 6) % 7)
   const [open, setOpen] = useState(false)
   const [edit, setEdit] = useState<Task | null>(null)
-  const [masterySubject, setMasterySubject] = useState<string>('')
-  const [subjects, setSubjects] = useState<string[]>([])
-  const [savingTask, setSavingTask] = useState(false)
   const dates = useMemo(weekDates, [])
   const key = dayKey(dates[dayIdx])
 
-  // Load subjects for mastery subject selector
+  // Week/Month are views of this page, so Back should step Week -> Day instead of leaving /routine.
   useEffect(() => {
-    try {
-      const pr = loadProfileLib()
-      if (pr) {
-        setSubjects((pr.persona === 'professional' ? pr.skills : pr.subjects) || [])
-      }
-    } catch {}
+    const onPop = (e: PopStateEvent) => setView((e.state as { routineView?: string } | null)?.routineView === 'Week' ? 'Week' : 'Day')
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
   }, [])
 
   // Server-aware task persistence
@@ -163,15 +157,8 @@ function Sheet({ edit, day, tasks, persist, close, syncTask }: { edit: Task | nu
   const [err, setErr] = useState('')
 
   // Get persona to determine available subjects vs skills
-  const [availableSubjects, setAvailableSubjects] = useState<string[]>([])
-  useEffect(() => {
-    try {
-      const pr = loadProfileLib()
-      if (pr) {
-        setAvailableSubjects((pr.persona === 'professional' ? pr.skills : pr.subjects) || [])
-      }
-    } catch {}
-  }, [])
+  const profile = loadProfileLib()
+  const availableSubjects = (profile?.persona === 'professional' ? profile?.skills : profile?.subjects) || []
 
   async function save() {
     if (!title.trim()) { setErr('Give the task a title.'); return }
