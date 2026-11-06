@@ -38,6 +38,7 @@ export const tasks = sqliteTable('tasks', {
   startTime: text('start_time').notNull(),
   endTime: text('end_time').notNull(),
   category: text('category').notNull().default('Study'),
+  masterSubject: text('master_subject').default(''),
   repeatDays: text('repeat_days').notNull().default('[]'),
   completedDates: text('completed_dates').notNull().default('[]'),
   date: text('date').notNull().default(''),

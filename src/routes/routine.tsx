@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { Shell } from '@/components/ui'
-import { dayKey, loadProfile, loadTasks, saveProfile, saveTasks, demoTasks, uid, type Task } from '@/lib/cognira'
+import { dayKey, loadProfile, loadTasks, saveProfile, saveTasks, demoTasks, uid, type Task, loadProfile as loadProfileLib } from '@/lib/cognira'
+import { completeTaskWithMastery, upsertTask } from '@/server/cognira'
 
 export const Route = createFileRoute('/routine')({ component: R })
 
@@ -17,8 +18,42 @@ function R() {
   const [dayIdx, setDayIdx] = useState(() => (new Date().getDay() + 6) % 7)
   const [open, setOpen] = useState(false)
   const [edit, setEdit] = useState<Task | null>(null)
+  const [masterySubject, setMasterySubject] = useState<string>('')
+  const [subjects, setSubjects] = useState<string[]>([])
+  const [savingTask, setSavingTask] = useState(false)
   const dates = useMemo(weekDates, [])
   const key = dayKey(dates[dayIdx])
+
+  // Load subjects for mastery subject selector
+  useEffect(() => {
+    try {
+      const pr = loadProfileLib()
+      if (pr) {
+        setSubjects((pr.persona === 'professional' ? pr.skills : pr.subjects) || [])
+      }
+    } catch {}
+  }, [])
+
+  // Server-aware task persistence
+  async function syncTaskWithServer(t: Task) {
+    try {
+      await upsertTask({
+        data: {
+          id: t.id,
+          title: t.title,
+          start: t.start,
+          end: t.end,
+          category: t.category,
+          masterySubject: t.masterSubject || '',
+          repeatDays: t.repeatDays,
+          completedDates: t.completedDates,
+          date: t.date
+        }
+      })
+    } catch (e) {
+      console.error('Failed to sync task to server', e)
+    }
+  }
 
   // Week/Month are views of this page, so Back should step Week -> Day instead of leaving /routine.
   useEffect(() => {
@@ -34,12 +69,37 @@ function R() {
 
   function persist(t: Task[]) { setTasks(t); saveTasks(t) }
   function awardCoins(n: number) { try { const pr = loadProfile(); if (pr) saveProfile({ ...pr, coins: (pr.coins || 0) + n }) } catch {} }
-  function toggle(id: string) {
-    const before = (tasks.find((x) => x.id === id)?.completedDates || []).includes(key)
+
+  async function toggle(id: string) {
+    const task = tasks.find((x) => x.id === id)
+    const before = (task?.completedDates || []).includes(key)
+
+    // Optimistic update
     const t = tasks.map((x) => x.id === id ? { ...x, completedDates: (x.completedDates || []).includes(key) ? (x.completedDates || []).filter((d) => d !== key) : [...(x.completedDates || []), key] } : x)
     persist(t)
-    if (!before) awardCoins(10)
+
+    if (!before) {
+      awardCoins(10)
+
+      // Log to mastery if task has a subject
+      const taskSubject = task?.masterSubject || task?.category
+      if (taskSubject) {
+        try {
+          const result = await completeTaskWithMastery({
+            data: {
+              taskId: id,
+              sessionMinutes: 25,
+              subject: taskSubject
+            }
+          })
+          if (result.masteryContribution) {
+            // Show toast or notification (would need a toast system)
+          }
+        } catch {}
+      }
+    }
   }
+
   function remove(id: string) { if (confirm('Delete this task?')) persist(tasks.filter((x) => x.id !== id)) }
 
   const dayTasks = tasks.filter((t) => (t.repeatDays || []).length === 0 || (t.repeatDays || []).includes(DAYS[dayIdx])).sort((a, b) => a.start.localeCompare(b.start))
@@ -88,23 +148,69 @@ function R() {
       )}
 
       <button className="fab" onClick={() => { setEdit(null); setOpen(true) }} aria-label="Add task">+</button>
-      {open && <Sheet edit={edit} day={DAYS[dayIdx]} tasks={tasks} persist={persist} close={() => setOpen(false)} />}
+      {open && <Sheet edit={edit} day={DAYS[dayIdx]} tasks={tasks} persist={persist} close={() => setOpen(false)} syncTask={syncTaskWithServer} />}
     </Shell>
   )
 }
 
-function Sheet({ edit, day, tasks, persist, close }: { edit: Task | null; day: string; tasks: Task[]; persist: (t: Task[]) => void; close: () => void }) {
+function Sheet({ edit, day, tasks, persist, close, syncTask }: { edit: Task | null; day: string; tasks: Task[]; persist: (t: Task[]) => void; close: () => void; syncTask: (t: Task) => Promise<void> }) {
   const [title, setTitle] = useState(edit?.title || '')
   const [start, setStart] = useState(edit?.start || '09:00')
   const [end, setEnd] = useState(edit?.end || '10:00')
   const [cat, setCat] = useState(edit?.category || 'Study')
+  const [masterSubj, setMasterSubj] = useState<string>(edit?.masterSubject || '')
   const [days, setDays] = useState<string[]>(edit?.repeatDays || [day])
   const [err, setErr] = useState('')
-  function save() {
+
+  // Get persona to determine available subjects vs skills
+  const [availableSubjects, setAvailableSubjects] = useState<string[]>([])
+  useEffect(() => {
+    try {
+      const pr = loadProfileLib()
+      if (pr) {
+        setAvailableSubjects((pr.persona === 'professional' ? pr.skills : pr.subjects) || [])
+      }
+    } catch {}
+  }, [])
+
+  async function save() {
     if (!title.trim()) { setErr('Give the task a title.'); return }
     if (end <= start) { setErr('End time must be after start time.'); return }
-    if (edit) persist(tasks.map((t) => t.id === edit.id ? { ...t, title: title.trim(), start, end, startTime: start, endTime: end, category: cat, repeatDays: days } : t))
-    else persist([...tasks, { id: uid(), title: title.trim(), start, end, startTime: start, endTime: end, category: cat, repeatDays: days, completedDates: [], date: dayKey(new Date()) }])
+
+    if (edit) {
+      const updatedTask: Task = {
+        ...edit,
+        title: title.trim(),
+        start,
+        end,
+        startTime: start,
+        endTime: end,
+        category: cat,
+        masterSubject: masterSubj || '',
+        repeatDays: days,
+        completedDates: edit.completedDates || [],
+        date: edit.date || dayKey(new Date())
+      }
+      persist(tasks.map((t) => t.id === edit.id ? updatedTask : t))
+      await syncTask(updatedTask)
+    } else {
+      const newId = uid()
+      const newTask: Task = {
+        id: newId,
+        title: title.trim(),
+        start,
+        end,
+        startTime: start,
+        endTime: end,
+        category: cat,
+        masterSubject: masterSubj || '',
+        repeatDays: days,
+        completedDates: [],
+        date: dayKey(new Date())
+      }
+      persist([...tasks, newTask])
+      await syncTask(newTask)
+    }
     close()
   }
   return (
@@ -116,6 +222,12 @@ function Sheet({ edit, day, tasks, persist, close }: { edit: Task | null; day: s
         <label className="lbl">End<input className="in" type="time" value={end} onChange={(e) => setEnd(e.target.value)} /></label>
       </div>
       <div className="lbl">Category<div className="flex flex-wrap gap-2">{['Study', 'Work', 'Health', 'Personal'].map((c) => <button key={c} className={`chip ${cat === c ? 'on' : ''}`} onClick={() => setCat(c)}>{c}</button>)}</div></div>
+      <div className="lbl">Mastery Subject
+        <select className="in w-full" value={masterSubj} onChange={(e) => setMasterSubj(e.target.value)}>
+          <option value="">Auto-detect from task</option>
+          {availableSubjects.length > 0 ? availableSubjects.map((s) => <option key={s} value={s}>{s}</option>) : null}
+        </select>
+      </div>
       <div className="lbl">Repeat<div className="flex flex-wrap gap-2">{['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((d) => <button key={d} className={`chip ${days.includes(d) ? 'on' : ''}`} onClick={() => setDays(days.includes(d) ? days.filter((x) => x !== d) : [...days, d])}>{d}</button>)}</div></div>
       {err && <div role="alert" className="text-sm font-bold">{err}</div>}
       <div className="flex gap-2"><button className="brutal-btn flex-1" onClick={save}>Save</button><button className="btn-ghost" onClick={close}>Cancel</button></div>

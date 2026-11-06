@@ -122,8 +122,10 @@ function Mastery() {
   }, [entries, baseList])
 
   const stats: Stats[] = useMemo(() => {
+    // When signed in, server minutes already include focus sessions
+    // When offline/demo, focusMins from localStorage should be added
     return merged.map((e) => {
-      const focusMins = sessions
+      const focusMins = signedIn ? 0 : sessions
         .filter((s) => {
           const sub = (s.subject || '').toLowerCase()
           const key = e.subject.toLowerCase()
@@ -132,16 +134,19 @@ function Mastery() {
         })
         .reduce((a, s) => a + (s.durationSec || 0), 0) / 60
       const taskDone = tasks.filter((t) =>
+        (t.masterSubject || '').toLowerCase() === e.subject.toLowerCase() ||
         (t.category || '').toLowerCase() === e.subject.toLowerCase() ||
         t.title.toLowerCase().includes(e.subject.toLowerCase()),
       )
       const tk = dayKey()
       const doneToday = taskDone.filter((t) => (t.completedDates || []).includes(tk)).length
+      // When signed in, use server minutes only (they include focus sessions)
+      // When not signed in, add localStorage focus minutes
       const totalMins = Math.round((e.minutes || 0) + focusMins)
       const needs = e.confidence <= 2 || (totalMins < 30 && e.confidence <= 3)
       return { entry: e, focusMins: Math.round(focusMins), taskCount: taskDone.length, doneToday, totalMins, needs }
     })
-  }, [merged, sessions, tasks])
+  }, [merged, sessions, tasks, signedIn])
 
   const sorted = useMemo(() => [...stats].sort((a, b) => a.entry.confidence - b.entry.confidence || a.totalMins - b.totalMins), [stats])
   const totalMinsAll = stats.reduce((a, s) => a + s.totalMins, 0)
@@ -212,7 +217,7 @@ function Mastery() {
     <Shell title="Mastery" coins={profile?.coins || 0}>
       <div className="kicker">{isPro ? 'Skills · professional' : 'Subjects · class tracking'}</div>
       <h1 className="font-display text-3xl leading-tight">MASTERY</h1>
-      <p className="font-mono2 text-xs text-muted">
+      <p className="font-mono2 text-xs text-ink">
         {isPro ? 'Log time and confidence per skill. Lowest confidence + least time needs attention first.' : 'Log study time and confidence per subject. Your weakest subject floats to the top.'}
       </p>
 
@@ -250,7 +255,7 @@ function Mastery() {
       )}
       {deletedNote && <div role="status" className="brutal-card text-sm font-bold">{deletedNote}</div>}
       {!signedIn && synced && (
-        <div className="font-mono2 text-[11px] text-muted">Exploring demo — entries save on this device. <Link to="/login" className="underline">Sign in</Link> to sync them to your account.</div>
+        <div className="font-mono2 text-[11px] text-ink">Exploring demo — entries save on this device. <Link to="/login" className="underline">Sign in</Link> to sync them to your account.</div>
       )}
 
       <div className="flex flex-col gap-3" aria-live="polite">
@@ -263,7 +268,7 @@ function Mastery() {
                   <h2 className="font-display text-lg leading-tight break-words">{entry.subject}</h2>
                   {needs && <span className="rounded-full border-2 border-ink bg-danger px-2 py-0.5 text-[10px] font-bold uppercase text-on-accent">Needs work</span>}
                 </div>
-                <div className="font-mono2 mt-1 text-[11px] text-muted">
+                <div className="font-mono2 mt-1 text-[11px] text-ink">
                   {totalMins} min total · {focusMins} min focus · {taskCount} tasks{doneToday > 0 ? ` · ${doneToday} done today` : ''} · {entry.logs.length} logs
                 </div>
               </div>
@@ -350,7 +355,7 @@ function Mastery() {
           <button className="brutal-btn min-h-[44px] px-4 text-sm" onClick={handleAdd}>{logAction.pending ? 'Adding…' : 'Add'}</button>
         </fieldset>
         {addError && <div id="mastery-add-error" role="alert" className="mt-1 text-sm font-bold">{addError}</div>}
-        <p className="font-mono2 mt-2 text-[11px] text-muted">From onboarding: {baseList.join(', ') || 'none yet'}</p>
+        <p className="font-mono2 mt-2 text-[11px] text-ink">From onboarding: {baseList.join(', ') || 'none yet'}</p>
       </div>
 
       <Link to="/focus" className="brutal-btn mt-1 block text-center">Start a focus session</Link>
@@ -390,7 +395,7 @@ function LogSheet({ subject, initialConfidence, close, save, pending, ready }: {
             </div>
           </div>
         </fieldset>
-        <p className="font-mono2 text-[11px] text-muted">1 = lost · 3 = okay · 5 = could teach it. Time adds to this {subject} total.</p>
+        <p className="font-mono2 text-[11px] text-ink">1 = lost · 3 = okay · 5 = could teach it. Time adds to this {subject} total.</p>
         {err && <div role="alert" className="text-sm font-bold">{err}</div>}
         <div className="flex gap-2">
           <button

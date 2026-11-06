@@ -1,8 +1,54 @@
 import { createServerFn } from '@tanstack/react-start'
-import { eq } from 'drizzle-orm'
+import { eq, and, sql } from 'drizzle-orm'
 
 const jparse = (s: string | null | undefined, fb: any) => { try { return s ? JSON.parse(s as string) : fb } catch { return fb } }
 const nid = (p = '') => `${Date.now()}${p}-${Math.random().toString(36).slice(2)}`
+
+/**
+ * Append study minutes to a mastery entry for a subject (case-insensitive match).
+ * Creates entry if not exists, preserves confidence.
+ */
+async function accumulateStudyMinutes(
+  db: Awaited<ReturnType<typeof import('@/lib/db').getDb>>,
+  userId: string,
+  subject: string,
+  minutes: number
+): Promise<{ updated: boolean; subject: string; previousTotal?: number }> {
+  const s = await import('@/db/schema')
+
+  // Try to find existing entry (case-insensitive match)
+  const existing = await db.select().from(s.masteryEntries as any)
+    .where(and(
+      eq((s.masteryEntries as any).userId, userId),
+      sql`LOWER(${(s.masteryEntries as any).subject}) = LOWER(${subject})`
+    )).get()
+
+  const previousTotal = existing?.minutes ?? 0
+
+  if (existing) {
+    // Atomic increment
+    await db.update(s.masteryEntries as any)
+      .set({
+        minutes: sql`${(s.masteryEntries as any).minutes} + ${minutes}`,
+        updatedAt: new Date().toISOString()
+      })
+      .where(eq((s.masteryEntries as any).id, existing.id))
+    return { updated: true, subject: existing.subject, previousTotal }
+  } else {
+    // Create new entry with default confidence=3
+    const newId = nid('-m')
+    await db.insert(s.masteryEntries as any).values({
+      id: newId,
+      userId,
+      subject,
+      minutes,
+      confidence: 3,
+      logs: JSON.stringify([{ at: new Date().toISOString(), minutes }]),
+      updatedAt: new Date().toISOString()
+    })
+    return { updated: true, subject, previousTotal: 0 }
+  }
+}
 
 export const getState = createServerFn({ method: 'GET' }).handler(async () => {
   const { currentUser } = await import('@/lib/session.server')
@@ -124,14 +170,37 @@ export const upsertTask = createServerFn({ method: 'POST' }).validator((d: any) 
   const now = new Date().toISOString()
   const startTime = String(data.startTime ?? data.start ?? '09:00')
   const endTime = String(data.endTime ?? data.end ?? '10:00')
+  const category = String(data.category || 'General')
+  const masterSubject = data.masterySubject !== undefined ? String(data.masterySubject || '') : ''
+
   if (data.id) {
     const ex = await d.select().from(s.tasks).where(eq(s.tasks.id, String(data.id))).get()
     if (!ex || ex.userId !== u.id) throw new Error('Not found')
-    await d.update(s.tasks).set({ title: String(data.title), startTime, endTime, category: String(data.category || 'General'), repeatDays: JSON.stringify(data.repeatDays || []), completedDates: JSON.stringify(data.completedDates || []) }).where(eq(s.tasks.id, String(data.id)))
+    await d.update(s.tasks).set({
+      title: String(data.title),
+      startTime,
+      endTime,
+      category,
+      masterSubject,
+      repeatDays: JSON.stringify(data.repeatDays || []),
+      completedDates: JSON.stringify(data.completedDates || [])
+    }).where(eq(s.tasks.id, String(data.id)))
     return { ok: true, id: String(data.id) }
   }
   const id = nid('-t')
-  await d.insert(s.tasks).values({ id, userId: u.id, title: String(data.title), startTime, endTime, category: String(data.category || 'General'), repeatDays: JSON.stringify(data.repeatDays || []), completedDates: JSON.stringify([]), date: String(data.date || now.slice(0, 10)), createdAt: now })
+  await d.insert(s.tasks).values({
+    id,
+    userId: u.id,
+    title: String(data.title),
+    startTime,
+    endTime,
+    category,
+    masterSubject,
+    repeatDays: JSON.stringify(data.repeatDays || []),
+    completedDates: JSON.stringify([]),
+    date: String(data.date || now.slice(0, 10)),
+    createdAt: now
+  })
   return { ok: true, id }
 })
 
@@ -145,6 +214,96 @@ export const deleteTask = createServerFn({ method: 'POST' }).validator((d: any) 
   if (ex && ex.userId === u.id) await d.delete(s.tasks).where(eq(s.tasks.id, String(data.id)))
   return { ok: true }
 })
+
+/**
+ * Complete a task and optionally log study time to mastery.
+ * Uses category as default mastery subject if it matches an existing entry.
+ */
+export const completeTaskWithMastery = createServerFn({ method: 'POST' })
+  .validator((d: any) => d)
+  .handler(async ({ data }: { data: any }) => {
+    const { requireUser } = await import('@/lib/session.server')
+    const u = await requireUser()
+    const { getDb } = await import('@/lib/db')
+    const d = await getDb()
+    const s = await import('@/db/schema')
+
+    const taskId = String(data.taskId)
+    const sessionMinutes = Math.round(Number(data.sessionMinutes || 0))
+    const overrideSubject = data.subject ? String(data.subject).trim() : null
+
+    if (sessionMinutes < 1) {
+      return { ok: true, masteryContribution: false }
+    }
+
+    return await d.transaction(async (tx) => {
+      // Fetch the task
+      const task = await tx.select().from(s.tasks as any)
+        .where(and(eq((s.tasks as any).id, taskId), eq((s.tasks as any).userId, u.id))).get() as any
+
+      if (!task) {
+        return { ok: true, masteryContribution: false }
+      }
+
+      // Determine mastery subject
+      // Priority: override subject > explicit master_subject > category match > none
+      let subject: string | null = null
+      const taskCategory = String(task.category || 'General')
+      const taskMasterSubject = String(task.masterSubject || '')
+
+      if (overrideSubject) {
+        subject = overrideSubject
+      } else if (taskMasterSubject) {
+        subject = taskMasterSubject
+      } else {
+        // Check if category matches an existing mastery entry (case-insensitive)
+        const entries = await tx.select().from(s.masteryEntries as any)
+          .where(eq((s.masteryEntries as any).userId, u.id)).all() as any[]
+        const matchingEntry = entries.find((e: any) =>
+          String(e.subject).toLowerCase() === taskCategory.toLowerCase()
+        )
+        if (matchingEntry) {
+          subject = taskCategory
+        }
+      }
+
+      // Accumulate to mastery if we have a subject
+      let contributed = false
+      if (subject) {
+        const existing = await tx.select().from(s.masteryEntries as any)
+          .where(and(
+            eq((s.masteryEntries as any).userId, u.id),
+            sql`LOWER(${(s.masteryEntries as any).subject}) = LOWER(${subject})`
+          )).get()
+
+        if (existing) {
+          await tx.update(s.masteryEntries as any)
+            .set({
+              minutes: sql`${(s.masteryEntries as any).minutes} + ${sessionMinutes}`,
+              updatedAt: new Date().toISOString()
+            })
+            .where(eq((s.masteryEntries as any).id, existing.id))
+          contributed = true
+        } else {
+          // No existing mastery entry - don't auto-create
+          contributed = false
+        }
+      }
+
+      // Mark task completed for today
+      const today = new Date().toISOString().slice(0, 10)
+      const completedDates = jparse(task.completedDates, [])
+      if (!completedDates.includes(today)) {
+        await tx.update(s.tasks as any)
+          .set({
+            completedDates: JSON.stringify([...completedDates, today])
+          })
+          .where(eq((s.tasks as any).id, taskId))
+      }
+
+      return { ok: true, masteryContribution: contributed, subject: subject || undefined }
+    })
+  })
 
 export const upsertHabit = createServerFn({ method: 'POST' }).validator((d: any) => d).handler(async ({ data }: { data: any }) => {
   const { requireUser } = await import('@/lib/session.server')
@@ -181,12 +340,93 @@ export const saveFocusSession = createServerFn({ method: 'POST' }).validator((d:
   const { getDb } = await import('@/lib/db')
   const s = await import('@/db/schema')
   const d = await getDb()
-  const id = nid('-f')
-  await d.insert(s.focusSessions).values({ id, userId: u.id, startedAt: String(data.startedAt), durationSec: Number(data.durationSec), mode: String(data.mode || 'Focus'), subject: String(data.subject || ''), completed: true })
-  const prof = await d.select().from(s.profiles).where(eq(s.profiles.userId, u.id)).get()
-  if (prof) await d.update(s.profiles).set({ coins: (prof.coins || 0) + 10, xp: (prof.xp || 0) + 20 }).where(eq(s.profiles.userId, u.id))
-  return { ok: true, id }
+
+  const sessionId = data.id ? String(data.id) : nid('-f')
+  const subject = String(data.subject || '').trim()
+  const durationSec = Number(data.durationSec || 0)
+  const mode = String(data.mode || 'Focus')
+
+  // Use transaction for atomic session + mastery update
+  return await d.transaction(async (tx) => {
+    // Insert focus session (idempotent via session ID)
+    await tx.insert(s.focusSessions).values({
+      id: sessionId,
+      userId: u.id,
+      startedAt: String(data.startedAt),
+      durationSec,
+      mode,
+      subject,
+      completed: true
+    })
+
+    // Accumulate study minutes to mastery if subject specified
+    let masteryResult = null
+    if (subject && durationSec > 0) {
+      const minutes = Math.round(durationSec / 60)
+      masteryResult = await accumulateStudyMinutes(tx, u.id, subject, minutes)
+    }
+
+    // Award coins/Xp
+    const prof = await tx.select().from(s.profiles).where(eq(s.profiles.userId, u.id)).get()
+    if (prof) {
+      await tx.update(s.profiles)
+        .set({ coins: (prof.coins || 0) + 10, xp: (prof.xp || 0) + 20 })
+        .where(eq(s.profiles.userId, u.id))
+    }
+
+    return {
+      ok: true,
+      id: sessionId,
+      focusLogged: !!subject,
+      subject,
+      masteryUpdated: masteryResult?.updated ?? false,
+      masterySubject: masteryResult?.subject,
+      minutesAdded: masteryResult?.previousTotal !== undefined
+        ? (masteryResult.previousTotal ? 'added to' : 'created')
+        : null
+    }
+  })
 })
+
+/**
+ * Log completed session minutes to user's mastery study time.
+ * Called separately for sessions that were saved before this function existed.
+ */
+export const logSessionStudyTime = createServerFn({ method: 'POST' })
+  .validator((d: any) => d)
+  .handler(async ({ data }: { data: any }) => {
+    const { requireUser } = await import('@/lib/session.server')
+    const u = await requireUser()
+    const { getDb } = await import('@/lib/db')
+    const d = await getDb()
+
+    const sessionId = String(data.sessionId || '')
+    const subject = String(data.subject || '').trim()
+    const minutes = Math.round(Number(data.minutes || 0))
+
+    if (!sessionId || !subject || minutes < 1) {
+      return { ok: true, masteryContribution: false }
+    }
+
+    // Check if session already has study time logged
+    const s = await import('@/db/schema')
+    const existingSession = await d.select().from(s.focusSessions)
+      .where(and(eq(s.focusSessions.id, sessionId), eq(s.focusSessions.userId, u.id))).get()
+
+    if (!existingSession) {
+      return { ok: true, masteryContribution: false, reason: 'Session not found' }
+    }
+
+    // Accumulate to mastery
+    const result = await accumulateStudyMinutes(d, u.id, subject, minutes)
+
+    return {
+      ok: true,
+      masteryContribution: result.updated,
+      subject: result.subject,
+      minutesAdded: minutes
+    }
+  })
 
 export const upsertResource = createServerFn({ method: 'POST' }).validator((d: any) => d).handler(async ({ data }: { data: any }) => {
   const { requireUser } = await import('@/lib/session.server')
